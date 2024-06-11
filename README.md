@@ -1,10 +1,10 @@
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
 
-# Image Tool
+# Media Tool
 
-Image Block for the [Editor.js](https://editorjs.io).
+Media Block for the [Editor.js](https://editorjs.io).
 
-![](https://capella.pics/63a03d04-3816-45b2-87b2-d85e556f0066.jpg)
+This is a fork of the image block: https://github.com/editor-js/image
 
 ## Features
 
@@ -18,9 +18,6 @@ Image Block for the [Editor.js](https://editorjs.io).
 **Notes**
 
 This Tool requires server-side implementation for the file uploading. See [backend response format](#server-format) for more details.
-
-This Tool is also capable of uploading & displaying video files using the `<video>` element. To enable this, specify video mime-types via the 'types' config param.
-
 
 ## Installation
 
@@ -75,8 +72,8 @@ Image Tool supports these configuration parameters:
 | Field | Type     | Description                                                                                                                                                                             |
 | ----- | -------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | endpoints | `{byFile: string, byUrl: string}` | Endpoints for file uploading. <br> Contains 2 fields: <br> __byFile__ - for file uploading <br> __byUrl__ - for uploading by URL                                                        |
-| field | `string` | (default: `file`) Name of uploaded image field in POST request                                                                                                                          |
-| types | `string` | (default: `image/*`) Mime-types of files that can be [accepted with file selection](https://github.com/codex-team/ajax#accept-string).                                                  |
+| field | `string` | (default: `media`) Name of uploaded image field in POST request                                                                                                                         |
+| types | `string` | (default: `image/*,audio/*,video/*`) Mime-types of files that can be [accepted with file selection](https://github.com/codex-team/ajax#accept-string).                                  |
 | additionalRequestData | `object` | Object with any data you want to send with uploading requests                                                                                                                           |
 | additionalRequestHeaders | `object` | Object with any custom headers which will be added to request. [See example](https://github.com/codex-team/ajax/blob/e5bc2a2391a18574c88b7ecd6508c29974c3e27f/README.md#headers-object) |
 | captionPlaceholder | `string` | (default: `Caption`) Placeholder for Caption input                                                                                                                                      |
