@@ -19,7 +19,7 @@
  *
  * It will expose 8008 port, so you can pass http://localhost:8008 with the Tools config:
  *
- * image: {
+ * media: {
  *   class: MediaTool,
  *   config: {
  *     endpoints: {
@@ -33,12 +33,12 @@
 /**
  * @typedef {object} MediaToolData
  * @description Image Tool's input and output data format
- * @property {string} caption — image caption
- * @property {boolean} withBorder - should image be rendered with border
- * @property {boolean} withBackground - should image be rendered with background
- * @property {boolean} stretched - should image be stretched to full width of container
+ * @property {string} caption — media caption
+ * @property {boolean} withBorder - should media be rendered with border
+ * @property {boolean} withBackground - should media be rendered with background
+ * @property {boolean} stretched - should media be stretched to full width of container
  * @property {object} file — Image file data returned from backend
- * @property {string} file.url — image URL
+ * @property {string} file.url — media URL
  */
 
 import './index.css';
@@ -54,15 +54,15 @@ import { IconAddBorder, IconStretch, IconAddBackground, IconPicture } from '@cod
  * @property {object} endpoints - upload endpoints
  * @property {string} endpoints.byFile - upload by file
  * @property {string} endpoints.byUrl - upload by URL
- * @property {string} field - field name for uploaded image
+ * @property {string} field - field name for uploaded media
  * @property {string} types - available mime-types
  * @property {string} captionPlaceholder - placeholder for Caption field
  * @property {object} additionalRequestData - any data to send with requests
  * @property {object} additionalRequestHeaders - allows to pass custom headers with Request
  * @property {string} buttonContent - overrides for Select File button
  * @property {object} [uploader] - optional custom uploader
- * @property {function(File): Promise.<UploadResponseFormat>} [uploader.uploadByFile] - method that upload image by File
- * @property {function(string): Promise.<UploadResponseFormat>} [uploader.uploadByUrl] - method that upload image by URL
+ * @property {function(File): Promise.<UploadResponseFormat>} [uploader.uploadByFile] - method that upload media by File
+ * @property {function(string): Promise.<UploadResponseFormat>} [uploader.uploadByUrl] - method that upload media by URL
  */
 
 /**
@@ -72,7 +72,7 @@ import { IconAddBorder, IconStretch, IconAddBackground, IconPicture } from '@cod
  * @property {object} file - Object with file data.
  *                           'url' is required,
  *                           also can contain any additional data that will be saved and passed back
- * @property {string} file.url - [Required] image source URL
+ * @property {string} file.url - [Required] media source URL
  */
 export default class MediaTool {
   /**
@@ -99,7 +99,7 @@ export default class MediaTool {
   }
 
   /**
-   * Available image tools
+   * Available media tools
    *
    * @returns {Array}
    */
@@ -114,7 +114,7 @@ export default class MediaTool {
       {
         name: 'stretched',
         icon: IconStretch,
-        title: 'Stretch image',
+        title: 'Stretch media',
         toggle: true,
       },
       {
@@ -224,7 +224,7 @@ export default class MediaTool {
   }
 
   /**
-   * Returns configuration for block tunes: add background, add border, stretch image
+   * Returns configuration for block tunes: add background, add border, stretch media
    *
    * @public
    *
@@ -280,10 +280,10 @@ export default class MediaTool {
         },
       ],
       /**
-       * Paste URL of image into the Editor
+       * Paste URL of media into the Editor
        */
       patterns: {
-        image: /https?:\/\/\S+\.(gif|jpe?g|tiff|png|svg|webp|mp3|mp4)(\?[a-z0-9=]*)?$/i,
+        media: /https?:\/\/\S+\.(gif|jpe?g|tiff|png|svg|webp|mp3|mp4)(\?[a-z0-9=]*)?$/i,
       },
 
       /**
@@ -459,7 +459,7 @@ export default class MediaTool {
   }
 
   /**
-   * Show preloader and upload image file
+   * Show preloader and upload media file
    *
    * @param {File} file - file that is currently uploading (from paste)
    * @returns {void}
@@ -473,7 +473,7 @@ export default class MediaTool {
   }
 
   /**
-   * Show preloader and upload image by target url
+   * Show preloader and upload media by target url
    *
    * @param {string} url - url pasted
    * @returns {void}

@@ -9,7 +9,7 @@ import { make } from './utils/dom';
  */
 export default class Ui {
   /**
-   * @param {object} ui - image tool Ui module
+   * @param {object} ui - media tool Ui module
    * @param {object} ui.api - Editor.js API
    * @param {MediaConfig} ui.config - user config
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
@@ -34,9 +34,9 @@ export default class Ui {
     /**
      * Create base structure
      *  <wrapper>
-     *    <image-container>
-     *      <image-preloader />
-     *    </image-container>
+     *    <media-container>
+     *      <media-preloader />
+     *    </media-container>
      *    <caption />
      *    <select-file-button />
      *  </wrapper>

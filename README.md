@@ -72,7 +72,7 @@ Image Tool supports these configuration parameters:
 | Field | Type     | Description                                                                                                                                                                             |
 | ----- | -------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | endpoints | `{byFile: string, byUrl: string}` | Endpoints for file uploading. <br> Contains 2 fields: <br> __byFile__ - for file uploading <br> __byUrl__ - for uploading by URL                                                        |
-| field | `string` | (default: `media`) Name of uploaded image field in POST request                                                                                                                         |
+| field | `string` | (default: `media`) Name of uploaded media field in POST request                                                                                                                         |
 | types | `string` | (default: `image/*,audio/*,video/*`) Mime-types of files that can be [accepted with file selection](https://github.com/codex-team/ajax#accept-string).                                  |
 | additionalRequestData | `object` | Object with any data you want to send with uploading requests                                                                                                                           |
 | additionalRequestHeaders | `object` | Object with any custom headers which will be added to request. [See example](https://github.com/codex-team/ajax/blob/e5bc2a2391a18574c88b7ecd6508c29974c3e27f/README.md#headers-object) |
@@ -203,7 +203,7 @@ Response of your uploader should be at the same format as described at «[Upload
 
 ### Uploading by drag-n-drop or from Clipboard
 
-Your backend will accept file as FormData object in field name, specified by `config.field` (by default, «`image`»).
+Your backend will accept file as FormData object in field name, specified by `config.field` (by default, «`media`»).
 You should save it and return the same response format as described above.
 
 ## Providing custom uploading methods
@@ -213,22 +213,22 @@ It is a quite simple: implement `uploadByFile` and `uploadByUrl` methods and pas
 Both methods must return a Promise that resolves with response in a format that described at the [backend response format](#server-format) section.
 
 
-| Method         | Arguments | Return value | Description |
-| -------------- | --------- | -------------| ------------|
-| uploadByFile   | `File`    | `{Promise.<{success, file: {url}}>}` | Upload file to the server and return an uploaded image data |
-| uploadByUrl    | `string`  | `{Promise.<{success, file: {url}}>}` | Send URL-string to the server, that should load image by this URL and return an uploaded image data |
+| Method         | Arguments | Return value | Description                                                                                         |
+| -------------- | --------- | -------------|-----------------------------------------------------------------------------------------------------|
+| uploadByFile   | `File`    | `{Promise.<{success, file: {url}}>}` | Upload file to the server and return an uploaded media data                                         |
+| uploadByUrl    | `string`  | `{Promise.<{success, file: {url}}>}` | Send URL-string to the server, that should load media by this URL and return an uploaded media data |
 
 Example:
 
 ```js
-import MediaTool from '@editorjs/image';
+import MediaTool from '@envidual/editorjs-media';
 
 var editor = EditorJS({
   ...
 
   tools: {
     ...
-    image: {
+    media: {
       class: MediaTool,
       config: {
         /**
@@ -236,7 +236,7 @@ var editor = EditorJS({
          */
         uploader: {
           /**
-           * Upload file to the server and return an uploaded image data
+           * Upload file to the server and return an uploaded media data
            * @param {File} file - file selected from the device or pasted by drag-n-drop
            * @return {Promise.<{success, file: {url}}>}
            */
@@ -247,15 +247,15 @@ var editor = EditorJS({
                 success: 1,
                 file: {
                   url: 'https://codex.so/upload/redactor_images/o_80beea670e49f04931ce9e3b2122ac70.jpg',
-                  // any other image data you want to store, such as width, height, color, extension, etc
+                  // any other media data you want to store, such as width, height, color, extension, etc
                 }
               };
             });
           },
 
           /**
-           * Send URL-string to the server. Backend should load image by this URL and return an uploaded image data
-           * @param {string} url - pasted image URL
+           * Send URL-string to the server. Backend should load media by this URL and return an uploaded media data
+           * @param {string} url - pasted media URL
            * @return {Promise.<{success, file: {url}}>}
            */
           uploadByUrl(url){
@@ -265,7 +265,7 @@ var editor = EditorJS({
                 success: 1,
                 file: {
                   url: 'https://codex.so/upload/redactor_images/o_e48549d1855c7fc1807308dd14990126.jpg',,
-                  // any other image data you want to store, such as width, height, color, extension, etc
+                  // any other media data you want to store, such as width, height, color, extension, etc
                 }
               }
             })
