@@ -221,7 +221,7 @@ var A = { exports: {} };
             throw new TypeError("not a function");
           this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], t(o, this);
         }
-        function p(o, c) {
+        function f(o, c) {
           for (; o._state === 3; )
             o = o._value;
           o._state !== 0 ? (o._handled = !0, l._immediateFn(function() {
@@ -252,8 +252,8 @@ var A = { exports: {} };
                 }), o);
             }
             o._state = 1, o._value = c, w(o);
-          } catch (f) {
-            y(o, f);
+          } catch (p) {
+            y(o, p);
           }
           var g, m;
         }
@@ -265,7 +265,7 @@ var A = { exports: {} };
             o._handled || l._unhandledRejectionFn(o._value);
           });
           for (var c = 0, u = o._deferreds.length; c < u; c++)
-            p(o, o._deferreds[c]);
+            f(o, o._deferreds[c]);
           o._deferreds = null;
         }
         function b(o, c, u) {
@@ -289,7 +289,7 @@ var A = { exports: {} };
           return this.then(null, o);
         }, l.prototype.then = function(o, c) {
           var u = new this.constructor(v);
-          return p(this, new b(o, c, u)), u;
+          return f(this, new b(o, c, u)), u;
         }, l.prototype.finally = r.a, l.all = function(o) {
           return new l(function(c, u) {
             if (!o || o.length === void 0)
@@ -298,13 +298,13 @@ var A = { exports: {} };
             if (g.length === 0)
               return c([]);
             var m = g.length;
-            function f(C, M) {
+            function p(C, M) {
               try {
                 if (M && (typeof M == "object" || typeof M == "function")) {
                   var T = M.then;
                   if (typeof T == "function")
                     return void T.call(M, function(_) {
-                      f(C, _);
+                      p(C, _);
                     }, u);
                 }
                 g[C] = M, --m == 0 && c(g);
@@ -313,7 +313,7 @@ var A = { exports: {} };
               }
             }
             for (var E = 0; E < g.length; E++)
-              f(E, g[E]);
+              p(E, g[E]);
           });
         }, l.resolve = function(o) {
           return o && typeof o == "object" && o.constructor === l ? o : new l(function(c) {
@@ -358,20 +358,20 @@ var A = { exports: {} };
         })(t);
       }
       i(4);
-      var r, d, v, l, p, h, y, w = i(8), b = (d = function(t) {
+      var r, d, v, l, f, h, y, w = i(8), b = (d = function(t) {
         return new Promise(function(o, c) {
-          t = l(t), (t = p(t)).beforeSend && t.beforeSend();
+          t = l(t), (t = f(t)).beforeSend && t.beforeSend();
           var u = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
           u.open(t.method, t.url), u.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(t.headers).forEach(function(m) {
-            var f = t.headers[m];
-            u.setRequestHeader(m, f);
+            var p = t.headers[m];
+            u.setRequestHeader(m, p);
           });
           var g = t.ratio;
           u.upload.addEventListener("progress", function(m) {
-            var f = Math.round(m.loaded / m.total * 100), E = Math.ceil(f * g / 100);
+            var p = Math.round(m.loaded / m.total * 100), E = Math.ceil(p * g / 100);
             t.progress(Math.min(E, 100));
           }, !1), u.addEventListener("progress", function(m) {
-            var f = Math.round(m.loaded / m.total * 100), E = Math.ceil(f * (100 - g) / 100) + g;
+            var p = Math.round(m.loaded / m.total * 100), E = Math.ceil(p * (100 - g) / 100) + g;
             t.progress(Math.min(E, 100));
           }, !1), u.onreadystatechange = function() {
             if (u.readyState === 4) {
@@ -380,7 +380,7 @@ var A = { exports: {} };
                 m = JSON.parse(m);
               } catch {
               }
-              var f = w.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: f };
+              var p = w.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: p };
               y(u.status) ? o(E) : c(E);
             }
           }, u.send(t.data);
@@ -412,7 +412,7 @@ var A = { exports: {} };
         if (t.multiple = t.multiple || !1, t.fieldName && typeof t.fieldName != "string")
           throw new Error("`fieldName` must be a string");
         return t.fieldName = t.fieldName || "files", t;
-      }, p = function(t) {
+      }, f = function(t) {
         switch (t.method) {
           case "GET":
             var o = h(t.data, r.URLENCODED);
@@ -449,8 +449,8 @@ var A = { exports: {} };
           for (var c = new FormData(), u = 0; u < o.length; u++)
             c.append(t.fieldName, o[u], o[u].name);
           w.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
-            var f = t.data[m];
-            c.append(m, f);
+            var p = t.data[m];
+            c.append(m, p);
           });
           var g = t.beforeSend;
           return t.beforeSend = function() {
@@ -468,8 +468,8 @@ var A = { exports: {} };
     }, function(e, s, i) {
       (function(a) {
         var r = a !== void 0 && a || typeof self < "u" && self || window, d = Function.prototype.apply;
-        function v(l, p) {
-          this._id = l, this._clearFn = p;
+        function v(l, f) {
+          this._id = l, this._clearFn = f;
         }
         s.setTimeout = function() {
           return new v(d.call(setTimeout, r, arguments), clearTimeout);
@@ -480,65 +480,65 @@ var A = { exports: {} };
         }, v.prototype.unref = v.prototype.ref = function() {
         }, v.prototype.close = function() {
           this._clearFn.call(r, this._id);
-        }, s.enroll = function(l, p) {
-          clearTimeout(l._idleTimeoutId), l._idleTimeout = p;
+        }, s.enroll = function(l, f) {
+          clearTimeout(l._idleTimeoutId), l._idleTimeout = f;
         }, s.unenroll = function(l) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = -1;
         }, s._unrefActive = s.active = function(l) {
           clearTimeout(l._idleTimeoutId);
-          var p = l._idleTimeout;
-          p >= 0 && (l._idleTimeoutId = setTimeout(function() {
+          var f = l._idleTimeout;
+          f >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
-          }, p));
+          }, f));
         }, i(6), s.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, s.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
       }).call(this, i(0));
     }, function(e, s, i) {
       (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
-            var l, p, h, y, w, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
-            u = u && u.setTimeout ? u : d, {}.toString.call(d.process) === "[object process]" ? l = function(f) {
+            var l, f, h, y, w, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
+            u = u && u.setTimeout ? u : d, {}.toString.call(d.process) === "[object process]" ? l = function(p) {
               r.nextTick(function() {
-                m(f);
+                m(p);
               });
             } : function() {
               if (d.postMessage && !d.importScripts) {
-                var f = !0, E = d.onmessage;
+                var p = !0, E = d.onmessage;
                 return d.onmessage = function() {
-                  f = !1;
-                }, d.postMessage("", "*"), d.onmessage = E, f;
+                  p = !1;
+                }, d.postMessage("", "*"), d.onmessage = E, p;
               }
-            }() ? (y = "setImmediate$" + Math.random() + "$", w = function(f) {
-              f.source === d && typeof f.data == "string" && f.data.indexOf(y) === 0 && m(+f.data.slice(y.length));
-            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), l = function(f) {
-              d.postMessage(y + f, "*");
-            }) : d.MessageChannel ? ((h = new MessageChannel()).port1.onmessage = function(f) {
-              m(f.data);
-            }, l = function(f) {
-              h.port2.postMessage(f);
-            }) : c && "onreadystatechange" in c.createElement("script") ? (p = c.documentElement, l = function(f) {
+            }() ? (y = "setImmediate$" + Math.random() + "$", w = function(p) {
+              p.source === d && typeof p.data == "string" && p.data.indexOf(y) === 0 && m(+p.data.slice(y.length));
+            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), l = function(p) {
+              d.postMessage(y + p, "*");
+            }) : d.MessageChannel ? ((h = new MessageChannel()).port1.onmessage = function(p) {
+              m(p.data);
+            }, l = function(p) {
+              h.port2.postMessage(p);
+            }) : c && "onreadystatechange" in c.createElement("script") ? (f = c.documentElement, l = function(p) {
               var E = c.createElement("script");
               E.onreadystatechange = function() {
-                m(f), E.onreadystatechange = null, p.removeChild(E), E = null;
-              }, p.appendChild(E);
-            }) : l = function(f) {
-              setTimeout(m, 0, f);
-            }, u.setImmediate = function(f) {
-              typeof f != "function" && (f = new Function("" + f));
+                m(p), E.onreadystatechange = null, f.removeChild(E), E = null;
+              }, f.appendChild(E);
+            }) : l = function(p) {
+              setTimeout(m, 0, p);
+            }, u.setImmediate = function(p) {
+              typeof p != "function" && (p = new Function("" + p));
               for (var E = new Array(arguments.length - 1), C = 0; C < E.length; C++)
                 E[C] = arguments[C + 1];
-              var M = { callback: f, args: E };
+              var M = { callback: p, args: E };
               return t[b] = M, l(b), b++;
             }, u.clearImmediate = g;
           }
-          function g(f) {
-            delete t[f];
+          function g(p) {
+            delete t[p];
           }
-          function m(f) {
+          function m(p) {
             if (o)
-              setTimeout(m, 0, f);
+              setTimeout(m, 0, p);
             else {
-              var E = t[f];
+              var E = t[p];
               if (E) {
                 o = !0;
                 try {
@@ -562,7 +562,7 @@ var A = { exports: {} };
                     }
                   })(E);
                 } finally {
-                  g(f), o = !1;
+                  g(p), o = !1;
                 }
               }
             }
@@ -604,20 +604,20 @@ var A = { exports: {} };
           a = v;
         }
       })();
-      var p, h = [], y = !1, w = -1;
+      var f, h = [], y = !1, w = -1;
       function b() {
-        y && p && (y = !1, p.length ? h = p.concat(h) : w = -1, h.length && t());
+        y && f && (y = !1, f.length ? h = f.concat(h) : w = -1, h.length && t());
       }
       function t() {
         if (!y) {
           var u = l(b);
           y = !0;
           for (var g = h.length; g; ) {
-            for (p = h, h = []; ++w < g; )
-              p && p[w].run();
+            for (f = h, h = []; ++w < g; )
+              f && f[w].run();
             w = -1, g = h.length;
           }
-          p = null, y = !1, function(m) {
+          f = null, y = !1, function(m) {
             if (a === clearTimeout)
               return clearTimeout(m);
             if ((a === v || !a) && clearTimeout)
@@ -661,8 +661,8 @@ var A = { exports: {} };
     }, function(e, s, i) {
       function a(d, v) {
         for (var l = 0; l < v.length; l++) {
-          var p = v[l];
-          p.enumerable = p.enumerable || !1, p.configurable = !0, "value" in p && (p.writable = !0), Object.defineProperty(d, p.key, p);
+          var f = v[l];
+          f.enumerable = f.enumerable || !1, f.configurable = !0, "value" in f && (f.writable = !0), Object.defineProperty(d, f.key, f);
         }
       }
       var r = i(9);
@@ -673,8 +673,8 @@ var A = { exports: {} };
               throw new TypeError("Cannot call a class as a function");
           })(this, d);
         }
-        var v, l, p;
-        return v = d, p = [{ key: "urlEncode", value: function(h) {
+        var v, l, f;
+        return v = d, f = [{ key: "urlEncode", value: function(h) {
           return r(h);
         } }, { key: "jsonEncode", value: function(h) {
           return JSON.stringify(h);
@@ -712,23 +712,23 @@ var A = { exports: {} };
             var t = b.split(": "), o = t.shift(), c = t.join(": ");
             o && (w[o] = c);
           }), w;
-        } }], (l = null) && a(v.prototype, l), p && a(v, p), d;
+        } }], (l = null) && a(v.prototype, l), f && a(v, f), d;
       }();
     }, function(e, s) {
       var i = function(r) {
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
       }, a = function(r, d, v, l) {
-        return d = d || null, v = v || "&", l = l || null, r ? function(p) {
-          for (var h = new Array(), y = 0; y < p.length; y++)
-            p[y] && h.push(p[y]);
+        return d = d || null, v = v || "&", l = l || null, r ? function(f) {
+          for (var h = new Array(), y = 0; y < f.length; y++)
+            f[y] && h.push(f[y]);
           return h;
-        }(Object.keys(r).map(function(p) {
-          var h, y, w = p;
-          if (l && (w = l + "[" + w + "]"), typeof r[p] == "object" && r[p] !== null)
-            h = a(r[p], null, v, w);
+        }(Object.keys(r).map(function(f) {
+          var h, y, w = f;
+          if (l && (w = l + "[" + w + "]"), typeof r[f] == "object" && r[f] !== null)
+            h = a(r[f], null, v, w);
           else {
             d && (y = w, w = !isNaN(parseFloat(y)) && isFinite(y) ? d + Number(w) : w);
-            var b = r[p];
+            var b = r[f];
             b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(w) + "=" + i(b);
           }
           return h;
@@ -747,7 +747,7 @@ function B(k, n) {
   const e = document.createElement("canvas"), s = e.getContext("2d"), i = document.createElement("canvas"), a = i.getContext("2d"), r = Math.min(n.width, n.height), d = W / r, v = n.width * d;
   e.width = v, e.height = v;
   let l = Math.floor(n.width * 0.5);
-  if (i.width = l, i.height = l, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, e.width, e.height).data.every((p) => p === 0)) {
+  if (i.width = l, i.height = l, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, e.width, e.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
       l = Math.floor(l * 0.5), a.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
     return s.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), R(e, Y) || R(e, K) || void 0;
@@ -805,7 +805,9 @@ class tt {
       let e, s;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
         const a = (await S.selectFiles({ accept: this.config.types }))[0];
-        s = L(a), F(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
+        s = L(a), F(a, s).then((r) => {
+          e || n(r);
+        }), e = await this.config.uploader.uploadByFile(a);
       } else
         e = await S.transport({
           url: this.config.endpoints.byFile,
@@ -854,10 +856,11 @@ class tt {
    */
   async uploadByFile(n, { onPreview: e }) {
     const s = L(n);
-    F(n, s).then(e);
     try {
       let i;
-      if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
+      if (F(n, s).then((a) => {
+        i || e(a);
+      }), this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
         i = await this.config.uploader.uploadByFile(n);
       else {
         const a = new FormData();

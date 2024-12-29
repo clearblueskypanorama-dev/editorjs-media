@@ -46,7 +46,9 @@ export default class Uploader {
         const file = files[0]
         tag = getTag(file)
 
-        getPreview(file, tag).then(onPreview)
+        getPreview(file, tag).then((url) => {
+          if (!result) onPreview(url);
+        })
 
         result = await this.config.uploader.uploadByFile(file)
       }
@@ -119,10 +121,13 @@ export default class Uploader {
    */
   async uploadByFile(file, { onPreview }) {
     const tag = getTag(file)
-    getPreview(file, tag).then(onPreview)
 
     try {
       let result;
+      
+      getPreview(file, tag).then((url) => {
+        if (!result) onPreview(url);
+      })
 
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
