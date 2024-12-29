@@ -22,11 +22,12 @@ class C {
    * @param {object} ui - media tool Ui module
    * @param {object} ui.api - Editor.js API
    * @param {MediaConfig} ui.config - user config
+   * @param {string} ui.status - status
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
    * @param {boolean} ui.readOnly - read-only mode flag
    */
   constructor({ api: n, config: e, onSelectFile: s, readOnly: i }) {
-    this.api = n, this.config = e, this.onSelectFile = s, this.readOnly = i, this.nodes = {
+    this.api = n, this.config = e, this.status = "empty", this.onSelectFile = s, this.readOnly = i, this.nodes = {
       wrapper: O("div", [this.CSS.baseClass, this.CSS.wrapper]),
       mediaContainer: O("div", [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
@@ -100,7 +101,7 @@ class C {
    * @returns {void}
    */
   showPreloader(n) {
-    C.status !== C.status.FILLED && (this.nodes.mediaPreloader.style.backgroundImage = `url(${n})`, this.toggleStatus(C.status.UPLOADING));
+    this.status !== C.status.FILLED && (this.nodes.mediaPreloader.style.backgroundImage = `url(${n})`, this.toggleStatus(C.status.UPLOADING));
   }
   /**
    * Hide uploading preloader
@@ -143,7 +144,7 @@ class C {
    */
   toggleStatus(n) {
     for (const e in C.status)
-      Object.prototype.hasOwnProperty.call(C.status, e) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${C.status[e]}`, n === C.status[e]);
+      Object.prototype.hasOwnProperty.call(C.status, e) && (this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${C.status[e]}`, n === C.status[e]), this.status = n);
   }
   /**
    * Apply visual representation of activated tune
@@ -229,11 +230,11 @@ var A = { exports: {} };
               try {
                 g = u(o._value);
               } catch (m) {
-                return void w(c.promise, m);
+                return void y(c.promise, m);
               }
               h(c.promise, g);
             } else
-              (o._state === 1 ? h : w)(c.promise, o._value);
+              (o._state === 1 ? h : y)(c.promise, o._value);
           })) : o._deferreds.push(c);
         }
         function h(o, c) {
@@ -243,22 +244,22 @@ var A = { exports: {} };
             if (c && (typeof c == "object" || typeof c == "function")) {
               var u = c.then;
               if (c instanceof l)
-                return o._state = 3, o._value = c, void y(o);
+                return o._state = 3, o._value = c, void w(o);
               if (typeof u == "function")
                 return void t((g = u, m = c, function() {
                   g.apply(m, arguments);
                 }), o);
             }
-            o._state = 1, o._value = c, y(o);
+            o._state = 1, o._value = c, w(o);
           } catch (p) {
-            w(o, p);
+            y(o, p);
           }
           var g, m;
         }
-        function w(o, c) {
-          o._state = 2, o._value = c, y(o);
+        function y(o, c) {
+          o._state = 2, o._value = c, w(o);
         }
-        function y(o) {
+        function w(o) {
           o._state === 2 && o._deferreds.length === 0 && l._immediateFn(function() {
             o._handled || l._unhandledRejectionFn(o._value);
           });
@@ -275,12 +276,12 @@ var A = { exports: {} };
             o(function(g) {
               u || (u = !0, h(c, g));
             }, function(g) {
-              u || (u = !0, w(c, g));
+              u || (u = !0, y(c, g));
             });
           } catch (g) {
             if (u)
               return;
-            u = !0, w(c, g);
+            u = !0, y(c, g);
           }
         }
         l.prototype.catch = function(o) {
@@ -301,13 +302,13 @@ var A = { exports: {} };
                 if (M && (typeof M == "object" || typeof M == "function")) {
                   var j = M.then;
                   if (typeof j == "function")
-                    return void j.call(M, function(F) {
-                      p(T, F);
+                    return void j.call(M, function(_) {
+                      p(T, _);
                     }, u);
                 }
                 g[T] = M, --m == 0 && c(g);
-              } catch (F) {
-                u(F);
+              } catch (_) {
+                u(_);
               }
             }
             for (var E = 0; E < g.length; E++)
@@ -356,7 +357,7 @@ var A = { exports: {} };
         })(t);
       }
       i(4);
-      var r, d, v, l, f, h, w, y = i(8), b = (d = function(t) {
+      var r, d, v, l, f, h, y, w = i(8), b = (d = function(t) {
         return new Promise(function(o, c) {
           t = l(t), (t = f(t)).beforeSend && t.beforeSend();
           var u = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
@@ -378,8 +379,8 @@ var A = { exports: {} };
                 m = JSON.parse(m);
               } catch {
               }
-              var p = y.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: p };
-              w(u.status) ? o(E) : c(E);
+              var p = w.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: p };
+              y(u.status) ? o(E) : c(E);
             }
           }, u.send(t.data);
         });
@@ -423,30 +424,30 @@ var A = { exports: {} };
             var c = function() {
               return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || r.JSON;
             }(t);
-            (y.isFormData(t.data) || y.isFormElement(t.data)) && (c = r.FORM), t.data = h(t.data, c), c !== b.contentType.FORM && (t.headers["content-type"] = c);
+            (w.isFormData(t.data) || w.isFormElement(t.data)) && (c = r.FORM), t.data = h(t.data, c), c !== b.contentType.FORM && (t.headers["content-type"] = c);
         }
         return t;
       }, h = function() {
         var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         switch (arguments.length > 1 ? arguments[1] : void 0) {
           case r.URLENCODED:
-            return y.urlEncode(t);
+            return w.urlEncode(t);
           case r.JSON:
-            return y.jsonEncode(t);
+            return w.jsonEncode(t);
           case r.FORM:
-            return y.formEncode(t);
+            return w.formEncode(t);
           default:
             return t;
         }
-      }, w = function(t) {
+      }, y = function(t) {
         return t >= 200 && t < 300;
       }, { contentType: r = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: d, get: function(t) {
         return t.method = "GET", d(t);
       }, post: v, transport: function(t) {
-        return t = l(t), y.selectFiles(t).then(function(o) {
+        return t = l(t), w.selectFiles(t).then(function(o) {
           for (var c = new FormData(), u = 0; u < o.length; u++)
             c.append(t.fieldName, o[u], o[u].name);
-          y.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
+          w.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
             var p = t.data[m];
             c.append(m, p);
           });
@@ -456,7 +457,7 @@ var A = { exports: {} };
           }, t.data = c, v(t);
         });
       }, selectFiles: function(t) {
-        return delete (t = l(t)).beforeSend, y.selectFiles(t);
+        return delete (t = l(t)).beforeSend, w.selectFiles(t);
       } });
       e.exports = b;
     }, function(e, s, i) {
@@ -494,7 +495,7 @@ var A = { exports: {} };
       (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
-            var l, f, h, w, y, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
+            var l, f, h, y, w, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
             u = u && u.setTimeout ? u : d, {}.toString.call(d.process) === "[object process]" ? l = function(p) {
               r.nextTick(function() {
                 m(p);
@@ -506,10 +507,10 @@ var A = { exports: {} };
                   p = !1;
                 }, d.postMessage("", "*"), d.onmessage = E, p;
               }
-            }() ? (w = "setImmediate$" + Math.random() + "$", y = function(p) {
-              p.source === d && typeof p.data == "string" && p.data.indexOf(w) === 0 && m(+p.data.slice(w.length));
-            }, d.addEventListener ? d.addEventListener("message", y, !1) : d.attachEvent("onmessage", y), l = function(p) {
-              d.postMessage(w + p, "*");
+            }() ? (y = "setImmediate$" + Math.random() + "$", w = function(p) {
+              p.source === d && typeof p.data == "string" && p.data.indexOf(y) === 0 && m(+p.data.slice(y.length));
+            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), l = function(p) {
+              d.postMessage(y + p, "*");
             }) : d.MessageChannel ? ((h = new MessageChannel()).port1.onmessage = function(p) {
               m(p.data);
             }, l = function(p) {
@@ -602,20 +603,20 @@ var A = { exports: {} };
           a = v;
         }
       })();
-      var f, h = [], w = !1, y = -1;
+      var f, h = [], y = !1, w = -1;
       function b() {
-        w && f && (w = !1, f.length ? h = f.concat(h) : y = -1, h.length && t());
+        y && f && (y = !1, f.length ? h = f.concat(h) : w = -1, h.length && t());
       }
       function t() {
-        if (!w) {
+        if (!y) {
           var u = l(b);
-          w = !0;
+          y = !0;
           for (var g = h.length; g; ) {
-            for (f = h, h = []; ++y < g; )
-              f && f[y].run();
-            y = -1, g = h.length;
+            for (f = h, h = []; ++w < g; )
+              f && f[w].run();
+            w = -1, g = h.length;
           }
-          f = null, w = !1, function(m) {
+          f = null, y = !1, function(m) {
             if (a === clearTimeout)
               return clearTimeout(m);
             if ((a === v || !a) && clearTimeout)
@@ -642,7 +643,7 @@ var A = { exports: {} };
         if (arguments.length > 1)
           for (var m = 1; m < arguments.length; m++)
             g[m - 1] = arguments[m];
-        h.push(new o(u, g)), h.length !== 1 || w || l(t);
+        h.push(new o(u, g)), h.length !== 1 || y || l(t);
       }, o.prototype.run = function() {
         this.fun.apply(null, this.array);
       }, r.title = "browser", r.browser = !0, r.env = {}, r.argv = [], r.version = "", r.versions = {}, r.on = c, r.addListener = c, r.once = c, r.off = c, r.removeListener = c, r.removeAllListeners = c, r.emit = c, r.prependListener = c, r.prependOnceListener = c, r.listeners = function(u) {
@@ -666,8 +667,8 @@ var A = { exports: {} };
       var r = i(9);
       e.exports = function() {
         function d() {
-          (function(h, w) {
-            if (!(h instanceof w))
+          (function(h, y) {
+            if (!(h instanceof y))
               throw new TypeError("Cannot call a class as a function");
           })(this, d);
         }
@@ -682,11 +683,11 @@ var A = { exports: {} };
           if (this.isFormElement(h))
             return new FormData(h);
           if (this.isObject(h)) {
-            var w = new FormData();
-            return Object.keys(h).forEach(function(y) {
-              var b = h[y];
-              w.append(y, b);
-            }), w;
+            var y = new FormData();
+            return Object.keys(h).forEach(function(w) {
+              var b = h[w];
+              y.append(w, b);
+            }), y;
           }
           throw new Error("`data` must be an instance of Object, FormData or <FORM> HTMLElement");
         } }, { key: "isObject", value: function(h) {
@@ -697,19 +698,19 @@ var A = { exports: {} };
           return h instanceof HTMLFormElement;
         } }, { key: "selectFiles", value: function() {
           var h = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-          return new Promise(function(w, y) {
+          return new Promise(function(y, w) {
             var b = document.createElement("INPUT");
             b.type = "file", h.multiple && b.setAttribute("multiple", "multiple"), h.accept && b.setAttribute("accept", h.accept), b.style.display = "none", document.body.appendChild(b), b.addEventListener("change", function(t) {
               var o = t.target.files;
-              w(o), document.body.removeChild(b);
+              y(o), document.body.removeChild(b);
             }, !1), b.click();
           });
         } }, { key: "parseHeaders", value: function(h) {
-          var w = h.trim().split(/[\r\n]+/), y = {};
-          return w.forEach(function(b) {
+          var y = h.trim().split(/[\r\n]+/), w = {};
+          return y.forEach(function(b) {
             var t = b.split(": "), o = t.shift(), c = t.join(": ");
-            o && (y[o] = c);
-          }), y;
+            o && (w[o] = c);
+          }), w;
         } }], (l = null) && a(v.prototype, l), f && a(v, f), d;
       }();
     }, function(e, s) {
@@ -717,17 +718,17 @@ var A = { exports: {} };
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
       }, a = function(r, d, v, l) {
         return d = d || null, v = v || "&", l = l || null, r ? function(f) {
-          for (var h = new Array(), w = 0; w < f.length; w++)
-            f[w] && h.push(f[w]);
+          for (var h = new Array(), y = 0; y < f.length; y++)
+            f[y] && h.push(f[y]);
           return h;
         }(Object.keys(r).map(function(f) {
-          var h, w, y = f;
-          if (l && (y = l + "[" + y + "]"), typeof r[f] == "object" && r[f] !== null)
-            h = a(r[f], null, v, y);
+          var h, y, w = f;
+          if (l && (w = l + "[" + w + "]"), typeof r[f] == "object" && r[f] !== null)
+            h = a(r[f], null, v, w);
           else {
-            d && (w = y, y = !isNaN(parseFloat(w)) && isFinite(w) ? d + Number(y) : y);
+            d && (y = w, w = !isNaN(parseFloat(y)) && isFinite(y) ? d + Number(w) : w);
             var b = r[f];
-            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(y) + "=" + i(b);
+            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(w) + "=" + i(b);
           }
           return h;
         })).join(v).replace(/[!'()*]/g, "") : "";
@@ -770,7 +771,7 @@ function z(k) {
     }, s.src = e;
   });
 }
-async function L(k, n) {
+async function F(k, n) {
   switch (n) {
     case "VIDEO":
       return await Z(k);
@@ -779,7 +780,7 @@ async function L(k, n) {
   }
   return "";
 }
-function _(k) {
+function L(k) {
   return k.type ? k.type.split("/")[0].toUpperCase() : P(k.name);
 }
 class tt {
@@ -803,7 +804,7 @@ class tt {
       let e, s;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
         const a = (await S.selectFiles({ accept: this.config.types }))[0];
-        s = _(a), L(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
+        s = L(a), F(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
       } else
         e = await S.transport({
           url: this.config.endpoints.byFile,
@@ -813,7 +814,7 @@ class tt {
           beforeSend: (i) => {
             preparePreview(i[0]);
             const a = i[0];
-            s = _(a), L(a, s).then(n);
+            s = L(a), F(a, s).then(n);
           },
           fieldName: this.config.field
         }).then((i) => i.body);
@@ -851,8 +852,8 @@ class tt {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(n, { onPreview: e }) {
-    const s = _(n);
-    L(n, s).then(e);
+    const s = L(n);
+    F(n, s).then(e);
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
@@ -1093,7 +1094,7 @@ class I {
    * @returns {void}
    */
   async onPaste(n) {
-    switch (console.debug(n), n.type) {
+    switch (n.type) {
       case "tag": {
         const e = n.detail.data;
         if (/^blob:/.test(e.src)) {
