@@ -1,5 +1,6 @@
 import { IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
+import { getUrlFileType } from './utils/fileTypes';
 
 /**
  * Class for working with UI:
@@ -153,14 +154,7 @@ export default class Ui {
      * Check for a source extension to compose element correctly: video tag for mp4, img — for others
      */
 
-    let tag;
-    if (url.endsWith(".mp4")) {
-      tag = "VIDEO";
-    } else if (url.endsWith(".mp3")) {
-      tag = "AUDIO";
-    } else {
-      tag = "IMG";
-    }
+    let tag = getUrlFileType(url);
 
     const attributes = {
       src: url,

@@ -47,6 +47,7 @@ import Ui from './ui';
 import Uploader from './uploader';
 
 import { IconAddBorder, IconStretch, IconAddBackground, IconPicture } from '@codexteam/icons';
+import { REGEX } from './utils/fileTypes';
 
 /**
  * @typedef {object} MediaConfig
@@ -283,7 +284,7 @@ export default class MediaTool {
        * Paste URL of media into the Editor
        */
       patterns: {
-        media: /https?:\/\/\S+\.(gif|jpe?g|tiff|png|svg|webp|mp3|mp4)(\?[a-z0-9=]*)?$/i,
+        media: REGEX,
       },
 
       /**
