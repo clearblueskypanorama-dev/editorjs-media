@@ -13,14 +13,12 @@ export default class Ui {
    * @param {object} ui - media tool Ui module
    * @param {object} ui.api - Editor.js API
    * @param {MediaConfig} ui.config - user config
-   * @param {string} ui.status - status
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
    * @param {boolean} ui.readOnly - read-only mode flag
    */
   constructor({ api, config, onSelectFile, readOnly }) {
     this.api = api;
     this.config = config;
-    this.status = "empty";
     this.onSelectFile = onSelectFile;
     this.readOnly = readOnly;
     this.nodes = {
@@ -233,7 +231,6 @@ export default class Ui {
    * @returns {void}
    */
   toggleStatus(status) {
-    this.status = status
     for (const statusType in Ui.status) {
       if (Object.prototype.hasOwnProperty.call(Ui.status, statusType)) {
         this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${Ui.status[statusType]}`, status === Ui.status[statusType]);
