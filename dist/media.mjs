@@ -7,12 +7,12 @@ function M(E, r = null, o = {}) {
     l[n] = o[n];
   return l;
 }
-const I = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), R = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), D = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), B = new RegExp(`https?:\\/\\/\\S+\\.(${[...I, ...R, ...D].join("|")})(\\?[a-z0-9=]*)?$`, "i");
+const R = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), I = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), D = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), B = new RegExp(`https?:\\/\\/\\S+\\.(${[...R, ...I, ...D].join("|")})(\\?[a-z0-9=]*)?$`, "i");
 function N({ pathname: E }) {
   const r = E.split(".").pop();
-  if (I.has(r))
-    return "IMG";
   if (R.has(r))
+    return "IMG";
+  if (I.has(r))
     return "AUDIO";
   if (D.has(r))
     return "VIDEO";
@@ -89,7 +89,7 @@ class S {
    */
   createFileButton() {
     const r = M("div", [this.CSS.button]);
-    return r.innerHTML = this.config.buttonContent || `${L} ${this.api.i18n.t("Datei auswählen")}`, r.addEventListener("click", () => {
+    return r.innerHTML = this.config.buttonContent || `${L} ${this.api.i18n.t("Select a media file")}`, r.addEventListener("click", () => {
       this.onSelectFile();
     }), r;
   }
@@ -117,7 +117,7 @@ class S {
    * @returns {void}
    */
   fillMedia(r) {
-    let o = N(r);
+    let o = N(new URL(r));
     const l = {
       src: r
     };

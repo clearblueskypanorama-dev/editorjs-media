@@ -112,7 +112,7 @@ export default class Ui {
   createFileButton() {
     const button = make('div', [ this.CSS.button ]);
 
-    button.innerHTML = this.config.buttonContent || `${IconPicture} ${this.api.i18n.t('Datei auswählen')}`;
+    button.innerHTML = this.config.buttonContent || `${IconPicture} ${this.api.i18n.t('Select a media file')}`;
 
     button.addEventListener('click', () => {
       this.onSelectFile();
@@ -154,7 +154,7 @@ export default class Ui {
      * Check for a source extension to compose element correctly: video tag for mp4, img — for others
      */
 
-    let tag = getUrlFileType(url);
+    let tag = getUrlFileType(new URL(url));
 
     const attributes = {
       src: url,
