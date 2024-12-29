@@ -107,7 +107,7 @@ function getMetadataImage(blob) {
 
 /**
  * @param  {Blob} blob
- * @returns {'VIDEO'|'AUDIO'|'IMG'|undefined}
+ * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag
  * @returns {Promise<string>}
  */
 export async function getPreview(blob, tag) {
