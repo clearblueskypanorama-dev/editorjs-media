@@ -766,7 +766,7 @@ class G {
       let n;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
         const i = (await O.selectFiles({ accept: this.config.types }))[0], a = P(i);
-        _(i, a).then(o), n = { tag: a, ...await this.config.uploader.uploadByFile(i) };
+        _(i, a).then(o), n = { tag: a, ...await this.config.uploader.uploadByFile(i) }, console.debug(n);
       } else
         n = await O.transport({
           url: this.config.endpoints.byFile,
@@ -794,7 +794,7 @@ class G {
   async uploadByUrl(o) {
     try {
       let n;
-      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? n = { tag: I(o), ...this.config.uploader.uploadByUrl(o) } : n = await O.post({
+      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? (n = { tag: I(o), ...this.config.uploader.uploadByUrl(o) }, console.debug(n)) : n = await O.post({
         url: this.config.endpoints.byUrl,
         data: Object.assign({
           url: o
@@ -819,7 +819,7 @@ class G {
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = { tag: c, ...await this.config.uploader.uploadByFile(o) };
+        i = { tag: c, ...await this.config.uploader.uploadByFile(o) }, console.debug(i);
       else {
         const a = new FormData();
         a.append(this.config.field, o), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
