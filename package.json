@@ -16,8 +16,8 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/media.umd.js",
-  "module": "./dist/media.mjs",
+  "main": "dist/media.umd.js",
+  "module": "dist/media.mjs",
   "exports": {
     ".": {
       "import": "./dist/media.mjs",
