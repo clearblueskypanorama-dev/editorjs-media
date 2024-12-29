@@ -14,10 +14,10 @@
     "url": "git+https://github.com/clearblueskypanorama-dev/editorjs-media.git"
   },
   "files": [
-    "dist/**/*"
+    "dist"
   ],
-  "main": "./dist/media.umd.js",
-  "module": "./dist/media.mjs",
+  "main": "dist/media.umd.js",
+  "module": "dist/media.mjs",
   "exports": {
     ".": {
       "import": "./dist/media.mjs",
