@@ -17,7 +17,7 @@ function P(k) {
   if (x.has(n))
     return "VIDEO";
 }
-class j {
+class C {
   /**
    * @param {object} ui - media tool Ui module
    * @param {object} ui.api - Editor.js API
@@ -80,7 +80,7 @@ class j {
    * @returns {Element}
    */
   render(n) {
-    return !n.file || Object.keys(n.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), this.nodes.wrapper;
+    return !n.file || Object.keys(n.file).length === 0 ? this.toggleStatus(C.status.EMPTY) : this.toggleStatus(C.status.UPLOADING), this.nodes.wrapper;
   }
   /**
    * Creates upload-file button
@@ -100,7 +100,7 @@ class j {
    * @returns {void}
    */
   showPreloader(n) {
-    this.nodes.mediaPreloader.style.backgroundImage = `url(${n})`, this.toggleStatus(j.status.UPLOADING);
+    C.status !== C.status.FILLED && (this.nodes.mediaPreloader.style.backgroundImage = `url(${n})`, this.toggleStatus(C.status.UPLOADING));
   }
   /**
    * Hide uploading preloader
@@ -108,7 +108,7 @@ class j {
    * @returns {void}
    */
   hidePreloader() {
-    this.nodes.mediaPreloader.style.backgroundImage = "", this.toggleStatus(j.status.EMPTY);
+    this.nodes.mediaPreloader.style.backgroundImage = "", this.toggleStatus(C.status.EMPTY);
   }
   /**
    * Shows a medium
@@ -123,7 +123,7 @@ class j {
     };
     let i = "load";
     (e === "VIDEO" || e === "AUDIO") && (s.muted = !0, s.playsinline = !0, s.controls = !0, e === "AUDIO" && (s.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, s), this.nodes.mediaEl.addEventListener(i, () => {
-      console.debug("mount"), this.toggleStatus(j.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
+      console.debug("mount"), this.toggleStatus(C.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
     }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl), console.debug(this.nodes.mediaEl);
   }
   /**
@@ -142,8 +142,8 @@ class j {
    * @returns {void}
    */
   toggleStatus(n) {
-    for (const e in j.status)
-      Object.prototype.hasOwnProperty.call(j.status, e) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${j.status[e]}`, n === j.status[e]);
+    for (const e in C.status)
+      Object.prototype.hasOwnProperty.call(C.status, e) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${C.status[e]}`, n === C.status[e]);
   }
   /**
    * Apply visual representation of activated tune
@@ -296,18 +296,18 @@ var A = { exports: {} };
             if (g.length === 0)
               return c([]);
             var m = g.length;
-            function p(C, M) {
+            function p(T, M) {
               try {
                 if (M && (typeof M == "object" || typeof M == "function")) {
-                  var T = M.then;
-                  if (typeof T == "function")
-                    return void T.call(M, function(_) {
-                      p(C, _);
+                  var j = M.then;
+                  if (typeof j == "function")
+                    return void j.call(M, function(F) {
+                      p(T, F);
                     }, u);
                 }
-                g[C] = M, --m == 0 && c(g);
-              } catch (_) {
-                u(_);
+                g[T] = M, --m == 0 && c(g);
+              } catch (F) {
+                u(F);
               }
             }
             for (var E = 0; E < g.length; E++)
@@ -523,8 +523,8 @@ var A = { exports: {} };
               setTimeout(m, 0, p);
             }, u.setImmediate = function(p) {
               typeof p != "function" && (p = new Function("" + p));
-              for (var E = new Array(arguments.length - 1), C = 0; C < E.length; C++)
-                E[C] = arguments[C + 1];
+              for (var E = new Array(arguments.length - 1), T = 0; T < E.length; T++)
+                E[T] = arguments[T + 1];
               var M = { callback: p, args: E };
               return t[b] = M, l(b), b++;
             }, u.clearImmediate = g;
@@ -540,23 +540,23 @@ var A = { exports: {} };
               if (E) {
                 o = !0;
                 try {
-                  (function(C) {
-                    var M = C.callback, T = C.args;
-                    switch (T.length) {
+                  (function(T) {
+                    var M = T.callback, j = T.args;
+                    switch (j.length) {
                       case 0:
                         M();
                         break;
                       case 1:
-                        M(T[0]);
+                        M(j[0]);
                         break;
                       case 2:
-                        M(T[0], T[1]);
+                        M(j[0], j[1]);
                         break;
                       case 3:
-                        M(T[0], T[1], T[2]);
+                        M(j[0], j[1], j[2]);
                         break;
                       default:
-                        M.apply(v, T);
+                        M.apply(v, j);
                     }
                   })(E);
                 } finally {
@@ -770,7 +770,7 @@ function z(k) {
     }, s.src = e;
   });
 }
-async function F(k, n) {
+async function L(k, n) {
   switch (n) {
     case "VIDEO":
       return await Z(k);
@@ -779,7 +779,7 @@ async function F(k, n) {
   }
   return "";
 }
-function L(k) {
+function _(k) {
   return k.type ? k.type.split("/")[0].toUpperCase() : P(k.name);
 }
 class tt {
@@ -803,7 +803,7 @@ class tt {
       let e, s;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
         const a = (await S.selectFiles({ accept: this.config.types }))[0];
-        s = L(a), F(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
+        s = _(a), L(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
       } else
         e = await S.transport({
           url: this.config.endpoints.byFile,
@@ -813,7 +813,7 @@ class tt {
           beforeSend: (i) => {
             preparePreview(i[0]);
             const a = i[0];
-            s = L(a), F(a, s).then(n);
+            s = _(a), L(a, s).then(n);
           },
           fieldName: this.config.field
         }).then((i) => i.body);
@@ -851,8 +851,8 @@ class tt {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(n, { onPreview: e }) {
-    const s = L(n);
-    F(n, s).then(e);
+    const s = _(n);
+    L(n, s).then(e);
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
@@ -977,7 +977,7 @@ class I {
       config: this.config,
       onUpload: (r) => this.onUpload(r),
       onError: (r) => this.uploadingFailed(r)
-    }), this.ui = new j({
+    }), this.ui = new C({
       api: s,
       config: this.config,
       onSelectFile: () => {

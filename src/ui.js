@@ -128,8 +128,9 @@ export default class Ui {
    * @returns {void}
    */
   showPreloader(src) {
+    // ignore if already filled
+    if (Ui.status === Ui.status.FILLED) return;
     this.nodes.mediaPreloader.style.backgroundImage = `url(${src})`;
-
     this.toggleStatus(Ui.status.UPLOADING);
   }
 
