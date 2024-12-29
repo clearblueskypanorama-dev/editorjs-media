@@ -1,5 +1,4 @@
 import ajax from '@codexteam/ajax';
-import isPromise from './utils/isPromise';
 import { getFileType } from './utils/fileTypes';
 import { getPreview } from './utils/preview';
 
@@ -48,7 +47,7 @@ export default class Uploader {
 
         getPreview(file, tag).then(onPreview)
 
-        result = { tag, ...await this.config.uploader.uploadByFile(file) }
+        result = await this.config.uploader.uploadByFile(file)
       }
 
       // default
@@ -68,6 +67,7 @@ export default class Uploader {
         }).then((response) => response.body);
       }
 
+      if (!result.file.tag) result.file.tag = tag;
       this.onUpload(result);
     } catch (error) {
       this.onError(error);
@@ -87,7 +87,7 @@ export default class Uploader {
 
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByUrl === 'function') {
-        result = { tag: getFileType(url), ...await this.config.uploader.uploadByUrl(url) }
+        result = await this.config.uploader.uploadByUrl(url)
       }
 
       // default
@@ -102,6 +102,7 @@ export default class Uploader {
         }).then(response => response.body);
       }
 
+      if (!result.file.tag) result.file.tag = getFileType(url);
       this.onUpload(result);
     } catch (error) {
       this.onError(error);
@@ -124,7 +125,7 @@ export default class Uploader {
 
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
-        result = { tag, ...await this.config.uploader.uploadByFile(file) }
+        result = await this.config.uploader.uploadByFile(file)
       }
 
       // default
@@ -146,8 +147,9 @@ export default class Uploader {
           headers: this.config.additionalRequestHeaders,
         }).then(response => response.body);
       }
-      this.onUpload(result);
 
+      if (!result.file.tag) result.file.tag = tag;
+      this.onUpload(result);
     } catch (error) {
       this.onError(error);
     }
