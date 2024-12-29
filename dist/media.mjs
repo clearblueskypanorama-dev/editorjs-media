@@ -119,6 +119,7 @@ class j {
    * @returns {void}
    */
   fillMedia(n, e = P(new URL(n).pathname) || "IMG") {
+    console.debug("fillMedia", n, e);
     const s = {
       src: n
     };
@@ -1167,7 +1168,7 @@ class I {
    * @returns {void}
    */
   onUpload(n) {
-    n.success && n.file ? this.media = n.file : this.uploadingFailed("incorrect response: " + JSON.stringify(n));
+    console.debug("onUpload", n), n.success && n.file ? this.media = n.file : this.uploadingFailed("incorrect response: " + JSON.stringify(n));
   }
   /**
    * Handle uploader errors

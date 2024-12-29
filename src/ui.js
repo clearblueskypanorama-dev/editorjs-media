@@ -152,6 +152,7 @@ export default class Ui {
    * @returns {void}
    */
   fillMedia(url, tag = getFileType((new URL(url)).pathname) || "IMG") {
+    console.debug("fillMedia", url, tag)
     const attributes = {
       src: url,
     };
