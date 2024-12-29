@@ -111,12 +111,12 @@ function getMetadataImage(blob) {
  * @returns {Promise<string>}
  */
 export async function getPreview(blob, tag) {
-    switch (tag) {
+    /*switch (tag) {
         case "VIDEO":
             return await getMetadataVideo(blob)
 
         case "IMAGE":
             return await getMetadataImage(blob)
-    }
+    }*/
     return ""
 }

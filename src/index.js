@@ -260,7 +260,7 @@ export default class MediaTool {
    *
    * @public
    */
-  rendered() {
+  appendCallback() {
     this.ui.nodes.fileButton.click();
   }
 
