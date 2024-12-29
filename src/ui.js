@@ -1,6 +1,6 @@
 import { IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
-import { getUrlFileType } from './utils/fileTypes';
+import { getFileType } from './utils/fileTypes';
 
 /**
  * Class for working with UI:
@@ -147,23 +147,24 @@ export default class Ui {
    * Shows a medium
    *
    * @param {string} url - medium source
+   * @param {'VIDEO'|'AUDIO'|'IMAGE'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(url) {
+  fillMedia(url, tag) {
     /**
      * Check for a source extension to compose element correctly: video tag for mp4, img — for others
      */
 
-    let tag = getUrlFileType(new URL(url));
+    if (!tag) tag = getFileType((new URL(url)).pathname) || "IMAGE";
 
     const attributes = {
       src: url,
     };
 
     /**
-     * We use eventName variable because IMG and VIDEO tags have different event to be called on source load
-     * - IMG: load
-     * - VIDEO: loadeddata
+     * We use eventName variable because IMAGE and VIDEO tags have different event to be called on source load
+     * - IMAGE: load
+     * - VIDEO: loadedmetadata
      *
      * @type {string}
      */
@@ -191,7 +192,7 @@ export default class Ui {
        *
        * @type {string}
        */
-      eventName = 'loadeddata';
+      eventName = 'loadedmetadata';
     }
 
     /**

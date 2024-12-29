@@ -260,7 +260,7 @@ export default class MediaTool {
    *
    * @public
    */
-  appendCallback() {
+  rendered() {
     this.ui.nodes.fileButton.click();
   }
 
@@ -384,7 +384,7 @@ export default class MediaTool {
     this._data.file = file || {};
 
     if (file && file.url) {
-      this.ui.fillMedia(file.url);
+      this.ui.fillMedia(file.url, file.tag);
     }
   }
 

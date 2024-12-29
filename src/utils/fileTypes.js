@@ -4,14 +4,14 @@ const VIDEO = new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", 
 export const REGEX = new RegExp(`https?:\\/\\/\\S+\\.(${[...IMAGE, ...AUDIO, ...VIDEO].join("|")})(\\?[a-z0-9=]*)?$`, "i")
 
 /**
- * Get file type from url string
+ * Get file type from file name
  *
- * @param  {URL} url
- * @returns {'VIDEO'|'AUDIO'|'IMG'|undefined}
+ * @param  {string} name
+ * @returns {'VIDEO'|'AUDIO'|'IMAGE'|undefined}
  */
-export function getUrlFileType({ pathname }) {
-    const ext = pathname.split(".").pop()
-    if (IMAGE.has(ext)) return "IMG"
+export function getFileType(name) {
+    const ext = name.split(".").pop()
+    if (IMAGE.has(ext)) return "IMAGE"
     if (AUDIO.has(ext)) return "AUDIO"
     if (VIDEO.has(ext)) return "VIDEO"
 }
