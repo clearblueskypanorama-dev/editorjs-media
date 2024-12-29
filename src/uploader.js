@@ -4,6 +4,14 @@ import { getFileType } from './utils/fileTypes';
 import { getPreview } from './utils/preview';
 
 /**
+ * @param {File} file
+ * @returns {string}
+ */
+function getTag(file) {
+  return file.type ? file.type.split("/")[0].toUpperCase() : getFileType(file.name)
+}
+
+/**
  * Module for file uploading. Handle 3 scenarios:
  *  1. Select file from device and upload
  *  2. Upload by pasting URL
@@ -29,9 +37,6 @@ export default class Uploader {
    * @param {Function} onPreview - callback fired when preview is ready
    */
   async uploadSelectedFile({ onPreview }) {
-    const tag = file.type ? file.type.split("/")[0].toUpperCase() : getFileType(file.name)
-    getPreview(file, tag).then(onPreview)
-
     try {
       let result;
 
@@ -39,8 +44,9 @@ export default class Uploader {
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
         const files = await ajax.selectFiles({ accept: this.config.types })
         const file = files[0]
+        const tag = getTag(file)
 
-        preparePreview(file);
+        getPreview(file, tag).then(onPreview)
 
         result = { tag, ...await this.config.uploader.uploadByFile(file) }
 
@@ -55,6 +61,9 @@ export default class Uploader {
           headers: this.config.additionalRequestHeaders,
           beforeSend: (files) => {
             preparePreview(files[0]);
+            const file = files[0]
+            const tag = getTag(file)
+            getPreview(file, tag).then(onPreview)
           },
           fieldName: this.config.field,
         }).then((response) => response.body);
@@ -108,7 +117,7 @@ export default class Uploader {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(file, { onPreview }) {
-    const tag = file.type ? file.type.split("/")[0].toUpperCase() : getFileType(file.name)
+    const tag = getTag(file)
     getPreview(file, tag).then(onPreview)
 
     try {

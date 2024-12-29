@@ -1,20 +1,20 @@
 (function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode('.media-tool{--bg-color: #cdd1e0;--front-color: #388ae5;--border-color: #e8e8eb}.media-tool__media{border-radius:3px;overflow:hidden;margin-bottom:10px}.media-tool__media-picture{max-width:100%;vertical-align:bottom;display:block}.media-tool__media-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;margin:auto;position:relative;background-color:var(--bg-color);background-position:center center}.media-tool__media-preloader:after{content:"";position:absolute;z-index:3;width:60px;height:60px;border-radius:50%;border:2px solid var(--bg-color);border-top-color:var(--front-color);left:50%;top:50%;margin-top:-30px;margin-left:-30px;animation:media-preloader-spin 2s infinite linear;box-sizing:border-box}.media-tool__caption[contentEditable=true][data-placeholder]:before{position:absolute!important;content:attr(data-placeholder);color:#707684;font-weight:400;display:none}.media-tool__caption[contentEditable=true][data-placeholder]:empty:before{display:block}.media-tool__caption[contentEditable=true][data-placeholder]:empty:focus:before{display:none}.media-tool--empty .media-tool__media,.media-tool--empty .media-tool__caption,.media-tool--loading .media-tool__caption{display:none}.media-tool .cdx-button{display:flex;align-items:center;justify-content:center}.media-tool .cdx-button svg{height:auto;margin:0 6px 0 0}.media-tool--filled .cdx-button,.media-tool--filled .media-tool__media-preloader{display:none}.media-tool--loading .media-tool__media{min-height:200px;display:flex;border:1px solid var(--border-color);background-color:#fff}.media-tool--loading .media-tool__media-picture,.media-tool--loading .cdx-button{display:none}.media-tool--withBorder .media-tool__media{border:1px solid var(--border-color)}.media-tool--withBackground .media-tool__media{padding:15px;background:var(--bg-color)}.media-tool--withBackground .media-tool__media-picture{max-width:60%;margin:0 auto}.media-tool--stretched .media-tool__media-picture{width:100%}@keyframes media-preloader-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}')),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
-const B = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', R = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
-function O(E, n = null, e = {}) {
-  const a = document.createElement(E);
-  Array.isArray(n) ? a.classList.add(...n) : n && a.classList.add(n);
+const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', D = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
+function O(k, n = null, e = {}) {
+  const s = document.createElement(k);
+  Array.isArray(n) ? s.classList.add(...n) : n && s.classList.add(n);
   for (const i in e)
-    a[i] = e[i];
-  return a;
+    s[i] = e[i];
+  return s;
 }
-const D = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), H = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), U = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), V = new RegExp(`https?:\\/\\/\\S+\\.(${[...D, ...H, ...U].join("|")})(\\?[a-z0-9=]*)?$`, "i");
-function _(E) {
-  const n = E.split(".").pop();
-  if (D.has(n))
-    return "IMAGE";
+const H = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), U = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), A = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...H, ...U, ...A].join("|")})(\\?[a-z0-9=]*)?$`, "i");
+function P(k) {
+  const n = k.split(".").pop();
   if (H.has(n))
-    return "AUDIO";
+    return "IMAGE";
   if (U.has(n))
+    return "AUDIO";
+  if (A.has(n))
     return "VIDEO";
 }
 class j {
@@ -25,8 +25,8 @@ class j {
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
    * @param {boolean} ui.readOnly - read-only mode flag
    */
-  constructor({ api: n, config: e, onSelectFile: a, readOnly: i }) {
-    this.api = n, this.config = e, this.onSelectFile = a, this.readOnly = i, this.nodes = {
+  constructor({ api: n, config: e, onSelectFile: s, readOnly: i }) {
+    this.api = n, this.config = e, this.onSelectFile = s, this.readOnly = i, this.nodes = {
       wrapper: O("div", [this.CSS.baseClass, this.CSS.wrapper]),
       mediaContainer: O("div", [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
@@ -89,7 +89,7 @@ class j {
    */
   createFileButton() {
     const n = O("div", [this.CSS.button]);
-    return n.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select a media file")}`, n.addEventListener("click", () => {
+    return n.innerHTML = this.config.buttonContent || `${D} ${this.api.i18n.t("Select a media file")}`, n.addEventListener("click", () => {
       this.onSelectFile();
     }), n;
   }
@@ -118,12 +118,12 @@ class j {
    * @returns {void}
    */
   fillMedia(n, e) {
-    e || (e = _(new URL(n).pathname) || "IMAGE");
-    const a = {
+    e || (e = P(new URL(n).pathname) || "IMAGE");
+    const s = {
       src: n
     };
     let i = "load";
-    (e === "VIDEO" || e === "AUDIO") && (a.muted = !0, a.playsinline = !0, a.controls = !0, e === "AUDIO" && (a.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, a), this.nodes.mediaEl.addEventListener(i, () => {
+    (e === "VIDEO" || e === "AUDIO") && (s.muted = !0, s.playsinline = !0, s.controls = !0, e === "AUDIO" && (s.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, s), this.nodes.mediaEl.addEventListener(i, () => {
       this.toggleStatus(j.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
     }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
   }
@@ -157,47 +157,47 @@ class j {
     this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${n}`, e);
   }
 }
-function G(E) {
-  return E && E.__esModule && Object.prototype.hasOwnProperty.call(E, "default") ? E.default : E;
+function $(k) {
+  return k && k.__esModule && Object.prototype.hasOwnProperty.call(k, "default") ? k.default : k;
 }
-var A = { exports: {} };
-(function(E, n) {
-  (function(e, a) {
-    E.exports = a();
+var x = { exports: {} };
+(function(k, n) {
+  (function(e, s) {
+    k.exports = s();
   })(window, function() {
     return function(e) {
-      var a = {};
-      function i(s) {
-        if (a[s])
-          return a[s].exports;
-        var r = a[s] = { i: s, l: !1, exports: {} };
-        return e[s].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
+      var s = {};
+      function i(a) {
+        if (s[a])
+          return s[a].exports;
+        var r = s[a] = { i: a, l: !1, exports: {} };
+        return e[a].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
       }
-      return i.m = e, i.c = a, i.d = function(s, r, d) {
-        i.o(s, r) || Object.defineProperty(s, r, { enumerable: !0, get: d });
-      }, i.r = function(s) {
-        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(s, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(s, "__esModule", { value: !0 });
-      }, i.t = function(s, r) {
-        if (1 & r && (s = i(s)), 8 & r || 4 & r && typeof s == "object" && s && s.__esModule)
-          return s;
+      return i.m = e, i.c = s, i.d = function(a, r, d) {
+        i.o(a, r) || Object.defineProperty(a, r, { enumerable: !0, get: d });
+      }, i.r = function(a) {
+        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(a, "__esModule", { value: !0 });
+      }, i.t = function(a, r) {
+        if (1 & r && (a = i(a)), 8 & r || 4 & r && typeof a == "object" && a && a.__esModule)
+          return a;
         var d = /* @__PURE__ */ Object.create(null);
-        if (i.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: s }), 2 & r && typeof s != "string")
-          for (var v in s)
-            i.d(d, v, (function(l) {
-              return s[l];
+        if (i.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: a }), 2 & r && typeof a != "string")
+          for (var v in a)
+            i.d(d, v, (function(u) {
+              return a[u];
             }).bind(null, v));
         return d;
-      }, i.n = function(s) {
-        var r = s && s.__esModule ? function() {
-          return s.default;
+      }, i.n = function(a) {
+        var r = a && a.__esModule ? function() {
+          return a.default;
         } : function() {
-          return s;
+          return a;
         };
         return i.d(r, "a", r), r;
-      }, i.o = function(s, r) {
-        return Object.prototype.hasOwnProperty.call(s, r);
+      }, i.o = function(a, r) {
+        return Object.prototype.hasOwnProperty.call(a, r);
       }, i.p = "", i(i.s = 3);
-    }([function(e, a) {
+    }([function(e, s) {
       var i;
       i = function() {
         return this;
@@ -208,13 +208,13 @@ var A = { exports: {} };
         typeof window == "object" && (i = window);
       }
       e.exports = i;
-    }, function(e, a, i) {
-      (function(s) {
+    }, function(e, s, i) {
+      (function(a) {
         var r = i(2), d = setTimeout;
         function v() {
         }
-        function l(o) {
-          if (!(this instanceof l))
+        function u(o) {
+          if (!(this instanceof u))
             throw new TypeError("Promises must be constructed via new");
           if (typeof o != "function")
             throw new TypeError("not a function");
@@ -223,12 +223,12 @@ var A = { exports: {} };
         function p(o, c) {
           for (; o._state === 3; )
             o = o._value;
-          o._state !== 0 ? (o._handled = !0, l._immediateFn(function() {
-            var u = o._state === 1 ? c.onFulfilled : c.onRejected;
-            if (u !== null) {
+          o._state !== 0 ? (o._handled = !0, u._immediateFn(function() {
+            var l = o._state === 1 ? c.onFulfilled : c.onRejected;
+            if (l !== null) {
               var g;
               try {
-                g = u(o._value);
+                g = l(o._value);
               } catch (m) {
                 return void y(c.promise, m);
               }
@@ -242,11 +242,11 @@ var A = { exports: {} };
             if (c === o)
               throw new TypeError("A promise cannot be resolved with itself.");
             if (c && (typeof c == "object" || typeof c == "function")) {
-              var u = c.then;
-              if (c instanceof l)
+              var l = c.then;
+              if (c instanceof u)
                 return o._state = 3, o._value = c, void w(o);
-              if (typeof u == "function")
-                return void t((g = u, m = c, function() {
+              if (typeof l == "function")
+                return void t((g = l, m = c, function() {
                   g.apply(m, arguments);
                 }), o);
             }
@@ -260,139 +260,139 @@ var A = { exports: {} };
           o._state = 2, o._value = c, w(o);
         }
         function w(o) {
-          o._state === 2 && o._deferreds.length === 0 && l._immediateFn(function() {
-            o._handled || l._unhandledRejectionFn(o._value);
+          o._state === 2 && o._deferreds.length === 0 && u._immediateFn(function() {
+            o._handled || u._unhandledRejectionFn(o._value);
           });
-          for (var c = 0, u = o._deferreds.length; c < u; c++)
+          for (var c = 0, l = o._deferreds.length; c < l; c++)
             p(o, o._deferreds[c]);
           o._deferreds = null;
         }
-        function b(o, c, u) {
-          this.onFulfilled = typeof o == "function" ? o : null, this.onRejected = typeof c == "function" ? c : null, this.promise = u;
+        function b(o, c, l) {
+          this.onFulfilled = typeof o == "function" ? o : null, this.onRejected = typeof c == "function" ? c : null, this.promise = l;
         }
         function t(o, c) {
-          var u = !1;
+          var l = !1;
           try {
             o(function(g) {
-              u || (u = !0, h(c, g));
+              l || (l = !0, h(c, g));
             }, function(g) {
-              u || (u = !0, y(c, g));
+              l || (l = !0, y(c, g));
             });
           } catch (g) {
-            if (u)
+            if (l)
               return;
-            u = !0, y(c, g);
+            l = !0, y(c, g);
           }
         }
-        l.prototype.catch = function(o) {
+        u.prototype.catch = function(o) {
           return this.then(null, o);
-        }, l.prototype.then = function(o, c) {
-          var u = new this.constructor(v);
-          return p(this, new b(o, c, u)), u;
-        }, l.prototype.finally = r.a, l.all = function(o) {
-          return new l(function(c, u) {
+        }, u.prototype.then = function(o, c) {
+          var l = new this.constructor(v);
+          return p(this, new b(o, c, l)), l;
+        }, u.prototype.finally = r.a, u.all = function(o) {
+          return new u(function(c, l) {
             if (!o || o.length === void 0)
               throw new TypeError("Promise.all accepts an array");
             var g = Array.prototype.slice.call(o);
             if (g.length === 0)
               return c([]);
             var m = g.length;
-            function f(C, M) {
+            function f(T, M) {
               try {
                 if (M && (typeof M == "object" || typeof M == "function")) {
-                  var T = M.then;
-                  if (typeof T == "function")
-                    return void T.call(M, function(F) {
-                      f(C, F);
-                    }, u);
+                  var C = M.then;
+                  if (typeof C == "function")
+                    return void C.call(M, function(_) {
+                      f(T, _);
+                    }, l);
                 }
-                g[C] = M, --m == 0 && c(g);
-              } catch (F) {
-                u(F);
+                g[T] = M, --m == 0 && c(g);
+              } catch (_) {
+                l(_);
               }
             }
-            for (var k = 0; k < g.length; k++)
-              f(k, g[k]);
+            for (var E = 0; E < g.length; E++)
+              f(E, g[E]);
           });
-        }, l.resolve = function(o) {
-          return o && typeof o == "object" && o.constructor === l ? o : new l(function(c) {
+        }, u.resolve = function(o) {
+          return o && typeof o == "object" && o.constructor === u ? o : new u(function(c) {
             c(o);
           });
-        }, l.reject = function(o) {
-          return new l(function(c, u) {
-            u(o);
+        }, u.reject = function(o) {
+          return new u(function(c, l) {
+            l(o);
           });
-        }, l.race = function(o) {
-          return new l(function(c, u) {
+        }, u.race = function(o) {
+          return new u(function(c, l) {
             for (var g = 0, m = o.length; g < m; g++)
-              o[g].then(c, u);
+              o[g].then(c, l);
           });
-        }, l._immediateFn = typeof s == "function" && function(o) {
-          s(o);
+        }, u._immediateFn = typeof a == "function" && function(o) {
+          a(o);
         } || function(o) {
           d(o, 0);
-        }, l._unhandledRejectionFn = function(o) {
+        }, u._unhandledRejectionFn = function(o) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", o);
-        }, a.a = l;
+        }, s.a = u;
       }).call(this, i(5).setImmediate);
-    }, function(e, a, i) {
-      a.a = function(s) {
+    }, function(e, s, i) {
+      s.a = function(a) {
         var r = this.constructor;
         return this.then(function(d) {
-          return r.resolve(s()).then(function() {
+          return r.resolve(a()).then(function() {
             return d;
           });
         }, function(d) {
-          return r.resolve(s()).then(function() {
+          return r.resolve(a()).then(function() {
             return r.reject(d);
           });
         });
       };
-    }, function(e, a, i) {
-      function s(t) {
-        return (s = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
+    }, function(e, s, i) {
+      function a(t) {
+        return (a = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
           return typeof o;
         } : function(o) {
           return o && typeof Symbol == "function" && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
         })(t);
       }
       i(4);
-      var r, d, v, l, p, h, y, w = i(8), b = (d = function(t) {
+      var r, d, v, u, p, h, y, w = i(8), b = (d = function(t) {
         return new Promise(function(o, c) {
-          t = l(t), (t = p(t)).beforeSend && t.beforeSend();
-          var u = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
-          u.open(t.method, t.url), u.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(t.headers).forEach(function(m) {
+          t = u(t), (t = p(t)).beforeSend && t.beforeSend();
+          var l = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
+          l.open(t.method, t.url), l.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(t.headers).forEach(function(m) {
             var f = t.headers[m];
-            u.setRequestHeader(m, f);
+            l.setRequestHeader(m, f);
           });
           var g = t.ratio;
-          u.upload.addEventListener("progress", function(m) {
-            var f = Math.round(m.loaded / m.total * 100), k = Math.ceil(f * g / 100);
-            t.progress(Math.min(k, 100));
-          }, !1), u.addEventListener("progress", function(m) {
-            var f = Math.round(m.loaded / m.total * 100), k = Math.ceil(f * (100 - g) / 100) + g;
-            t.progress(Math.min(k, 100));
-          }, !1), u.onreadystatechange = function() {
-            if (u.readyState === 4) {
-              var m = u.response;
+          l.upload.addEventListener("progress", function(m) {
+            var f = Math.round(m.loaded / m.total * 100), E = Math.ceil(f * g / 100);
+            t.progress(Math.min(E, 100));
+          }, !1), l.addEventListener("progress", function(m) {
+            var f = Math.round(m.loaded / m.total * 100), E = Math.ceil(f * (100 - g) / 100) + g;
+            t.progress(Math.min(E, 100));
+          }, !1), l.onreadystatechange = function() {
+            if (l.readyState === 4) {
+              var m = l.response;
               try {
                 m = JSON.parse(m);
               } catch {
               }
-              var f = w.parseHeaders(u.getAllResponseHeaders()), k = { body: m, code: u.status, headers: f };
-              y(u.status) ? o(k) : c(k);
+              var f = w.parseHeaders(l.getAllResponseHeaders()), E = { body: m, code: l.status, headers: f };
+              y(l.status) ? o(E) : c(E);
             }
-          }, u.send(t.data);
+          }, l.send(t.data);
         });
       }, v = function(t) {
         return t.method = "POST", d(t);
-      }, l = function() {
+      }, u = function() {
         var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         if (t.url && typeof t.url != "string")
           throw new Error("Url must be a string");
         if (t.url = t.url || "", t.method && typeof t.method != "string")
           throw new Error("`method` must be a string or null");
-        if (t.method = t.method ? t.method.toUpperCase() : "GET", t.headers && s(t.headers) !== "object")
+        if (t.method = t.method ? t.method.toUpperCase() : "GET", t.headers && a(t.headers) !== "object")
           throw new Error("`headers` must be an object or null");
         if (t.headers = t.headers || {}, t.type && (typeof t.type != "string" || !Object.values(r).includes(t.type)))
           throw new Error("`type` must be taken from module's «contentType» library");
@@ -444,9 +444,9 @@ var A = { exports: {} };
       }, { contentType: r = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: d, get: function(t) {
         return t.method = "GET", d(t);
       }, post: v, transport: function(t) {
-        return t = l(t), w.selectFiles(t).then(function(o) {
-          for (var c = new FormData(), u = 0; u < o.length; u++)
-            c.append(t.fieldName, o[u], o[u].name);
+        return t = u(t), w.selectFiles(t).then(function(o) {
+          for (var c = new FormData(), l = 0; l < o.length; l++)
+            c.append(t.fieldName, o[l], o[l].name);
           w.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
             var f = t.data[m];
             c.append(m, f);
@@ -457,78 +457,78 @@ var A = { exports: {} };
           }, t.data = c, v(t);
         });
       }, selectFiles: function(t) {
-        return delete (t = l(t)).beforeSend, w.selectFiles(t);
+        return delete (t = u(t)).beforeSend, w.selectFiles(t);
       } });
       e.exports = b;
-    }, function(e, a, i) {
-      i.r(a);
-      var s = i(1);
-      window.Promise = window.Promise || s.a;
-    }, function(e, a, i) {
-      (function(s) {
-        var r = s !== void 0 && s || typeof self < "u" && self || window, d = Function.prototype.apply;
-        function v(l, p) {
-          this._id = l, this._clearFn = p;
+    }, function(e, s, i) {
+      i.r(s);
+      var a = i(1);
+      window.Promise = window.Promise || a.a;
+    }, function(e, s, i) {
+      (function(a) {
+        var r = a !== void 0 && a || typeof self < "u" && self || window, d = Function.prototype.apply;
+        function v(u, p) {
+          this._id = u, this._clearFn = p;
         }
-        a.setTimeout = function() {
+        s.setTimeout = function() {
           return new v(d.call(setTimeout, r, arguments), clearTimeout);
-        }, a.setInterval = function() {
+        }, s.setInterval = function() {
           return new v(d.call(setInterval, r, arguments), clearInterval);
-        }, a.clearTimeout = a.clearInterval = function(l) {
-          l && l.close();
+        }, s.clearTimeout = s.clearInterval = function(u) {
+          u && u.close();
         }, v.prototype.unref = v.prototype.ref = function() {
         }, v.prototype.close = function() {
           this._clearFn.call(r, this._id);
-        }, a.enroll = function(l, p) {
-          clearTimeout(l._idleTimeoutId), l._idleTimeout = p;
-        }, a.unenroll = function(l) {
-          clearTimeout(l._idleTimeoutId), l._idleTimeout = -1;
-        }, a._unrefActive = a.active = function(l) {
-          clearTimeout(l._idleTimeoutId);
-          var p = l._idleTimeout;
-          p >= 0 && (l._idleTimeoutId = setTimeout(function() {
-            l._onTimeout && l._onTimeout();
+        }, s.enroll = function(u, p) {
+          clearTimeout(u._idleTimeoutId), u._idleTimeout = p;
+        }, s.unenroll = function(u) {
+          clearTimeout(u._idleTimeoutId), u._idleTimeout = -1;
+        }, s._unrefActive = s.active = function(u) {
+          clearTimeout(u._idleTimeoutId);
+          var p = u._idleTimeout;
+          p >= 0 && (u._idleTimeoutId = setTimeout(function() {
+            u._onTimeout && u._onTimeout();
           }, p));
-        }, i(6), a.setImmediate = typeof self < "u" && self.setImmediate || s !== void 0 && s.setImmediate || this && this.setImmediate, a.clearImmediate = typeof self < "u" && self.clearImmediate || s !== void 0 && s.clearImmediate || this && this.clearImmediate;
+        }, i(6), s.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, s.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
       }).call(this, i(0));
-    }, function(e, a, i) {
-      (function(s, r) {
+    }, function(e, s, i) {
+      (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
-            var l, p, h, y, w, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
-            u = u && u.setTimeout ? u : d, {}.toString.call(d.process) === "[object process]" ? l = function(f) {
+            var u, p, h, y, w, b = 1, t = {}, o = !1, c = d.document, l = Object.getPrototypeOf && Object.getPrototypeOf(d);
+            l = l && l.setTimeout ? l : d, {}.toString.call(d.process) === "[object process]" ? u = function(f) {
               r.nextTick(function() {
                 m(f);
               });
             } : function() {
               if (d.postMessage && !d.importScripts) {
-                var f = !0, k = d.onmessage;
+                var f = !0, E = d.onmessage;
                 return d.onmessage = function() {
                   f = !1;
-                }, d.postMessage("", "*"), d.onmessage = k, f;
+                }, d.postMessage("", "*"), d.onmessage = E, f;
               }
             }() ? (y = "setImmediate$" + Math.random() + "$", w = function(f) {
               f.source === d && typeof f.data == "string" && f.data.indexOf(y) === 0 && m(+f.data.slice(y.length));
-            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), l = function(f) {
+            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), u = function(f) {
               d.postMessage(y + f, "*");
             }) : d.MessageChannel ? ((h = new MessageChannel()).port1.onmessage = function(f) {
               m(f.data);
-            }, l = function(f) {
+            }, u = function(f) {
               h.port2.postMessage(f);
-            }) : c && "onreadystatechange" in c.createElement("script") ? (p = c.documentElement, l = function(f) {
-              var k = c.createElement("script");
-              k.onreadystatechange = function() {
-                m(f), k.onreadystatechange = null, p.removeChild(k), k = null;
-              }, p.appendChild(k);
-            }) : l = function(f) {
+            }) : c && "onreadystatechange" in c.createElement("script") ? (p = c.documentElement, u = function(f) {
+              var E = c.createElement("script");
+              E.onreadystatechange = function() {
+                m(f), E.onreadystatechange = null, p.removeChild(E), E = null;
+              }, p.appendChild(E);
+            }) : u = function(f) {
               setTimeout(m, 0, f);
-            }, u.setImmediate = function(f) {
+            }, l.setImmediate = function(f) {
               typeof f != "function" && (f = new Function("" + f));
-              for (var k = new Array(arguments.length - 1), C = 0; C < k.length; C++)
-                k[C] = arguments[C + 1];
-              var M = { callback: f, args: k };
-              return t[b] = M, l(b), b++;
-            }, u.clearImmediate = g;
+              for (var E = new Array(arguments.length - 1), T = 0; T < E.length; T++)
+                E[T] = arguments[T + 1];
+              var M = { callback: f, args: E };
+              return t[b] = M, u(b), b++;
+            }, l.clearImmediate = g;
           }
           function g(f) {
             delete t[f];
@@ -537,57 +537,57 @@ var A = { exports: {} };
             if (o)
               setTimeout(m, 0, f);
             else {
-              var k = t[f];
-              if (k) {
+              var E = t[f];
+              if (E) {
                 o = !0;
                 try {
-                  (function(C) {
-                    var M = C.callback, T = C.args;
-                    switch (T.length) {
+                  (function(T) {
+                    var M = T.callback, C = T.args;
+                    switch (C.length) {
                       case 0:
                         M();
                         break;
                       case 1:
-                        M(T[0]);
+                        M(C[0]);
                         break;
                       case 2:
-                        M(T[0], T[1]);
+                        M(C[0], C[1]);
                         break;
                       case 3:
-                        M(T[0], T[1], T[2]);
+                        M(C[0], C[1], C[2]);
                         break;
                       default:
-                        M.apply(v, T);
+                        M.apply(v, C);
                     }
-                  })(k);
+                  })(E);
                 } finally {
                   g(f), o = !1;
                 }
               }
             }
           }
-        })(typeof self > "u" ? s === void 0 ? this : s : self);
+        })(typeof self > "u" ? a === void 0 ? this : a : self);
       }).call(this, i(0), i(7));
-    }, function(e, a) {
-      var i, s, r = e.exports = {};
+    }, function(e, s) {
+      var i, a, r = e.exports = {};
       function d() {
         throw new Error("setTimeout has not been defined");
       }
       function v() {
         throw new Error("clearTimeout has not been defined");
       }
-      function l(u) {
+      function u(l) {
         if (i === setTimeout)
-          return setTimeout(u, 0);
+          return setTimeout(l, 0);
         if ((i === d || !i) && setTimeout)
-          return i = setTimeout, setTimeout(u, 0);
+          return i = setTimeout, setTimeout(l, 0);
         try {
-          return i(u, 0);
+          return i(l, 0);
         } catch {
           try {
-            return i.call(null, u, 0);
+            return i.call(null, l, 0);
           } catch {
-            return i.call(this, u, 0);
+            return i.call(this, l, 0);
           }
         }
       }
@@ -598,9 +598,9 @@ var A = { exports: {} };
           i = d;
         }
         try {
-          s = typeof clearTimeout == "function" ? clearTimeout : v;
+          a = typeof clearTimeout == "function" ? clearTimeout : v;
         } catch {
-          s = v;
+          a = v;
         }
       })();
       var p, h = [], y = !1, w = -1;
@@ -609,7 +609,7 @@ var A = { exports: {} };
       }
       function t() {
         if (!y) {
-          var u = l(b);
+          var l = u(b);
           y = !0;
           for (var g = h.length; g; ) {
             for (p = h, h = []; ++w < g; )
@@ -617,50 +617,50 @@ var A = { exports: {} };
             w = -1, g = h.length;
           }
           p = null, y = !1, function(m) {
-            if (s === clearTimeout)
+            if (a === clearTimeout)
               return clearTimeout(m);
-            if ((s === v || !s) && clearTimeout)
-              return s = clearTimeout, clearTimeout(m);
+            if ((a === v || !a) && clearTimeout)
+              return a = clearTimeout, clearTimeout(m);
             try {
-              s(m);
+              a(m);
             } catch {
               try {
-                return s.call(null, m);
+                return a.call(null, m);
               } catch {
-                return s.call(this, m);
+                return a.call(this, m);
               }
             }
-          }(u);
+          }(l);
         }
       }
-      function o(u, g) {
-        this.fun = u, this.array = g;
+      function o(l, g) {
+        this.fun = l, this.array = g;
       }
       function c() {
       }
-      r.nextTick = function(u) {
+      r.nextTick = function(l) {
         var g = new Array(arguments.length - 1);
         if (arguments.length > 1)
           for (var m = 1; m < arguments.length; m++)
             g[m - 1] = arguments[m];
-        h.push(new o(u, g)), h.length !== 1 || y || l(t);
+        h.push(new o(l, g)), h.length !== 1 || y || u(t);
       }, o.prototype.run = function() {
         this.fun.apply(null, this.array);
-      }, r.title = "browser", r.browser = !0, r.env = {}, r.argv = [], r.version = "", r.versions = {}, r.on = c, r.addListener = c, r.once = c, r.off = c, r.removeListener = c, r.removeAllListeners = c, r.emit = c, r.prependListener = c, r.prependOnceListener = c, r.listeners = function(u) {
+      }, r.title = "browser", r.browser = !0, r.env = {}, r.argv = [], r.version = "", r.versions = {}, r.on = c, r.addListener = c, r.once = c, r.off = c, r.removeListener = c, r.removeAllListeners = c, r.emit = c, r.prependListener = c, r.prependOnceListener = c, r.listeners = function(l) {
         return [];
-      }, r.binding = function(u) {
+      }, r.binding = function(l) {
         throw new Error("process.binding is not supported");
       }, r.cwd = function() {
         return "/";
-      }, r.chdir = function(u) {
+      }, r.chdir = function(l) {
         throw new Error("process.chdir is not supported");
       }, r.umask = function() {
         return 0;
       };
-    }, function(e, a, i) {
-      function s(d, v) {
-        for (var l = 0; l < v.length; l++) {
-          var p = v[l];
+    }, function(e, s, i) {
+      function a(d, v) {
+        for (var u = 0; u < v.length; u++) {
+          var p = v[u];
           p.enumerable = p.enumerable || !1, p.configurable = !0, "value" in p && (p.writable = !0), Object.defineProperty(d, p.key, p);
         }
       }
@@ -672,7 +672,7 @@ var A = { exports: {} };
               throw new TypeError("Cannot call a class as a function");
           })(this, d);
         }
-        var v, l, p;
+        var v, u, p;
         return v = d, p = [{ key: "urlEncode", value: function(h) {
           return r(h);
         } }, { key: "jsonEncode", value: function(h) {
@@ -711,20 +711,20 @@ var A = { exports: {} };
             var t = b.split(": "), o = t.shift(), c = t.join(": ");
             o && (w[o] = c);
           }), w;
-        } }], (l = null) && s(v.prototype, l), p && s(v, p), d;
+        } }], (u = null) && a(v.prototype, u), p && a(v, p), d;
       }();
-    }, function(e, a) {
+    }, function(e, s) {
       var i = function(r) {
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
-      }, s = function(r, d, v, l) {
-        return d = d || null, v = v || "&", l = l || null, r ? function(p) {
+      }, a = function(r, d, v, u) {
+        return d = d || null, v = v || "&", u = u || null, r ? function(p) {
           for (var h = new Array(), y = 0; y < p.length; y++)
             p[y] && h.push(p[y]);
           return h;
         }(Object.keys(r).map(function(p) {
           var h, y, w = p;
-          if (l && (w = l + "[" + w + "]"), typeof r[p] == "object" && r[p] !== null)
-            h = s(r[p], null, v, w);
+          if (u && (w = u + "[" + w + "]"), typeof r[p] == "object" && r[p] !== null)
+            h = a(r[p], null, v, w);
           else {
             d && (y = w, w = !isNaN(parseFloat(y)) && isFinite(y) ? d + Number(w) : w);
             var b = r[p];
@@ -733,62 +733,65 @@ var A = { exports: {} };
           return h;
         })).join(v).replace(/[!'()*]/g, "") : "";
       };
-      e.exports = s;
+      e.exports = a;
     }]);
   });
-})(A);
-var $ = A.exports;
-const S = /* @__PURE__ */ G($), X = 0.85, J = 50, W = "image/webp", Y = "image/jpeg";
-function I(E, n) {
-  return E.toDataURL(n, X);
+})(x);
+var X = x.exports;
+const S = /* @__PURE__ */ $(X), J = 0.85, W = 50, Y = "image/webp", K = "image/jpeg";
+function R(k, n) {
+  return k.toDataURL(n, J);
 }
-function x(E, n) {
-  const e = document.createElement("canvas"), a = e.getContext("2d"), i = document.createElement("canvas"), s = i.getContext("2d"), r = Math.min(n.width, n.height), d = J / r, v = n.width * d;
+function B(k, n) {
+  const e = document.createElement("canvas"), s = e.getContext("2d"), i = document.createElement("canvas"), a = i.getContext("2d"), r = Math.min(n.width, n.height), d = W / r, v = n.width * d;
   e.width = v, e.height = v;
-  let l = Math.floor(n.width * 0.5);
-  if (i.width = l, i.height = l, s.drawImage(E, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !s.getImageData(0, 0, e.width, e.height).data.every((p) => p === 0)) {
-    for (; l * 0.5 > v; )
-      l = Math.floor(l * 0.5), s.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return a.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), I(e, W) || I(e, Y) || void 0;
+  let u = Math.floor(n.width * 0.5);
+  if (i.width = u, i.height = u, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, u, u), !a.getImageData(0, 0, e.width, e.height).data.every((p) => p === 0)) {
+    for (; u * 0.5 > v; )
+      u = Math.floor(u * 0.5), a.drawImage(i, 0, 0, u * 2, u * 2, 0, 0, u, u);
+    return s.drawImage(i, 0, 0, u, u, 0, 0, e.width, e.height), R(e, Y) || R(e, K) || void 0;
   }
 }
-const K = 5;
-function Q(E) {
+const Q = 5;
+function Z(k) {
   return new Promise((n) => {
-    const e = URL.createObjectURL(E), a = document.createElement("video");
-    a.oncanplay = () => {
-      a.onseeked = () => {
-        n(x(a, { width: a.videoWidth, height: a.videoHeight })), a.remove(), URL.revokeObjectURL(e);
-      }, a.currentTime = Math.min(a.duration / 2, K);
-    }, a.src = e;
+    const e = URL.createObjectURL(k), s = document.createElement("video");
+    s.oncanplay = () => {
+      s.onseeked = () => {
+        n(B(s, { width: s.videoWidth, height: s.videoHeight })), s.remove(), URL.revokeObjectURL(e);
+      }, s.currentTime = Math.min(s.duration / 2, Q);
+    }, s.src = e;
   });
 }
-function Z(E) {
+function z(k) {
   return new Promise((n) => {
-    const e = URL.createObjectURL(E), a = document.createElement("img");
-    a.onload = () => {
-      n(x(a, { width: a.naturalWidth, height: a.naturalHeight })), a.remove(), URL.revokeObjectURL(e);
-    }, a.src = e;
+    const e = URL.createObjectURL(k), s = document.createElement("img");
+    s.onload = () => {
+      n(B(s, { width: s.naturalWidth, height: s.naturalHeight })), s.remove(), URL.revokeObjectURL(e);
+    }, s.src = e;
   });
 }
-async function P(E, n) {
+async function F(k, n) {
   switch (n) {
     case "VIDEO":
-      return await Q(E);
+      return await Z(k);
     case "IMAGE":
-      return await Z(E);
+      return await z(k);
   }
   return "";
 }
-class z {
+function L(k) {
+  return k.type ? k.type.split("/")[0].toUpperCase() : P(k.name);
+}
+class tt {
   /**
    * @param {object} params - uploader module params
    * @param {MediaConfig} params.config - media tool config
    * @param {Function} params.onUpload - one callback for all uploading (file, url, d-n-d, pasting)
    * @param {Function} params.onError - callback for uploading errors
    */
-  constructor({ config: n, onUpload: e, onError: a }) {
-    this.config = n, this.onUpload = e, this.onError = a;
+  constructor({ config: n, onUpload: e, onError: s }) {
+    this.config = n, this.onUpload = e, this.onError = s;
   }
   /**
    * Handle clicks on the upload file button
@@ -797,27 +800,27 @@ class z {
    * @param {Function} onPreview - callback fired when preview is ready
    */
   async uploadSelectedFile({ onPreview: n }) {
-    const e = file.type ? file.type.split("/")[0].toUpperCase() : _(file.name);
-    P(file, e).then(n);
     try {
-      let a;
+      let e;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
-        const s = (await S.selectFiles({ accept: this.config.types }))[0];
-        preparePreview(s), a = { tag: e, ...await this.config.uploader.uploadByFile(s) };
+        const i = (await S.selectFiles({ accept: this.config.types }))[0], a = L(i);
+        F(i, a).then(n), e = { tag: a, ...await this.config.uploader.uploadByFile(i) };
       } else
-        a = await S.transport({
+        e = await S.transport({
           url: this.config.endpoints.byFile,
           data: this.config.additionalRequestData,
           accept: this.config.types,
           headers: this.config.additionalRequestHeaders,
-          beforeSend: (i) => {
-            preparePreview(i[0]);
+          beforeSend: (s) => {
+            preparePreview(s[0]);
+            const i = s[0], a = L(i);
+            F(i, a).then(n);
           },
           fieldName: this.config.field
-        }).then((i) => i.body);
-      this.onUpload(a);
-    } catch (a) {
-      this.onError(a);
+        }).then((s) => s.body);
+      this.onUpload(e);
+    } catch (e) {
+      this.onError(e);
     }
   }
   /**
@@ -829,14 +832,14 @@ class z {
   async uploadByUrl(n) {
     try {
       let e;
-      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? e = { tag: _(n), ...this.config.uploader.uploadByUrl(n) } : e = await S.post({
+      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? e = { tag: P(n), ...this.config.uploader.uploadByUrl(n) } : e = await S.post({
         url: this.config.endpoints.byUrl,
         data: Object.assign({
           url: n
         }, this.config.additionalRequestData),
         type: S.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((a) => a.body), this.onUpload(e);
+      }).then((s) => s.body), this.onUpload(e);
     } catch (e) {
       this.onError(e);
     }
@@ -849,19 +852,19 @@ class z {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(n, { onPreview: e }) {
-    const a = n.type ? n.type.split("/")[0].toUpperCase() : _(n.name);
-    P(n, a).then(e);
+    const s = L(n);
+    F(n, s).then(e);
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = { tag: a, ...await this.config.uploader.uploadByFile(n) };
+        i = { tag: s, ...await this.config.uploader.uploadByFile(n) };
       else {
-        const s = new FormData();
-        s.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
-          s.append(r, d);
+        const a = new FormData();
+        a.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
+          a.append(r, d);
         }), i = S.post({
           url: this.config.endpoints.byFile,
-          data: s,
+          data: a,
           type: S.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((r) => r.body);
@@ -903,7 +906,7 @@ class z {
  *   },
  * },
  */
-class L {
+class I {
   /**
    * Notify core that read-only mode is supported
    *
@@ -921,7 +924,7 @@ class L {
    */
   static get toolbox() {
     return {
-      icon: R,
+      icon: D,
       title: "Media"
     };
   }
@@ -934,19 +937,19 @@ class L {
     return [
       {
         name: "withBorder",
-        icon: N,
+        icon: q,
         title: "With border",
         toggle: !0
       },
       {
         name: "stretched",
-        icon: q,
+        icon: V,
         title: "Stretch media",
         toggle: !0
       },
       {
         name: "withBackground",
-        icon: B,
+        icon: N,
         title: "With background",
         toggle: !0
       }
@@ -960,8 +963,8 @@ class L {
    * @param {boolean} tool.readOnly - read-only mode flag
    * @param {BlockAPI|{}} tool.block - current Block API
    */
-  constructor({ data: n, config: e, api: a, readOnly: i, block: s }) {
-    this.api = a, this.readOnly = i, this.block = s, this.config = {
+  constructor({ data: n, config: e, api: s, readOnly: i, block: a }) {
+    this.api = s, this.readOnly = i, this.block = a, this.config = {
       endpoints: e.endpoints || "",
       additionalRequestData: e.additionalRequestData || {},
       additionalRequestHeaders: e.additionalRequestHeaders || {},
@@ -971,12 +974,12 @@ class L {
       buttonContent: e.buttonContent || "",
       uploader: e.uploader || void 0,
       actions: e.actions || []
-    }, this.uploader = new z({
+    }, this.uploader = new tt({
       config: this.config,
       onUpload: (r) => this.onUpload(r),
       onError: (r) => this.uploadingFailed(r)
     }), this.ui = new j({
-      api: a,
+      api: s,
       config: this.config,
       onSelectFile: () => {
         this.uploader.uploadSelectedFile({
@@ -1027,7 +1030,7 @@ class L {
    * @returns {Array}
    */
   renderSettings() {
-    return L.tunes.concat(this.config.actions).map((e) => ({
+    return I.tunes.concat(this.config.actions).map((e) => ({
       icon: e.icon,
       label: this.api.i18n.t(e.title),
       name: e.name,
@@ -1071,7 +1074,7 @@ class L {
        * Paste URL of media into the Editor
        */
       patterns: {
-        media: V
+        media: G
       },
       /**
        * Drag n drop file from into the Editor
@@ -1126,9 +1129,9 @@ class L {
    * @param {MediaToolData} data - data in Image Tool format
    */
   set data(n) {
-    this.media = n.file, this._data.caption = n.caption || "", this.ui.fillCaption(this._data.caption), L.tunes.forEach(({ name: e }) => {
-      const a = typeof n[e] < "u" ? n[e] === !0 || n[e] === "true" : !1;
-      this.setTune(e, a);
+    this.media = n.file, this._data.caption = n.caption || "", this.ui.fillCaption(this._data.caption), I.tunes.forEach(({ name: e }) => {
+      const s = typeof n[e] < "u" ? n[e] === !0 || n[e] === "true" : !1;
+      this.setTune(e, s);
     });
   }
   /**
@@ -1196,8 +1199,8 @@ class L {
   setTune(n, e) {
     this._data[n] = e, this.ui.applyTune(n, e), n === "stretched" && Promise.resolve().then(() => {
       this.block.stretched = e;
-    }).catch((a) => {
-      console.error(a);
+    }).catch((s) => {
+      console.error(s);
     });
   }
   /**
@@ -1224,5 +1227,5 @@ class L {
   }
 }
 export {
-  L as default
+  I as default
 };
