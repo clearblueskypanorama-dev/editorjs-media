@@ -7,7 +7,7 @@ import { getPreview } from './utils/preview';
  * @returns {string}
  */
 function getTag(file) {
-  return file.type ? file.type.split("/")[0].toUpperCase() : getFileType(file.name)
+  return file.type ? { "IMAGE": "IMG", "VIDEO": "VIDEO", "AUDIO": "AUDIO" }[file.type.split("/")[0].toUpperCase()] : getFileType(file.name)
 }
 
 /**
@@ -124,7 +124,7 @@ export default class Uploader {
 
     try {
       let result;
-      
+
       getPreview(file, tag).then((url) => {
         if (!result) onPreview(url);
       })
@@ -132,6 +132,7 @@ export default class Uploader {
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
         result = await this.config.uploader.uploadByFile(file)
+        console.debug(result)
       }
 
       // default
@@ -146,7 +147,7 @@ export default class Uploader {
           });
         }
 
-        result = ajax.post({
+        result = await ajax.post({
           url: this.config.endpoints.byFile,
           data: formData,
           type: ajax.contentType.JSON,

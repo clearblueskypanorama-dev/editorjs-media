@@ -151,8 +151,7 @@ export default class Ui {
    * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(url, tag = getFileType((new URL(url)).pathname) || "IMG") {
-    console.debug("fillMedia", url, tag)
+  fillMedia(url, tag = getFileType((new URL(url)).pathname)) {
     const attributes = {
       src: url,
     };
@@ -235,7 +234,6 @@ export default class Ui {
    */
   toggleStatus(status) {
     this.status = status
-    console.debug(status, this)
     for (const statusType in Ui.status) {
       if (Object.prototype.hasOwnProperty.call(Ui.status, statusType)) {
         this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${Ui.status[statusType]}`, status === Ui.status[statusType]);

@@ -329,6 +329,7 @@ export default class MediaTool {
         break;
       }
       case 'file': {
+        console.debug(event)
         const file = event.detail.file;
 
         this.uploadFile(file);
@@ -397,7 +398,6 @@ export default class MediaTool {
    * @returns {void}
    */
   onUpload(response) {
-    console.debug("onUpload", response)
     if (response.success && response.file) {
       this.media = response.file;
     } else {

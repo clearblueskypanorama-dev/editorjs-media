@@ -1,5 +1,5 @@
 (function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode('.media-tool{--bg-color: #cdd1e0;--front-color: #388ae5;--border-color: #e8e8eb}.media-tool__media{border-radius:3px;overflow:hidden;margin-bottom:10px}.media-tool__media-picture{max-width:100%;vertical-align:bottom;display:block}.media-tool__media-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;margin:auto;position:relative;background-color:var(--bg-color);background-position:center center}.media-tool__media-preloader:after{content:"";position:absolute;z-index:3;width:60px;height:60px;border-radius:50%;border:2px solid var(--bg-color);border-top-color:var(--front-color);left:50%;top:50%;margin-top:-30px;margin-left:-30px;animation:media-preloader-spin 2s infinite linear;box-sizing:border-box}.media-tool__caption[contentEditable=true][data-placeholder]:before{position:absolute!important;content:attr(data-placeholder);color:#707684;font-weight:400;display:none}.media-tool__caption[contentEditable=true][data-placeholder]:empty:before{display:block}.media-tool__caption[contentEditable=true][data-placeholder]:empty:focus:before{display:none}.media-tool--empty .media-tool__media,.media-tool--empty .media-tool__caption,.media-tool--loading .media-tool__caption{display:none}.media-tool .cdx-button{display:flex;align-items:center;justify-content:center}.media-tool .cdx-button svg{height:auto;margin:0 6px 0 0}.media-tool--filled .cdx-button,.media-tool--filled .media-tool__media-preloader{display:none}.media-tool--loading .media-tool__media{min-height:200px;display:flex;border:1px solid var(--border-color);background-color:#fff}.media-tool--loading .media-tool__media-picture,.media-tool--loading .cdx-button{display:none}.media-tool--withBorder .media-tool__media{border:1px solid var(--border-color)}.media-tool--withBackground .media-tool__media{padding:15px;background:var(--bg-color)}.media-tool--withBackground .media-tool__media-picture{max-width:60%;margin:0 auto}.media-tool--stretched .media-tool__media-picture{width:100%}@keyframes media-preloader-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}')),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
-const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', D = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
+const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', R = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
 function O(k, n = null, e = {}) {
   const s = document.createElement(k);
   Array.isArray(n) ? s.classList.add(...n) : n && s.classList.add(n);
@@ -7,14 +7,14 @@ function O(k, n = null, e = {}) {
     s[i] = e[i];
   return s;
 }
-const H = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), U = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), x = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...H, ...U, ...x].join("|")})(\\?[a-z0-9=]*)?$`, "i");
+const U = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), H = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), A = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...U, ...H, ...A].join("|")})(\\?[a-z0-9=]*)?$`, "i");
 function P(k) {
   const n = k.split(".").pop();
-  if (H.has(n))
-    return "IMG";
   if (U.has(n))
+    return "IMG";
+  if (H.has(n))
     return "AUDIO";
-  if (x.has(n))
+  if (A.has(n))
     return "VIDEO";
 }
 class j {
@@ -90,7 +90,7 @@ class j {
    */
   createFileButton() {
     const n = O("div", [this.CSS.button]);
-    return n.innerHTML = this.config.buttonContent || `${D} ${this.api.i18n.t("Select a media file")}`, n.addEventListener("click", () => {
+    return n.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select a media file")}`, n.addEventListener("click", () => {
       this.onSelectFile();
     }), n;
   }
@@ -118,8 +118,7 @@ class j {
    * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(n, e = P(new URL(n).pathname) || "IMG") {
-    console.debug("fillMedia", n, e);
+  fillMedia(n, e = P(new URL(n).pathname)) {
     const s = {
       src: n
     };
@@ -144,7 +143,7 @@ class j {
    * @returns {void}
    */
   toggleStatus(n) {
-    this.status = n, console.debug(n, this);
+    this.status = n;
     for (const e in j.status)
       Object.prototype.hasOwnProperty.call(j.status, e) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${j.status[e]}`, n === j.status[e]);
   }
@@ -162,7 +161,7 @@ class j {
 function $(k) {
   return k && k.__esModule && Object.prototype.hasOwnProperty.call(k, "default") ? k.default : k;
 }
-var A = { exports: {} };
+var x = { exports: {} };
 (function(k, n) {
   (function(e, s) {
     k.exports = s();
@@ -232,11 +231,11 @@ var A = { exports: {} };
               try {
                 g = u(o._value);
               } catch (m) {
-                return void y(c.promise, m);
+                return void w(c.promise, m);
               }
               h(c.promise, g);
             } else
-              (o._state === 1 ? h : y)(c.promise, o._value);
+              (o._state === 1 ? h : w)(c.promise, o._value);
           })) : o._deferreds.push(c);
         }
         function h(o, c) {
@@ -246,22 +245,22 @@ var A = { exports: {} };
             if (c && (typeof c == "object" || typeof c == "function")) {
               var u = c.then;
               if (c instanceof l)
-                return o._state = 3, o._value = c, void w(o);
+                return o._state = 3, o._value = c, void y(o);
               if (typeof u == "function")
                 return void t((g = u, m = c, function() {
                   g.apply(m, arguments);
                 }), o);
             }
-            o._state = 1, o._value = c, w(o);
+            o._state = 1, o._value = c, y(o);
           } catch (p) {
-            y(o, p);
+            w(o, p);
           }
           var g, m;
         }
-        function y(o, c) {
-          o._state = 2, o._value = c, w(o);
+        function w(o, c) {
+          o._state = 2, o._value = c, y(o);
         }
-        function w(o) {
+        function y(o) {
           o._state === 2 && o._deferreds.length === 0 && l._immediateFn(function() {
             o._handled || l._unhandledRejectionFn(o._value);
           });
@@ -278,12 +277,12 @@ var A = { exports: {} };
             o(function(g) {
               u || (u = !0, h(c, g));
             }, function(g) {
-              u || (u = !0, y(c, g));
+              u || (u = !0, w(c, g));
             });
           } catch (g) {
             if (u)
               return;
-            u = !0, y(c, g);
+            u = !0, w(c, g);
           }
         }
         l.prototype.catch = function(o) {
@@ -359,7 +358,7 @@ var A = { exports: {} };
         })(t);
       }
       i(4);
-      var r, d, v, l, f, h, y, w = i(8), b = (d = function(t) {
+      var r, d, v, l, f, h, w, y = i(8), b = (d = function(t) {
         return new Promise(function(o, c) {
           t = l(t), (t = f(t)).beforeSend && t.beforeSend();
           var u = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
@@ -381,8 +380,8 @@ var A = { exports: {} };
                 m = JSON.parse(m);
               } catch {
               }
-              var p = w.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: p };
-              y(u.status) ? o(E) : c(E);
+              var p = y.parseHeaders(u.getAllResponseHeaders()), E = { body: m, code: u.status, headers: p };
+              w(u.status) ? o(E) : c(E);
             }
           }, u.send(t.data);
         });
@@ -426,30 +425,30 @@ var A = { exports: {} };
             var c = function() {
               return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || r.JSON;
             }(t);
-            (w.isFormData(t.data) || w.isFormElement(t.data)) && (c = r.FORM), t.data = h(t.data, c), c !== b.contentType.FORM && (t.headers["content-type"] = c);
+            (y.isFormData(t.data) || y.isFormElement(t.data)) && (c = r.FORM), t.data = h(t.data, c), c !== b.contentType.FORM && (t.headers["content-type"] = c);
         }
         return t;
       }, h = function() {
         var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         switch (arguments.length > 1 ? arguments[1] : void 0) {
           case r.URLENCODED:
-            return w.urlEncode(t);
+            return y.urlEncode(t);
           case r.JSON:
-            return w.jsonEncode(t);
+            return y.jsonEncode(t);
           case r.FORM:
-            return w.formEncode(t);
+            return y.formEncode(t);
           default:
             return t;
         }
-      }, y = function(t) {
+      }, w = function(t) {
         return t >= 200 && t < 300;
       }, { contentType: r = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: d, get: function(t) {
         return t.method = "GET", d(t);
       }, post: v, transport: function(t) {
-        return t = l(t), w.selectFiles(t).then(function(o) {
+        return t = l(t), y.selectFiles(t).then(function(o) {
           for (var c = new FormData(), u = 0; u < o.length; u++)
             c.append(t.fieldName, o[u], o[u].name);
-          w.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
+          y.isObject(t.data) && Object.keys(t.data).forEach(function(m) {
             var p = t.data[m];
             c.append(m, p);
           });
@@ -459,7 +458,7 @@ var A = { exports: {} };
           }, t.data = c, v(t);
         });
       }, selectFiles: function(t) {
-        return delete (t = l(t)).beforeSend, w.selectFiles(t);
+        return delete (t = l(t)).beforeSend, y.selectFiles(t);
       } });
       e.exports = b;
     }, function(e, s, i) {
@@ -497,7 +496,7 @@ var A = { exports: {} };
       (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
-            var l, f, h, y, w, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
+            var l, f, h, w, y, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
             u = u && u.setTimeout ? u : d, {}.toString.call(d.process) === "[object process]" ? l = function(p) {
               r.nextTick(function() {
                 m(p);
@@ -509,10 +508,10 @@ var A = { exports: {} };
                   p = !1;
                 }, d.postMessage("", "*"), d.onmessage = E, p;
               }
-            }() ? (y = "setImmediate$" + Math.random() + "$", w = function(p) {
-              p.source === d && typeof p.data == "string" && p.data.indexOf(y) === 0 && m(+p.data.slice(y.length));
-            }, d.addEventListener ? d.addEventListener("message", w, !1) : d.attachEvent("onmessage", w), l = function(p) {
-              d.postMessage(y + p, "*");
+            }() ? (w = "setImmediate$" + Math.random() + "$", y = function(p) {
+              p.source === d && typeof p.data == "string" && p.data.indexOf(w) === 0 && m(+p.data.slice(w.length));
+            }, d.addEventListener ? d.addEventListener("message", y, !1) : d.attachEvent("onmessage", y), l = function(p) {
+              d.postMessage(w + p, "*");
             }) : d.MessageChannel ? ((h = new MessageChannel()).port1.onmessage = function(p) {
               m(p.data);
             }, l = function(p) {
@@ -605,20 +604,20 @@ var A = { exports: {} };
           a = v;
         }
       })();
-      var f, h = [], y = !1, w = -1;
+      var f, h = [], w = !1, y = -1;
       function b() {
-        y && f && (y = !1, f.length ? h = f.concat(h) : w = -1, h.length && t());
+        w && f && (w = !1, f.length ? h = f.concat(h) : y = -1, h.length && t());
       }
       function t() {
-        if (!y) {
+        if (!w) {
           var u = l(b);
-          y = !0;
+          w = !0;
           for (var g = h.length; g; ) {
-            for (f = h, h = []; ++w < g; )
-              f && f[w].run();
-            w = -1, g = h.length;
+            for (f = h, h = []; ++y < g; )
+              f && f[y].run();
+            y = -1, g = h.length;
           }
-          f = null, y = !1, function(m) {
+          f = null, w = !1, function(m) {
             if (a === clearTimeout)
               return clearTimeout(m);
             if ((a === v || !a) && clearTimeout)
@@ -645,7 +644,7 @@ var A = { exports: {} };
         if (arguments.length > 1)
           for (var m = 1; m < arguments.length; m++)
             g[m - 1] = arguments[m];
-        h.push(new o(u, g)), h.length !== 1 || y || l(t);
+        h.push(new o(u, g)), h.length !== 1 || w || l(t);
       }, o.prototype.run = function() {
         this.fun.apply(null, this.array);
       }, r.title = "browser", r.browser = !0, r.env = {}, r.argv = [], r.version = "", r.versions = {}, r.on = c, r.addListener = c, r.once = c, r.off = c, r.removeListener = c, r.removeAllListeners = c, r.emit = c, r.prependListener = c, r.prependOnceListener = c, r.listeners = function(u) {
@@ -669,8 +668,8 @@ var A = { exports: {} };
       var r = i(9);
       e.exports = function() {
         function d() {
-          (function(h, y) {
-            if (!(h instanceof y))
+          (function(h, w) {
+            if (!(h instanceof w))
               throw new TypeError("Cannot call a class as a function");
           })(this, d);
         }
@@ -685,11 +684,11 @@ var A = { exports: {} };
           if (this.isFormElement(h))
             return new FormData(h);
           if (this.isObject(h)) {
-            var y = new FormData();
-            return Object.keys(h).forEach(function(w) {
-              var b = h[w];
-              y.append(w, b);
-            }), y;
+            var w = new FormData();
+            return Object.keys(h).forEach(function(y) {
+              var b = h[y];
+              w.append(y, b);
+            }), w;
           }
           throw new Error("`data` must be an instance of Object, FormData or <FORM> HTMLElement");
         } }, { key: "isObject", value: function(h) {
@@ -700,19 +699,19 @@ var A = { exports: {} };
           return h instanceof HTMLFormElement;
         } }, { key: "selectFiles", value: function() {
           var h = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-          return new Promise(function(y, w) {
+          return new Promise(function(w, y) {
             var b = document.createElement("INPUT");
             b.type = "file", h.multiple && b.setAttribute("multiple", "multiple"), h.accept && b.setAttribute("accept", h.accept), b.style.display = "none", document.body.appendChild(b), b.addEventListener("change", function(t) {
               var o = t.target.files;
-              y(o), document.body.removeChild(b);
+              w(o), document.body.removeChild(b);
             }, !1), b.click();
           });
         } }, { key: "parseHeaders", value: function(h) {
-          var y = h.trim().split(/[\r\n]+/), w = {};
-          return y.forEach(function(b) {
+          var w = h.trim().split(/[\r\n]+/), y = {};
+          return w.forEach(function(b) {
             var t = b.split(": "), o = t.shift(), c = t.join(": ");
-            o && (w[o] = c);
-          }), w;
+            o && (y[o] = c);
+          }), y;
         } }], (l = null) && a(v.prototype, l), f && a(v, f), d;
       }();
     }, function(e, s) {
@@ -720,17 +719,17 @@ var A = { exports: {} };
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
       }, a = function(r, d, v, l) {
         return d = d || null, v = v || "&", l = l || null, r ? function(f) {
-          for (var h = new Array(), y = 0; y < f.length; y++)
-            f[y] && h.push(f[y]);
+          for (var h = new Array(), w = 0; w < f.length; w++)
+            f[w] && h.push(f[w]);
           return h;
         }(Object.keys(r).map(function(f) {
-          var h, y, w = f;
-          if (l && (w = l + "[" + w + "]"), typeof r[f] == "object" && r[f] !== null)
-            h = a(r[f], null, v, w);
+          var h, w, y = f;
+          if (l && (y = l + "[" + y + "]"), typeof r[f] == "object" && r[f] !== null)
+            h = a(r[f], null, v, y);
           else {
-            d && (y = w, w = !isNaN(parseFloat(y)) && isFinite(y) ? d + Number(w) : w);
+            d && (w = y, y = !isNaN(parseFloat(w)) && isFinite(w) ? d + Number(y) : y);
             var b = r[f];
-            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(w) + "=" + i(b);
+            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(y) + "=" + i(b);
           }
           return h;
         })).join(v).replace(/[!'()*]/g, "") : "";
@@ -738,10 +737,10 @@ var A = { exports: {} };
       e.exports = a;
     }]);
   });
-})(A);
-var X = A.exports;
+})(x);
+var X = x.exports;
 const S = /* @__PURE__ */ $(X), J = 0.85, W = 50, Y = "image/webp", K = "image/jpeg";
-function R(k, n) {
+function D(k, n) {
   return k.toDataURL(n, J);
 }
 function B(k, n) {
@@ -751,7 +750,7 @@ function B(k, n) {
   if (i.width = l, i.height = l, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, e.width, e.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
       l = Math.floor(l * 0.5), a.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return s.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), R(e, Y) || R(e, K) || void 0;
+    return s.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), D(e, Y) || D(e, K) || void 0;
   }
 }
 const Q = 5;
@@ -783,7 +782,7 @@ async function F(k, n) {
   return "";
 }
 function L(k) {
-  return k.type ? k.type.split("/")[0].toUpperCase() : P(k.name);
+  return k.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[k.type.split("/")[0].toUpperCase()] : P(k.name);
 }
 class tt {
   /**
@@ -862,12 +861,12 @@ class tt {
       if (F(n, s).then((a) => {
         i || e(a);
       }), this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = await this.config.uploader.uploadByFile(n);
+        i = await this.config.uploader.uploadByFile(n), console.debug(i);
       else {
         const a = new FormData();
         a.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
           a.append(r, d);
-        }), i = S.post({
+        }), i = await S.post({
           url: this.config.endpoints.byFile,
           data: a,
           type: S.contentType.JSON,
@@ -929,7 +928,7 @@ class I {
    */
   static get toolbox() {
     return {
-      icon: D,
+      icon: R,
       title: "Media"
     };
   }
@@ -1116,6 +1115,7 @@ class I {
         break;
       }
       case "file": {
+        console.debug(n);
         const e = n.detail.file;
         this.uploadFile(e);
         break;
@@ -1168,7 +1168,7 @@ class I {
    * @returns {void}
    */
   onUpload(n) {
-    console.debug("onUpload", n), n.success && n.file ? this.media = n.file : this.uploadingFailed("incorrect response: " + JSON.stringify(n));
+    n.success && n.file ? this.media = n.file : this.uploadingFailed("incorrect response: " + JSON.stringify(n));
   }
   /**
    * Handle uploader errors
