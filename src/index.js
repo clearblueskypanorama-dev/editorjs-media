@@ -306,6 +306,7 @@ export default class MediaTool {
    * @returns {void}
    */
   async onPaste(event) {
+    console.debug(event)
     switch (event.type) {
       case 'tag': {
         this.ui.showPreloader();

@@ -1098,7 +1098,7 @@ class I {
    * @returns {void}
    */
   async onPaste(n) {
-    switch (n.type) {
+    switch (console.debug(n), n.type) {
       case "tag": {
         this.ui.showPreloader();
         const e = n.detail.data;
