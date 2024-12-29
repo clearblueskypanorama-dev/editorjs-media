@@ -123,8 +123,8 @@ class C {
     };
     let i = "load";
     (e === "VIDEO" || e === "AUDIO") && (s.muted = !0, s.playsinline = !0, s.controls = !0, e === "AUDIO" && (s.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, s), this.nodes.mediaEl.addEventListener(i, () => {
-      console.debug("mount"), this.toggleStatus(C.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
-    }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl), console.debug(this.nodes.mediaEl);
+      this.toggleStatus(C.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
+    }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
   }
   /**
    * Shows caption input
@@ -1093,7 +1093,7 @@ class I {
    * @returns {void}
    */
   async onPaste(n) {
-    switch (n.type) {
+    switch (console.debug(n), n.type) {
       case "tag": {
         const e = n.detail.data;
         if (/^blob:/.test(e.src)) {

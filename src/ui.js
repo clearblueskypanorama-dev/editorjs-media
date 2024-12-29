@@ -201,7 +201,6 @@ export default class Ui {
      * Add load event listener
      */
     this.nodes.mediaEl.addEventListener(eventName, () => {
-      console.debug("mount")
       this.toggleStatus(Ui.status.FILLED);
 
       /**
@@ -213,7 +212,6 @@ export default class Ui {
     });
 
     this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
-    console.debug(this.nodes.mediaEl)
   }
 
   /**
