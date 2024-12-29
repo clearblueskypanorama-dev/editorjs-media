@@ -130,6 +130,7 @@ export default class Ui {
    * @returns {void}
    */
   showPreloader(src) {
+    console.debug("showPreloader", this, this.status)
     // ignore if already filled
     if (this.status === Ui.status.FILLED) return;
     this.nodes.mediaPreloader.style.backgroundImage = `url(${src})`;
@@ -235,10 +236,11 @@ export default class Ui {
    * @returns {void}
    */
   toggleStatus(status) {
+    this.status = status
+    console.debug(this, this.status)
     for (const statusType in Ui.status) {
       if (Object.prototype.hasOwnProperty.call(Ui.status, statusType)) {
         this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${Ui.status[statusType]}`, status === Ui.status[statusType]);
-        this.status = status
       }
     }
   }
