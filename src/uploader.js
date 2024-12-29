@@ -38,12 +38,13 @@ export default class Uploader {
   async uploadSelectedFile({ onPreview }) {
     try {
       let result;
+      let tag;
 
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
         const files = await ajax.selectFiles({ accept: this.config.types })
         const file = files[0]
-        const tag = getTag(file)
+        tag = getTag(file)
 
         getPreview(file, tag).then(onPreview)
 
@@ -60,7 +61,7 @@ export default class Uploader {
           beforeSend: (files) => {
             preparePreview(files[0]);
             const file = files[0]
-            const tag = getTag(file)
+            tag = getTag(file)
             getPreview(file, tag).then(onPreview)
           },
           fieldName: this.config.field,

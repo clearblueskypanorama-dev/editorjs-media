@@ -1,11 +1,11 @@
 (function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode('.media-tool{--bg-color: #cdd1e0;--front-color: #388ae5;--border-color: #e8e8eb}.media-tool__media{border-radius:3px;overflow:hidden;margin-bottom:10px}.media-tool__media-picture{max-width:100%;vertical-align:bottom;display:block}.media-tool__media-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;margin:auto;position:relative;background-color:var(--bg-color);background-position:center center}.media-tool__media-preloader:after{content:"";position:absolute;z-index:3;width:60px;height:60px;border-radius:50%;border:2px solid var(--bg-color);border-top-color:var(--front-color);left:50%;top:50%;margin-top:-30px;margin-left:-30px;animation:media-preloader-spin 2s infinite linear;box-sizing:border-box}.media-tool__caption[contentEditable=true][data-placeholder]:before{position:absolute!important;content:attr(data-placeholder);color:#707684;font-weight:400;display:none}.media-tool__caption[contentEditable=true][data-placeholder]:empty:before{display:block}.media-tool__caption[contentEditable=true][data-placeholder]:empty:focus:before{display:none}.media-tool--empty .media-tool__media,.media-tool--empty .media-tool__caption,.media-tool--loading .media-tool__caption{display:none}.media-tool .cdx-button{display:flex;align-items:center;justify-content:center}.media-tool .cdx-button svg{height:auto;margin:0 6px 0 0}.media-tool--filled .cdx-button,.media-tool--filled .media-tool__media-preloader{display:none}.media-tool--loading .media-tool__media{min-height:200px;display:flex;border:1px solid var(--border-color);background-color:#fff}.media-tool--loading .media-tool__media-picture,.media-tool--loading .cdx-button{display:none}.media-tool--withBorder .media-tool__media{border:1px solid var(--border-color)}.media-tool--withBackground .media-tool__media{padding:15px;background:var(--bg-color)}.media-tool--withBackground .media-tool__media-picture{max-width:60%;margin:0 auto}.media-tool--stretched .media-tool__media-picture{width:100%}@keyframes media-preloader-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}')),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
 const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', D = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
 function O(k, n = null, e = {}) {
-  const a = document.createElement(k);
-  Array.isArray(n) ? a.classList.add(...n) : n && a.classList.add(n);
+  const s = document.createElement(k);
+  Array.isArray(n) ? s.classList.add(...n) : n && s.classList.add(n);
   for (const i in e)
-    a[i] = e[i];
-  return a;
+    s[i] = e[i];
+  return s;
 }
 const H = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), U = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), x = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...H, ...U, ...x].join("|")})(\\?[a-z0-9=]*)?$`, "i");
 function P(k) {
@@ -25,8 +25,8 @@ class j {
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
    * @param {boolean} ui.readOnly - read-only mode flag
    */
-  constructor({ api: n, config: e, onSelectFile: a, readOnly: i }) {
-    this.api = n, this.config = e, this.onSelectFile = a, this.readOnly = i, this.nodes = {
+  constructor({ api: n, config: e, onSelectFile: s, readOnly: i }) {
+    this.api = n, this.config = e, this.onSelectFile = s, this.readOnly = i, this.nodes = {
       wrapper: O("div", [this.CSS.baseClass, this.CSS.wrapper]),
       mediaContainer: O("div", [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
@@ -118,11 +118,11 @@ class j {
    * @returns {void}
    */
   fillMedia(n, e = P(new URL(n).pathname) || "IMG") {
-    const a = {
+    const s = {
       src: n
     };
     let i = "load";
-    (e === "VIDEO" || e === "AUDIO") && (a.muted = !0, a.playsinline = !0, a.controls = !0, e === "AUDIO" && (a.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, a), this.nodes.mediaEl.addEventListener(i, () => {
+    (e === "VIDEO" || e === "AUDIO") && (s.muted = !0, s.playsinline = !0, s.controls = !0, e === "AUDIO" && (s.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, s), this.nodes.mediaEl.addEventListener(i, () => {
       console.debug("mount"), this.toggleStatus(j.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
     }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl), console.debug(this.nodes.mediaEl);
   }
@@ -161,42 +161,42 @@ function $(k) {
 }
 var A = { exports: {} };
 (function(k, n) {
-  (function(e, a) {
-    k.exports = a();
+  (function(e, s) {
+    k.exports = s();
   })(window, function() {
     return function(e) {
-      var a = {};
-      function i(s) {
-        if (a[s])
-          return a[s].exports;
-        var r = a[s] = { i: s, l: !1, exports: {} };
-        return e[s].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
+      var s = {};
+      function i(a) {
+        if (s[a])
+          return s[a].exports;
+        var r = s[a] = { i: a, l: !1, exports: {} };
+        return e[a].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
       }
-      return i.m = e, i.c = a, i.d = function(s, r, d) {
-        i.o(s, r) || Object.defineProperty(s, r, { enumerable: !0, get: d });
-      }, i.r = function(s) {
-        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(s, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(s, "__esModule", { value: !0 });
-      }, i.t = function(s, r) {
-        if (1 & r && (s = i(s)), 8 & r || 4 & r && typeof s == "object" && s && s.__esModule)
-          return s;
+      return i.m = e, i.c = s, i.d = function(a, r, d) {
+        i.o(a, r) || Object.defineProperty(a, r, { enumerable: !0, get: d });
+      }, i.r = function(a) {
+        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(a, "__esModule", { value: !0 });
+      }, i.t = function(a, r) {
+        if (1 & r && (a = i(a)), 8 & r || 4 & r && typeof a == "object" && a && a.__esModule)
+          return a;
         var d = /* @__PURE__ */ Object.create(null);
-        if (i.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: s }), 2 & r && typeof s != "string")
-          for (var v in s)
+        if (i.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: a }), 2 & r && typeof a != "string")
+          for (var v in a)
             i.d(d, v, (function(l) {
-              return s[l];
+              return a[l];
             }).bind(null, v));
         return d;
-      }, i.n = function(s) {
-        var r = s && s.__esModule ? function() {
-          return s.default;
+      }, i.n = function(a) {
+        var r = a && a.__esModule ? function() {
+          return a.default;
         } : function() {
-          return s;
+          return a;
         };
         return i.d(r, "a", r), r;
-      }, i.o = function(s, r) {
-        return Object.prototype.hasOwnProperty.call(s, r);
+      }, i.o = function(a, r) {
+        return Object.prototype.hasOwnProperty.call(a, r);
       }, i.p = "", i(i.s = 3);
-    }([function(e, a) {
+    }([function(e, s) {
       var i;
       i = function() {
         return this;
@@ -207,8 +207,8 @@ var A = { exports: {} };
         typeof window == "object" && (i = window);
       }
       e.exports = i;
-    }, function(e, a, i) {
-      (function(s) {
+    }, function(e, s, i) {
+      (function(a) {
         var r = i(2), d = setTimeout;
         function v() {
         }
@@ -326,30 +326,30 @@ var A = { exports: {} };
             for (var g = 0, m = o.length; g < m; g++)
               o[g].then(c, u);
           });
-        }, l._immediateFn = typeof s == "function" && function(o) {
-          s(o);
+        }, l._immediateFn = typeof a == "function" && function(o) {
+          a(o);
         } || function(o) {
           d(o, 0);
         }, l._unhandledRejectionFn = function(o) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", o);
-        }, a.a = l;
+        }, s.a = l;
       }).call(this, i(5).setImmediate);
-    }, function(e, a, i) {
-      a.a = function(s) {
+    }, function(e, s, i) {
+      s.a = function(a) {
         var r = this.constructor;
         return this.then(function(d) {
-          return r.resolve(s()).then(function() {
+          return r.resolve(a()).then(function() {
             return d;
           });
         }, function(d) {
-          return r.resolve(s()).then(function() {
+          return r.resolve(a()).then(function() {
             return r.reject(d);
           });
         });
       };
-    }, function(e, a, i) {
-      function s(t) {
-        return (s = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
+    }, function(e, s, i) {
+      function a(t) {
+        return (a = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
           return typeof o;
         } : function(o) {
           return o && typeof Symbol == "function" && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
@@ -391,7 +391,7 @@ var A = { exports: {} };
           throw new Error("Url must be a string");
         if (t.url = t.url || "", t.method && typeof t.method != "string")
           throw new Error("`method` must be a string or null");
-        if (t.method = t.method ? t.method.toUpperCase() : "GET", t.headers && s(t.headers) !== "object")
+        if (t.method = t.method ? t.method.toUpperCase() : "GET", t.headers && a(t.headers) !== "object")
           throw new Error("`headers` must be an object or null");
         if (t.headers = t.headers || {}, t.type && (typeof t.type != "string" || !Object.values(r).includes(t.type)))
           throw new Error("`type` must be taken from module's «contentType» library");
@@ -459,39 +459,39 @@ var A = { exports: {} };
         return delete (t = l(t)).beforeSend, y.selectFiles(t);
       } });
       e.exports = b;
-    }, function(e, a, i) {
-      i.r(a);
-      var s = i(1);
-      window.Promise = window.Promise || s.a;
-    }, function(e, a, i) {
-      (function(s) {
-        var r = s !== void 0 && s || typeof self < "u" && self || window, d = Function.prototype.apply;
+    }, function(e, s, i) {
+      i.r(s);
+      var a = i(1);
+      window.Promise = window.Promise || a.a;
+    }, function(e, s, i) {
+      (function(a) {
+        var r = a !== void 0 && a || typeof self < "u" && self || window, d = Function.prototype.apply;
         function v(l, f) {
           this._id = l, this._clearFn = f;
         }
-        a.setTimeout = function() {
+        s.setTimeout = function() {
           return new v(d.call(setTimeout, r, arguments), clearTimeout);
-        }, a.setInterval = function() {
+        }, s.setInterval = function() {
           return new v(d.call(setInterval, r, arguments), clearInterval);
-        }, a.clearTimeout = a.clearInterval = function(l) {
+        }, s.clearTimeout = s.clearInterval = function(l) {
           l && l.close();
         }, v.prototype.unref = v.prototype.ref = function() {
         }, v.prototype.close = function() {
           this._clearFn.call(r, this._id);
-        }, a.enroll = function(l, f) {
+        }, s.enroll = function(l, f) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = f;
-        }, a.unenroll = function(l) {
+        }, s.unenroll = function(l) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = -1;
-        }, a._unrefActive = a.active = function(l) {
+        }, s._unrefActive = s.active = function(l) {
           clearTimeout(l._idleTimeoutId);
           var f = l._idleTimeout;
           f >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
           }, f));
-        }, i(6), a.setImmediate = typeof self < "u" && self.setImmediate || s !== void 0 && s.setImmediate || this && this.setImmediate, a.clearImmediate = typeof self < "u" && self.clearImmediate || s !== void 0 && s.clearImmediate || this && this.clearImmediate;
+        }, i(6), s.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, s.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
       }).call(this, i(0));
-    }, function(e, a, i) {
-      (function(s, r) {
+    }, function(e, s, i) {
+      (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
             var l, f, h, w, y, b = 1, t = {}, o = !1, c = d.document, u = Object.getPrototypeOf && Object.getPrototypeOf(d);
@@ -565,10 +565,10 @@ var A = { exports: {} };
               }
             }
           }
-        })(typeof self > "u" ? s === void 0 ? this : s : self);
+        })(typeof self > "u" ? a === void 0 ? this : a : self);
       }).call(this, i(0), i(7));
-    }, function(e, a) {
-      var i, s, r = e.exports = {};
+    }, function(e, s) {
+      var i, a, r = e.exports = {};
       function d() {
         throw new Error("setTimeout has not been defined");
       }
@@ -597,9 +597,9 @@ var A = { exports: {} };
           i = d;
         }
         try {
-          s = typeof clearTimeout == "function" ? clearTimeout : v;
+          a = typeof clearTimeout == "function" ? clearTimeout : v;
         } catch {
-          s = v;
+          a = v;
         }
       })();
       var f, h = [], w = !1, y = -1;
@@ -616,17 +616,17 @@ var A = { exports: {} };
             y = -1, g = h.length;
           }
           f = null, w = !1, function(m) {
-            if (s === clearTimeout)
+            if (a === clearTimeout)
               return clearTimeout(m);
-            if ((s === v || !s) && clearTimeout)
-              return s = clearTimeout, clearTimeout(m);
+            if ((a === v || !a) && clearTimeout)
+              return a = clearTimeout, clearTimeout(m);
             try {
-              s(m);
+              a(m);
             } catch {
               try {
-                return s.call(null, m);
+                return a.call(null, m);
               } catch {
-                return s.call(this, m);
+                return a.call(this, m);
               }
             }
           }(u);
@@ -656,8 +656,8 @@ var A = { exports: {} };
       }, r.umask = function() {
         return 0;
       };
-    }, function(e, a, i) {
-      function s(d, v) {
+    }, function(e, s, i) {
+      function a(d, v) {
         for (var l = 0; l < v.length; l++) {
           var f = v[l];
           f.enumerable = f.enumerable || !1, f.configurable = !0, "value" in f && (f.writable = !0), Object.defineProperty(d, f.key, f);
@@ -710,12 +710,12 @@ var A = { exports: {} };
             var t = b.split(": "), o = t.shift(), c = t.join(": ");
             o && (y[o] = c);
           }), y;
-        } }], (l = null) && s(v.prototype, l), f && s(v, f), d;
+        } }], (l = null) && a(v.prototype, l), f && a(v, f), d;
       }();
-    }, function(e, a) {
+    }, function(e, s) {
       var i = function(r) {
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
-      }, s = function(r, d, v, l) {
+      }, a = function(r, d, v, l) {
         return d = d || null, v = v || "&", l = l || null, r ? function(f) {
           for (var h = new Array(), w = 0; w < f.length; w++)
             f[w] && h.push(f[w]);
@@ -723,7 +723,7 @@ var A = { exports: {} };
         }(Object.keys(r).map(function(f) {
           var h, w, y = f;
           if (l && (y = l + "[" + y + "]"), typeof r[f] == "object" && r[f] !== null)
-            h = s(r[f], null, v, y);
+            h = a(r[f], null, v, y);
           else {
             d && (w = y, y = !isNaN(parseFloat(w)) && isFinite(w) ? d + Number(y) : y);
             var b = r[f];
@@ -732,7 +732,7 @@ var A = { exports: {} };
           return h;
         })).join(v).replace(/[!'()*]/g, "") : "";
       };
-      e.exports = s;
+      e.exports = a;
     }]);
   });
 })(A);
@@ -742,32 +742,32 @@ function R(k, n) {
   return k.toDataURL(n, J);
 }
 function B(k, n) {
-  const e = document.createElement("canvas"), a = e.getContext("2d"), i = document.createElement("canvas"), s = i.getContext("2d"), r = Math.min(n.width, n.height), d = W / r, v = n.width * d;
+  const e = document.createElement("canvas"), s = e.getContext("2d"), i = document.createElement("canvas"), a = i.getContext("2d"), r = Math.min(n.width, n.height), d = W / r, v = n.width * d;
   e.width = v, e.height = v;
   let l = Math.floor(n.width * 0.5);
-  if (i.width = l, i.height = l, s.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !s.getImageData(0, 0, e.width, e.height).data.every((f) => f === 0)) {
+  if (i.width = l, i.height = l, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, e.width, e.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
-      l = Math.floor(l * 0.5), s.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return a.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), R(e, Y) || R(e, K) || void 0;
+      l = Math.floor(l * 0.5), a.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
+    return s.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), R(e, Y) || R(e, K) || void 0;
   }
 }
 const Q = 5;
 function Z(k) {
   return new Promise((n) => {
-    const e = URL.createObjectURL(k), a = document.createElement("video");
-    a.oncanplay = () => {
-      a.onseeked = () => {
-        n(B(a, { width: a.videoWidth, height: a.videoHeight })), a.remove(), URL.revokeObjectURL(e);
-      }, a.currentTime = Math.min(a.duration / 2, Q);
-    }, a.src = e;
+    const e = URL.createObjectURL(k), s = document.createElement("video");
+    s.oncanplay = () => {
+      s.onseeked = () => {
+        n(B(s, { width: s.videoWidth, height: s.videoHeight })), s.remove(), URL.revokeObjectURL(e);
+      }, s.currentTime = Math.min(s.duration / 2, Q);
+    }, s.src = e;
   });
 }
 function z(k) {
   return new Promise((n) => {
-    const e = URL.createObjectURL(k), a = document.createElement("img");
-    a.onload = () => {
-      n(B(a, { width: a.naturalWidth, height: a.naturalHeight })), a.remove(), URL.revokeObjectURL(e);
-    }, a.src = e;
+    const e = URL.createObjectURL(k), s = document.createElement("img");
+    s.onload = () => {
+      n(B(s, { width: s.naturalWidth, height: s.naturalHeight })), s.remove(), URL.revokeObjectURL(e);
+    }, s.src = e;
   });
 }
 async function F(k, n) {
@@ -789,8 +789,8 @@ class tt {
    * @param {Function} params.onUpload - one callback for all uploading (file, url, d-n-d, pasting)
    * @param {Function} params.onError - callback for uploading errors
    */
-  constructor({ config: n, onUpload: e, onError: a }) {
-    this.config = n, this.onUpload = e, this.onError = a;
+  constructor({ config: n, onUpload: e, onError: s }) {
+    this.config = n, this.onUpload = e, this.onError = s;
   }
   /**
    * Handle clicks on the upload file button
@@ -800,24 +800,24 @@ class tt {
    */
   async uploadSelectedFile({ onPreview: n }) {
     try {
-      let e;
+      let e, s;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
-        const i = (await S.selectFiles({ accept: this.config.types }))[0], s = L(i);
-        F(i, s).then(n), e = await this.config.uploader.uploadByFile(i);
+        const a = (await S.selectFiles({ accept: this.config.types }))[0];
+        s = L(a), F(a, s).then(n), e = await this.config.uploader.uploadByFile(a);
       } else
         e = await S.transport({
           url: this.config.endpoints.byFile,
           data: this.config.additionalRequestData,
           accept: this.config.types,
           headers: this.config.additionalRequestHeaders,
-          beforeSend: (a) => {
-            preparePreview(a[0]);
-            const i = a[0], s = L(i);
-            F(i, s).then(n);
+          beforeSend: (i) => {
+            preparePreview(i[0]);
+            const a = i[0];
+            s = L(a), F(a, s).then(n);
           },
           fieldName: this.config.field
-        }).then((a) => a.body);
-      e.file.tag || (e.file.tag = tag), this.onUpload(e);
+        }).then((i) => i.body);
+      e.file.tag || (e.file.tag = s), this.onUpload(e);
     } catch (e) {
       this.onError(e);
     }
@@ -838,7 +838,7 @@ class tt {
         }, this.config.additionalRequestData),
         type: S.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((a) => a.body), e.file.tag || (e.file.tag = P(n)), this.onUpload(e);
+      }).then((s) => s.body), e.file.tag || (e.file.tag = P(n)), this.onUpload(e);
     } catch (e) {
       this.onError(e);
     }
@@ -851,24 +851,24 @@ class tt {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(n, { onPreview: e }) {
-    const a = L(n);
-    F(n, a).then(e);
+    const s = L(n);
+    F(n, s).then(e);
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
         i = await this.config.uploader.uploadByFile(n);
       else {
-        const s = new FormData();
-        s.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
-          s.append(r, d);
+        const a = new FormData();
+        a.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
+          a.append(r, d);
         }), i = S.post({
           url: this.config.endpoints.byFile,
-          data: s,
+          data: a,
           type: S.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((r) => r.body);
       }
-      i.file.tag || (i.file.tag = a), this.onUpload(i);
+      i.file.tag || (i.file.tag = s), this.onUpload(i);
     } catch (i) {
       this.onError(i);
     }
@@ -962,8 +962,8 @@ class I {
    * @param {boolean} tool.readOnly - read-only mode flag
    * @param {BlockAPI|{}} tool.block - current Block API
    */
-  constructor({ data: n, config: e, api: a, readOnly: i, block: s }) {
-    this.api = a, this.readOnly = i, this.block = s, this.config = {
+  constructor({ data: n, config: e, api: s, readOnly: i, block: a }) {
+    this.api = s, this.readOnly = i, this.block = a, this.config = {
       endpoints: e.endpoints || "",
       additionalRequestData: e.additionalRequestData || {},
       additionalRequestHeaders: e.additionalRequestHeaders || {},
@@ -978,7 +978,7 @@ class I {
       onUpload: (r) => this.onUpload(r),
       onError: (r) => this.uploadingFailed(r)
     }), this.ui = new j({
-      api: a,
+      api: s,
       config: this.config,
       onSelectFile: () => {
         this.uploader.uploadSelectedFile({
@@ -1129,8 +1129,8 @@ class I {
    */
   set data(n) {
     this.media = n.file, this._data.caption = n.caption || "", this.ui.fillCaption(this._data.caption), I.tunes.forEach(({ name: e }) => {
-      const a = typeof n[e] < "u" ? n[e] === !0 || n[e] === "true" : !1;
-      this.setTune(e, a);
+      const s = typeof n[e] < "u" ? n[e] === !0 || n[e] === "true" : !1;
+      this.setTune(e, s);
     });
   }
   /**
@@ -1198,8 +1198,8 @@ class I {
   setTune(n, e) {
     this._data[n] = e, this.ui.applyTune(n, e), n === "stretched" && Promise.resolve().then(() => {
       this.block.stretched = e;
-    }).catch((a) => {
-      console.error(a);
+    }).catch((s) => {
+      console.error(s);
     });
   }
   /**
