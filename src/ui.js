@@ -147,23 +147,17 @@ export default class Ui {
    * Shows a medium
    *
    * @param {string} url - medium source
-   * @param {'VIDEO'|'AUDIO'|'IMAGE'|undefined} tag - medium source
+   * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(url, tag) {
-    /**
-     * Check for a source extension to compose element correctly: video tag for mp4, img — for others
-     */
-
-    if (!tag) tag = getFileType((new URL(url)).pathname) || "IMAGE";
-
+  fillMedia(url, tag = getFileType((new URL(url)).pathname) || "IMG") {
     const attributes = {
       src: url,
     };
 
     /**
-     * We use eventName variable because IMAGE and VIDEO tags have different event to be called on source load
-     * - IMAGE: load
+     * We use eventName variable because IMG and VIDEO tags have different event to be called on source load
+     * - IMG: load
      * - VIDEO: loadedmetadata
      *
      * @type {string}
@@ -206,6 +200,7 @@ export default class Ui {
      * Add load event listener
      */
     this.nodes.mediaEl.addEventListener(eventName, () => {
+      console.debug("mount")
       this.toggleStatus(Ui.status.FILLED);
 
       /**
@@ -217,6 +212,7 @@ export default class Ui {
     });
 
     this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
+    console.debug(this.nodes.mediaEl)
   }
 
   /**

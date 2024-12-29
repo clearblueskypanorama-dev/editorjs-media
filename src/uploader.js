@@ -49,7 +49,6 @@ export default class Uploader {
         getPreview(file, tag).then(onPreview)
 
         result = { tag, ...await this.config.uploader.uploadByFile(file) }
-        console.debug(result)
       }
 
       // default
@@ -88,8 +87,7 @@ export default class Uploader {
 
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByUrl === 'function') {
-        result = { tag: getFileType(url), ...this.config.uploader.uploadByUrl(url) }
-        console.debug(result)
+        result = { tag: getFileType(url), ...await this.config.uploader.uploadByUrl(url) }
       }
 
       // default
@@ -127,7 +125,6 @@ export default class Uploader {
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
         result = { tag, ...await this.config.uploader.uploadByFile(file) }
-        console.debug(result)
       }
 
       // default

@@ -11,7 +11,7 @@ const R = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif",
 function I(E) {
   const o = E.split(".").pop();
   if (R.has(o))
-    return "IMAGE";
+    return "IMG";
   if (D.has(o))
     return "AUDIO";
   if (x.has(o))
@@ -114,18 +114,17 @@ class S {
    * Shows a medium
    *
    * @param {string} url - medium source
-   * @param {'VIDEO'|'AUDIO'|'IMAGE'|undefined} tag - medium source
+   * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(o, n) {
-    n || (n = I(new URL(o).pathname) || "IMAGE");
+  fillMedia(o, n = I(new URL(o).pathname) || "IMG") {
     const c = {
       src: o
     };
     let i = "load";
     (n === "VIDEO" || n === "AUDIO") && (c.muted = !0, c.playsinline = !0, c.controls = !0, n === "AUDIO" && (c.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = M(n, this.CSS.mediaEl, c), this.nodes.mediaEl.addEventListener(i, () => {
-      this.toggleStatus(S.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
-    }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
+      console.debug("mount"), this.toggleStatus(S.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
+    }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl), console.debug(this.nodes.mediaEl);
   }
   /**
    * Shows caption input
@@ -766,7 +765,7 @@ class G {
       let n;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
         const i = (await O.selectFiles({ accept: this.config.types }))[0], a = P(i);
-        _(i, a).then(o), n = { tag: a, ...await this.config.uploader.uploadByFile(i) }, console.debug(n);
+        _(i, a).then(o), n = { tag: a, ...await this.config.uploader.uploadByFile(i) };
       } else
         n = await O.transport({
           url: this.config.endpoints.byFile,
@@ -794,7 +793,7 @@ class G {
   async uploadByUrl(o) {
     try {
       let n;
-      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? (n = { tag: I(o), ...this.config.uploader.uploadByUrl(o) }, console.debug(n)) : n = await O.post({
+      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? n = { tag: I(o), ...await this.config.uploader.uploadByUrl(o) } : n = await O.post({
         url: this.config.endpoints.byUrl,
         data: Object.assign({
           url: o
@@ -819,7 +818,7 @@ class G {
     try {
       let i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = { tag: c, ...await this.config.uploader.uploadByFile(o) }, console.debug(i);
+        i = { tag: c, ...await this.config.uploader.uploadByFile(o) };
       else {
         const a = new FormData();
         a.append(this.config.field, o), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
