@@ -308,13 +308,13 @@ export default class MediaTool {
   async onPaste(event) {
     switch (event.type) {
       case 'tag': {
+        this.ui.showPreloader();
         const media = event.detail.data;
 
         /** Images from PDF */
         if (/^blob:/.test(media.src)) {
           const response = await fetch(media.src);
           const file = await response.blob();
-
           this.uploadFile(file);
           break;
         }
@@ -323,15 +323,14 @@ export default class MediaTool {
         break;
       }
       case 'pattern': {
+        this.ui.showPreloader();
         const url = event.detail.data;
-
         this.uploadUrl(url);
         break;
       }
       case 'file': {
-        console.debug(event)
+        this.ui.showPreloader();
         const file = event.detail.file;
-
         this.uploadFile(file);
         break;
       }

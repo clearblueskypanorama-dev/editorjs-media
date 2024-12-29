@@ -132,7 +132,6 @@ export default class Uploader {
       // custom
       if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
         result = await this.config.uploader.uploadByFile(file)
-        console.debug(result)
       }
 
       // default

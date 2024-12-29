@@ -100,8 +100,8 @@ class j {
    * @param {string} src - preview source
    * @returns {void}
    */
-  showPreloader(n) {
-    this.nodes.mediaPreloader.style.backgroundImage = `url(${n})`, this.toggleStatus(j.status.UPLOADING);
+  showPreloader(n = "") {
+    this.nodes.mediaPreloader.style.backgroundImage = n ? `url(${n})` : "", this.toggleStatus(j.status.UPLOADING);
   }
   /**
    * Hide uploading preloader
@@ -861,7 +861,7 @@ class tt {
       if (F(n, s).then((a) => {
         i || e(a);
       }), this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = await this.config.uploader.uploadByFile(n), console.debug(i);
+        i = await this.config.uploader.uploadByFile(n);
       else {
         const a = new FormData();
         a.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
@@ -1100,6 +1100,7 @@ class I {
   async onPaste(n) {
     switch (n.type) {
       case "tag": {
+        this.ui.showPreloader();
         const e = n.detail.data;
         if (/^blob:/.test(e.src)) {
           const i = await (await fetch(e.src)).blob();
@@ -1110,12 +1111,13 @@ class I {
         break;
       }
       case "pattern": {
+        this.ui.showPreloader();
         const e = n.detail.data;
         this.uploadUrl(e);
         break;
       }
       case "file": {
-        console.debug(n);
+        this.ui.showPreloader();
         const e = n.detail.file;
         this.uploadFile(e);
         break;

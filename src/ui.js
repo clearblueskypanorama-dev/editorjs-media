@@ -25,7 +25,7 @@ export default class Ui {
     this.readOnly = readOnly;
     this.nodes = {
       wrapper: make('div', [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: make('div', [ this.CSS.mediaContainer ]),
+      mediaContainer: make('div', [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
       mediaEl: undefined,
       mediaPreloader: make('div', this.CSS.mediaPreloader),
@@ -112,7 +112,7 @@ export default class Ui {
    * @returns {Element}
    */
   createFileButton() {
-    const button = make('div', [ this.CSS.button ]);
+    const button = make('div', [this.CSS.button]);
 
     button.innerHTML = this.config.buttonContent || `${IconPicture} ${this.api.i18n.t('Select a media file')}`;
 
@@ -129,8 +129,8 @@ export default class Ui {
    * @param {string} src - preview source
    * @returns {void}
    */
-  showPreloader(src) {
-    this.nodes.mediaPreloader.style.backgroundImage = `url(${src})`;
+  showPreloader(src = "") {
+    this.nodes.mediaPreloader.style.backgroundImage = src ? `url(${src})` : "";
     this.toggleStatus(Ui.status.UPLOADING);
   }
 
