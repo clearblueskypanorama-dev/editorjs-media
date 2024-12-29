@@ -28,6 +28,8 @@ export default class Uploader {
    */
   uploadSelectedFile({ onPreview }) {
     const preparePreview = function (file) {
+      if (!onPreview) return;
+
       const reader = new FileReader();
 
       reader.readAsDataURL(file);
@@ -56,7 +58,7 @@ export default class Uploader {
         return customUpload;
       });
 
-    // default uploading
+      // default uploading
     } else {
       upload = ajax.transport({
         url: this.config.endpoints.byFile,
@@ -124,17 +126,19 @@ export default class Uploader {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   uploadByFile(file, { onPreview }) {
-    /**
+    if (onPreview) {
+      /**
      * Load file for preview
      *
      * @type {FileReader}
      */
-    const reader = new FileReader();
+      const reader = new FileReader();
 
-    reader.readAsDataURL(file);
-    reader.onload = (e) => {
-      onPreview(e.target.result);
-    };
+      reader.readAsDataURL(file);
+      reader.onload = (e) => {
+        onPreview(e.target.result);
+      };
+    }
 
     let upload;
 
