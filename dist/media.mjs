@@ -8,7 +8,7 @@ function L(k, e = null, n = {}) {
   return i;
 }
 const A = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), H = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), B = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), X = new RegExp(`https?:\\/\\/\\S+\\.(${[...A, ...H, ...B].join("|")})(\\?[a-z0-9=]*)?$`, "i");
-function x(k) {
+function D(k) {
   const e = k.split(".").pop();
   if (A.has(e))
     return "IMG";
@@ -76,7 +76,7 @@ class j {
    * @returns {Element}
    */
   render(e) {
-    return !e.file || Object.keys(e.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), console.debug(e, this.nodes), e.link && (this.nodes.mediaContainer.href = e.link), this.nodes.wrapper;
+    return !e.file || Object.keys(e.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), e.link && (this.nodes.mediaContainer.href = e.link), this.nodes.wrapper;
   }
   /**
    * Creates upload-file button
@@ -113,7 +113,7 @@ class j {
    * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(e, n = x(new URL(e).pathname)) {
+  fillMedia(e, n = D(new URL(e).pathname)) {
     const i = {
       src: e
     };
@@ -288,13 +288,13 @@ var N = { exports: {} };
                 if (C && (typeof C == "object" || typeof C == "function")) {
                   var T = C.then;
                   if (typeof T == "function")
-                    return void T.call(C, function(_) {
-                      p(M, _);
+                    return void T.call(C, function(I) {
+                      p(M, I);
                     }, u);
                 }
                 g[M] = C, --m == 0 && c(g);
-              } catch (_) {
-                u(_);
+              } catch (I) {
+                u(I);
               }
             }
             for (var E = 0; E < g.length; E++)
@@ -725,7 +725,7 @@ var N = { exports: {} };
 })(N);
 var Y = N.exports;
 const O = /* @__PURE__ */ J(Y), K = 0.85, Q = 50, Z = "image/webp", z = "image/jpeg";
-function D(k, e) {
+function x(k, e) {
   return k.toDataURL(e, K);
 }
 function V(k, e) {
@@ -735,7 +735,7 @@ function V(k, e) {
   if (s.width = l, s.height = l, a.drawImage(k, Math.max(0, (e.width - r) / 2), Math.max(0, (e.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, n.width, n.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
       l = Math.floor(l * 0.5), a.drawImage(s, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return i.drawImage(s, 0, 0, l, l, 0, 0, n.width, n.height), D(n, Z) || D(n, z) || void 0;
+    return i.drawImage(s, 0, 0, l, l, 0, 0, n.width, n.height), x(n, Z) || x(n, z) || void 0;
   }
 }
 const tt = 5;
@@ -767,7 +767,7 @@ async function S(k, e) {
   return "";
 }
 function F(k) {
-  return k.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[k.type.split("/")[0].toUpperCase()] : x(k.name);
+  return k.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[k.type.split("/")[0].toUpperCase()] : D(k.name);
 }
 class rt {
   /**
@@ -827,7 +827,7 @@ class rt {
         }, this.config.additionalRequestData),
         type: O.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((i) => i.body), n.file.tag || (n.file.tag = x(e)), this.onUpload(n);
+      }).then((i) => i.body), n.file.tag || (n.file.tag = D(e)), this.onUpload(n);
     } catch (n) {
       this.onError(n);
     }
@@ -864,13 +864,13 @@ class rt {
     }
   }
 }
-const P = "cdx-list", I = {
+const P = "cdx-list", _ = {
   wrapper: `${P}-start-with-field`,
   input: `${P}-start-with-field__input`,
   startWithElementWrapperInvalid: `${P}-start-with-field--invalid`
 };
 function ot(k, { value: e, placeholder: n, attributes: i, sanitize: s }) {
-  const a = L("div", I.wrapper), r = L("input", I.input, {
+  const a = L("div", _.wrapper), r = L("input", _.input, {
     placeholder: n,
     /**
      * Used to prevent focusing on the input by Tab key
@@ -888,7 +888,7 @@ function ot(k, { value: e, placeholder: n, attributes: i, sanitize: s }) {
   return a.appendChild(r), r.addEventListener("input", () => {
     s !== void 0 && (r.value = s(r.value));
     const d = r.checkValidity();
-    !d && !a.classList.contains(I.startWithElementWrapperInvalid) && a.classList.add(I.startWithElementWrapperInvalid), d && a.classList.contains(I.startWithElementWrapperInvalid) && a.classList.remove(I.startWithElementWrapperInvalid), d && k(r.value);
+    !d && !a.classList.contains(_.startWithElementWrapperInvalid) && a.classList.add(_.startWithElementWrapperInvalid), d && a.classList.contains(_.startWithElementWrapperInvalid) && a.classList.remove(_.startWithElementWrapperInvalid), d && k(r.value);
   }), a;
 }
 /**
@@ -1073,10 +1073,10 @@ class R {
             {
               element: ot(
                 (e) => {
-                  this.data.link = e, this.ui.nodes.mediaContainer.href = e;
+                  this._data.link = e, this.ui.nodes.mediaContainer.href = e;
                 },
                 {
-                  value: this.data.link || "",
+                  value: this._data.link || "",
                   placeholder: this.api.i18n.t("Add a link"),
                   target: "_blank"
                 }

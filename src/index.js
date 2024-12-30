@@ -263,11 +263,11 @@ export default class MediaTool {
             {
               element: renderToolboxInput(
                 (link) => {
-                  this.data["link"] = link
+                  this._data["link"] = link
                   this.ui.nodes.mediaContainer.href = link
                 },
                 {
-                  value: this.data["link"] || "",
+                  value: this._data["link"] || "",
                   placeholder: this.api.i18n.t('Add a link'),
                   target: "_blank",
                 }),
