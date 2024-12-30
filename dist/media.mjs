@@ -981,7 +981,7 @@ class R {
    * @param {BlockAPI|{}} tool.block - current Block API
    */
   constructor({ data: e, config: n, api: i, readOnly: s, block: a }) {
-    this.api = i, this.readOnly = s, this.block = a, console.debug(e), this.config = {
+    this.api = i, this.readOnly = s, this.block = a, this.config = {
       endpoints: n.endpoints || "",
       additionalRequestData: n.additionalRequestData || {},
       additionalRequestHeaders: n.additionalRequestHeaders || {},
@@ -1178,7 +1178,7 @@ class R {
     this.media = e.file, R.tunes.forEach(({ name: n }) => {
       const i = typeof e[n] < "u" ? e[n] === !0 || e[n] === "true" : !1;
       this.setTune(n, i);
-    });
+    }), e.link && (this._data.link = e.link);
   }
   /**
    * Return Tool data

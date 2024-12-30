@@ -138,7 +138,6 @@ export default class MediaTool {
     this.api = api;
     this.readOnly = readOnly;
     this.block = block;
-    console.debug(data)
 
     /**
      * Tool's initial config
@@ -382,6 +381,8 @@ export default class MediaTool {
 
       this.setTune(tune, value);
     });
+
+    if (data.link) this._data["link"] = data.link;
   }
 
   /**
