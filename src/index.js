@@ -171,12 +171,13 @@ export default class MediaTool {
       config: this.config,
       onSelectFile: async () => {
         const files = await selectFiles({ accept: this.config.types, multiple: true })
-        let index = this.api.blocks.getCurrentBlockIndex()
+        const current = this.api.blocks.getCurrentBlockIndex()
+        let index = current
         for (let _file of files) {
           index++
           this.api.blocks.insert(this.config.field, { _file }, config, index)
         }
-        this.api.blocks.delete(index)
+        this.api.blocks.delete(current)
       },
       readOnly,
     });
