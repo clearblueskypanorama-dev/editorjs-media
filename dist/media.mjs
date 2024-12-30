@@ -1,20 +1,20 @@
 (function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode('.media-tool{--bg-color: #cdd1e0;--front-color: #388ae5;--border-color: #e8e8eb}.media-tool__media{border-radius:3px;overflow:hidden;margin-bottom:10px}.media-tool__media-picture{max-width:100%;vertical-align:bottom;display:block}.media-tool__media-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;margin:auto;position:relative;background-color:var(--bg-color);background-position:center center}.media-tool__media-preloader:after{content:"";position:absolute;z-index:3;width:60px;height:60px;border-radius:50%;border:2px solid var(--bg-color);border-top-color:var(--front-color);left:50%;top:50%;margin-top:-30px;margin-left:-30px;animation:media-preloader-spin 2s infinite linear;box-sizing:border-box}.media-tool__caption[contentEditable=true][data-placeholder]:before{position:absolute!important;content:attr(data-placeholder);color:#707684;font-weight:400;display:none}.media-tool__caption[contentEditable=true][data-placeholder]:empty:before{display:block}.media-tool__caption[contentEditable=true][data-placeholder]:empty:focus:before{display:none}.media-tool--empty .media-tool__media,.media-tool--empty .media-tool__caption,.media-tool--loading .media-tool__caption{display:none}.media-tool .cdx-button{display:flex;align-items:center;justify-content:center}.media-tool .cdx-button svg{height:auto;margin:0 6px 0 0}.media-tool--filled .cdx-button,.media-tool--filled .media-tool__media-preloader{display:none}.media-tool--loading .media-tool__media{min-height:200px;display:flex;border:1px solid var(--border-color);background-color:#fff}.media-tool--loading .media-tool__media-picture,.media-tool--loading .cdx-button{display:none}.media-tool--withBorder .media-tool__media{border:1px solid var(--border-color)}.media-tool--withBackground .media-tool__media{padding:15px;background:var(--bg-color)}.media-tool--withBackground .media-tool__media-picture{max-width:60%;margin:0 auto}.media-tool--stretched .media-tool__media-picture{width:100%}@keyframes media-preloader-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}')),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
-const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', R = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
-function O(k, n = null, e = {}) {
-  const s = document.createElement(k);
-  Array.isArray(n) ? s.classList.add(...n) : n && s.classList.add(n);
-  for (const i in e)
-    s[i] = e[i];
-  return s;
+const q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', W = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', $ = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"/></svg>', U = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', G = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
+function L(k, e = null, n = {}) {
+  const i = document.createElement(k);
+  Array.isArray(e) ? i.classList.add(...e) : e && i.classList.add(e);
+  for (const s in n)
+    i[s] = n[s];
+  return i;
 }
-const U = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), H = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), A = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...U, ...H, ...A].join("|")})(\\?[a-z0-9=]*)?$`, "i");
-function P(k) {
-  const n = k.split(".").pop();
-  if (U.has(n))
+const A = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), H = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), B = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), X = new RegExp(`https?:\\/\\/\\S+\\.(${[...A, ...H, ...B].join("|")})(\\?[a-z0-9=]*)?$`, "i");
+function D(k) {
+  const e = k.split(".").pop();
+  if (A.has(e))
     return "IMG";
-  if (H.has(n))
+  if (H.has(e))
     return "AUDIO";
-  if (A.has(n))
+  if (B.has(e))
     return "VIDEO";
 }
 class j {
@@ -22,21 +22,17 @@ class j {
    * @param {object} ui - media tool Ui module
    * @param {object} ui.api - Editor.js API
    * @param {MediaConfig} ui.config - user config
-   * @param {string} ui.status - status
    * @param {Function} ui.onSelectFile - callback for clicks on Select file button
    * @param {boolean} ui.readOnly - read-only mode flag
    */
-  constructor({ api: n, config: e, onSelectFile: s, readOnly: i }) {
-    this.api = n, this.config = e, this.status = "empty", this.onSelectFile = s, this.readOnly = i, this.nodes = {
-      wrapper: O("div", [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: O("div", [this.CSS.mediaContainer]),
+  constructor({ api: e, config: n, onSelectFile: i, readOnly: s }) {
+    this.api = e, this.config = n, this.onSelectFile = i, this.readOnly = s, this.nodes = {
+      wrapper: L("div", [this.CSS.baseClass, this.CSS.wrapper]),
+      mediaContainer: L("a", [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
       mediaEl: void 0,
-      mediaPreloader: O("div", this.CSS.mediaPreloader),
-      caption: O("div", [this.CSS.input, this.CSS.caption], {
-        contentEditable: !this.readOnly
-      })
-    }, this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder, this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader), this.nodes.wrapper.appendChild(this.nodes.mediaContainer), this.nodes.wrapper.appendChild(this.nodes.caption), this.nodes.wrapper.appendChild(this.nodes.fileButton);
+      mediaPreloader: L("div", this.CSS.mediaPreloader)
+    }, this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader), this.nodes.wrapper.appendChild(this.nodes.mediaContainer), this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
   /**
    * CSS classes
@@ -55,8 +51,7 @@ class j {
       wrapper: "media-tool",
       mediaContainer: "media-tool__media",
       mediaPreloader: "media-tool__media-preloader",
-      mediaEl: "media-tool__media-picture",
-      caption: "media-tool__caption"
+      mediaEl: "media-tool__media-picture"
     };
   }
   /**
@@ -80,8 +75,8 @@ class j {
    * @param {MediaToolData} toolData - saved tool data
    * @returns {Element}
    */
-  render(n) {
-    return !n.file || Object.keys(n.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), this.nodes.wrapper;
+  render(e) {
+    return !e.file || Object.keys(e.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), e.link && (this.nodes.mediaContainer.href = e.link), this.nodes.wrapper;
   }
   /**
    * Creates upload-file button
@@ -89,10 +84,10 @@ class j {
    * @returns {Element}
    */
   createFileButton() {
-    const n = O("div", [this.CSS.button]);
-    return n.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select a media file")}`, n.addEventListener("click", () => {
+    const e = L("div", [this.CSS.button]);
+    return e.innerHTML = this.config.buttonContent || `${U} ${this.api.i18n.t("Select a media file")}`, e.addEventListener("click", () => {
       this.onSelectFile();
-    }), n;
+    }), e;
   }
   /**
    * Shows uploading preloader
@@ -100,8 +95,8 @@ class j {
    * @param {string} src - preview source
    * @returns {void}
    */
-  showPreloader(n = "") {
-    this.nodes.mediaPreloader.style.backgroundImage = n ? `url(${n})` : "", this.toggleStatus(j.status.UPLOADING);
+  showPreloader(e = "") {
+    this.nodes.mediaPreloader.style.backgroundImage = e ? `url(${e})` : "", this.toggleStatus(j.status.UPLOADING);
   }
   /**
    * Hide uploading preloader
@@ -118,23 +113,14 @@ class j {
    * @param {'VIDEO'|'AUDIO'|'IMG'|undefined} tag - medium source
    * @returns {void}
    */
-  fillMedia(n, e = P(new URL(n).pathname)) {
-    const s = {
-      src: n
+  fillMedia(e, n = D(new URL(e).pathname)) {
+    const i = {
+      src: e
     };
-    let i = "load";
-    (e === "VIDEO" || e === "AUDIO") && (s.muted = !0, s.playsinline = !0, s.controls = !0, e === "AUDIO" && (s.style = "width: 100%;"), i = "loadedmetadata"), this.nodes.mediaEl = O(e, this.CSS.mediaEl, s), this.nodes.mediaEl.addEventListener(i, () => {
+    let s = "load";
+    (n === "VIDEO" || n === "AUDIO") && (i.muted = !0, i.playsinline = !0, i.controls = !0, n === "AUDIO" && (i.style = "width: 100%;"), s = "loadedmetadata"), this.nodes.mediaEl = L(n, this.CSS.mediaEl, i), this.nodes.mediaEl.addEventListener(s, () => {
       this.toggleStatus(j.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
     }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
-  }
-  /**
-   * Shows caption input
-   *
-   * @param {string} text - caption text
-   * @returns {void}
-   */
-  fillCaption(n) {
-    this.nodes.caption && (this.nodes.caption.innerHTML = n);
   }
   /**
    * Changes UI status
@@ -142,10 +128,9 @@ class j {
    * @param {string} status - see {@link Ui.status} constants
    * @returns {void}
    */
-  toggleStatus(n) {
-    this.status = n;
-    for (const e in j.status)
-      Object.prototype.hasOwnProperty.call(j.status, e) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${j.status[e]}`, n === j.status[e]);
+  toggleStatus(e) {
+    for (const n in j.status)
+      Object.prototype.hasOwnProperty.call(j.status, n) && this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${j.status[n]}`, e === j.status[n]);
   }
   /**
    * Apply visual representation of activated tune
@@ -154,64 +139,64 @@ class j {
    * @param {boolean} status - true for enable, false for disable
    * @returns {void}
    */
-  applyTune(n, e) {
-    this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${n}`, e);
+  applyTune(e, n) {
+    this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${e}`, n);
   }
 }
-function $(k) {
+function J(k) {
   return k && k.__esModule && Object.prototype.hasOwnProperty.call(k, "default") ? k.default : k;
 }
-var x = { exports: {} };
-(function(k, n) {
-  (function(e, s) {
-    k.exports = s();
+var N = { exports: {} };
+(function(k, e) {
+  (function(n, i) {
+    k.exports = i();
   })(window, function() {
-    return function(e) {
-      var s = {};
-      function i(a) {
-        if (s[a])
-          return s[a].exports;
-        var r = s[a] = { i: a, l: !1, exports: {} };
-        return e[a].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
+    return function(n) {
+      var i = {};
+      function s(a) {
+        if (i[a])
+          return i[a].exports;
+        var r = i[a] = { i: a, l: !1, exports: {} };
+        return n[a].call(r.exports, r, r.exports, s), r.l = !0, r.exports;
       }
-      return i.m = e, i.c = s, i.d = function(a, r, d) {
-        i.o(a, r) || Object.defineProperty(a, r, { enumerable: !0, get: d });
-      }, i.r = function(a) {
+      return s.m = n, s.c = i, s.d = function(a, r, d) {
+        s.o(a, r) || Object.defineProperty(a, r, { enumerable: !0, get: d });
+      }, s.r = function(a) {
         typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(a, "__esModule", { value: !0 });
-      }, i.t = function(a, r) {
-        if (1 & r && (a = i(a)), 8 & r || 4 & r && typeof a == "object" && a && a.__esModule)
+      }, s.t = function(a, r) {
+        if (1 & r && (a = s(a)), 8 & r || 4 & r && typeof a == "object" && a && a.__esModule)
           return a;
         var d = /* @__PURE__ */ Object.create(null);
-        if (i.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: a }), 2 & r && typeof a != "string")
+        if (s.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: a }), 2 & r && typeof a != "string")
           for (var v in a)
-            i.d(d, v, (function(l) {
+            s.d(d, v, (function(l) {
               return a[l];
             }).bind(null, v));
         return d;
-      }, i.n = function(a) {
+      }, s.n = function(a) {
         var r = a && a.__esModule ? function() {
           return a.default;
         } : function() {
           return a;
         };
-        return i.d(r, "a", r), r;
-      }, i.o = function(a, r) {
+        return s.d(r, "a", r), r;
+      }, s.o = function(a, r) {
         return Object.prototype.hasOwnProperty.call(a, r);
-      }, i.p = "", i(i.s = 3);
-    }([function(e, s) {
-      var i;
-      i = function() {
+      }, s.p = "", s(s.s = 3);
+    }([function(n, i) {
+      var s;
+      s = function() {
         return this;
       }();
       try {
-        i = i || new Function("return this")();
+        s = s || new Function("return this")();
       } catch {
-        typeof window == "object" && (i = window);
+        typeof window == "object" && (s = window);
       }
-      e.exports = i;
-    }, function(e, s, i) {
+      n.exports = s;
+    }, function(n, i, s) {
       (function(a) {
-        var r = i(2), d = setTimeout;
+        var r = s(2), d = setTimeout;
         function v() {
         }
         function l(o) {
@@ -298,16 +283,16 @@ var x = { exports: {} };
             if (g.length === 0)
               return c([]);
             var m = g.length;
-            function p(C, M) {
+            function p(M, C) {
               try {
-                if (M && (typeof M == "object" || typeof M == "function")) {
-                  var T = M.then;
+                if (C && (typeof C == "object" || typeof C == "function")) {
+                  var T = C.then;
                   if (typeof T == "function")
-                    return void T.call(M, function(_) {
-                      p(C, _);
+                    return void T.call(C, function(_) {
+                      p(M, _);
                     }, u);
                 }
-                g[C] = M, --m == 0 && c(g);
+                g[M] = C, --m == 0 && c(g);
               } catch (_) {
                 u(_);
               }
@@ -334,10 +319,10 @@ var x = { exports: {} };
           d(o, 0);
         }, l._unhandledRejectionFn = function(o) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", o);
-        }, s.a = l;
-      }).call(this, i(5).setImmediate);
-    }, function(e, s, i) {
-      s.a = function(a) {
+        }, i.a = l;
+      }).call(this, s(5).setImmediate);
+    }, function(n, i, s) {
+      i.a = function(a) {
         var r = this.constructor;
         return this.then(function(d) {
           return r.resolve(a()).then(function() {
@@ -349,7 +334,7 @@ var x = { exports: {} };
           });
         });
       };
-    }, function(e, s, i) {
+    }, function(n, i, s) {
       function a(t) {
         return (a = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(o) {
           return typeof o;
@@ -357,8 +342,8 @@ var x = { exports: {} };
           return o && typeof Symbol == "function" && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
         })(t);
       }
-      i(4);
-      var r, d, v, l, f, h, w, y = i(8), b = (d = function(t) {
+      s(4);
+      var r, d, v, l, f, h, w, y = s(8), b = (d = function(t) {
         return new Promise(function(o, c) {
           t = l(t), (t = f(t)).beforeSend && t.beforeSend();
           var u = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
@@ -460,39 +445,39 @@ var x = { exports: {} };
       }, selectFiles: function(t) {
         return delete (t = l(t)).beforeSend, y.selectFiles(t);
       } });
-      e.exports = b;
-    }, function(e, s, i) {
-      i.r(s);
-      var a = i(1);
+      n.exports = b;
+    }, function(n, i, s) {
+      s.r(i);
+      var a = s(1);
       window.Promise = window.Promise || a.a;
-    }, function(e, s, i) {
+    }, function(n, i, s) {
       (function(a) {
         var r = a !== void 0 && a || typeof self < "u" && self || window, d = Function.prototype.apply;
         function v(l, f) {
           this._id = l, this._clearFn = f;
         }
-        s.setTimeout = function() {
+        i.setTimeout = function() {
           return new v(d.call(setTimeout, r, arguments), clearTimeout);
-        }, s.setInterval = function() {
+        }, i.setInterval = function() {
           return new v(d.call(setInterval, r, arguments), clearInterval);
-        }, s.clearTimeout = s.clearInterval = function(l) {
+        }, i.clearTimeout = i.clearInterval = function(l) {
           l && l.close();
         }, v.prototype.unref = v.prototype.ref = function() {
         }, v.prototype.close = function() {
           this._clearFn.call(r, this._id);
-        }, s.enroll = function(l, f) {
+        }, i.enroll = function(l, f) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = f;
-        }, s.unenroll = function(l) {
+        }, i.unenroll = function(l) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = -1;
-        }, s._unrefActive = s.active = function(l) {
+        }, i._unrefActive = i.active = function(l) {
           clearTimeout(l._idleTimeoutId);
           var f = l._idleTimeout;
           f >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
           }, f));
-        }, i(6), s.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, s.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
-      }).call(this, i(0));
-    }, function(e, s, i) {
+        }, s(6), i.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
+      }).call(this, s(0));
+    }, function(n, i, s) {
       (function(a, r) {
         (function(d, v) {
           if (!d.setImmediate) {
@@ -525,10 +510,10 @@ var x = { exports: {} };
               setTimeout(m, 0, p);
             }, u.setImmediate = function(p) {
               typeof p != "function" && (p = new Function("" + p));
-              for (var E = new Array(arguments.length - 1), C = 0; C < E.length; C++)
-                E[C] = arguments[C + 1];
-              var M = { callback: p, args: E };
-              return t[b] = M, l(b), b++;
+              for (var E = new Array(arguments.length - 1), M = 0; M < E.length; M++)
+                E[M] = arguments[M + 1];
+              var C = { callback: p, args: E };
+              return t[b] = C, l(b), b++;
             }, u.clearImmediate = g;
           }
           function g(p) {
@@ -542,23 +527,23 @@ var x = { exports: {} };
               if (E) {
                 o = !0;
                 try {
-                  (function(C) {
-                    var M = C.callback, T = C.args;
+                  (function(M) {
+                    var C = M.callback, T = M.args;
                     switch (T.length) {
                       case 0:
-                        M();
+                        C();
                         break;
                       case 1:
-                        M(T[0]);
+                        C(T[0]);
                         break;
                       case 2:
-                        M(T[0], T[1]);
+                        C(T[0], T[1]);
                         break;
                       case 3:
-                        M(T[0], T[1], T[2]);
+                        C(T[0], T[1], T[2]);
                         break;
                       default:
-                        M.apply(v, T);
+                        C.apply(v, T);
                     }
                   })(E);
                 } finally {
@@ -568,9 +553,9 @@ var x = { exports: {} };
             }
           }
         })(typeof self > "u" ? a === void 0 ? this : a : self);
-      }).call(this, i(0), i(7));
-    }, function(e, s) {
-      var i, a, r = e.exports = {};
+      }).call(this, s(0), s(7));
+    }, function(n, i) {
+      var s, a, r = n.exports = {};
       function d() {
         throw new Error("setTimeout has not been defined");
       }
@@ -578,25 +563,25 @@ var x = { exports: {} };
         throw new Error("clearTimeout has not been defined");
       }
       function l(u) {
-        if (i === setTimeout)
+        if (s === setTimeout)
           return setTimeout(u, 0);
-        if ((i === d || !i) && setTimeout)
-          return i = setTimeout, setTimeout(u, 0);
+        if ((s === d || !s) && setTimeout)
+          return s = setTimeout, setTimeout(u, 0);
         try {
-          return i(u, 0);
+          return s(u, 0);
         } catch {
           try {
-            return i.call(null, u, 0);
+            return s.call(null, u, 0);
           } catch {
-            return i.call(this, u, 0);
+            return s.call(this, u, 0);
           }
         }
       }
       (function() {
         try {
-          i = typeof setTimeout == "function" ? setTimeout : d;
+          s = typeof setTimeout == "function" ? setTimeout : d;
         } catch {
-          i = d;
+          s = d;
         }
         try {
           a = typeof clearTimeout == "function" ? clearTimeout : v;
@@ -658,15 +643,15 @@ var x = { exports: {} };
       }, r.umask = function() {
         return 0;
       };
-    }, function(e, s, i) {
+    }, function(n, i, s) {
       function a(d, v) {
         for (var l = 0; l < v.length; l++) {
           var f = v[l];
           f.enumerable = f.enumerable || !1, f.configurable = !0, "value" in f && (f.writable = !0), Object.defineProperty(d, f.key, f);
         }
       }
-      var r = i(9);
-      e.exports = function() {
+      var r = s(9);
+      n.exports = function() {
         function d() {
           (function(h, w) {
             if (!(h instanceof w))
@@ -714,8 +699,8 @@ var x = { exports: {} };
           }), y;
         } }], (l = null) && a(v.prototype, l), f && a(v, f), d;
       }();
-    }, function(e, s) {
-      var i = function(r) {
+    }, function(n, i) {
+      var s = function(r) {
         return encodeURIComponent(r).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
       }, a = function(r, d, v, l) {
         return d = d || null, v = v || "&", l = l || null, r ? function(f) {
@@ -729,70 +714,70 @@ var x = { exports: {} };
           else {
             d && (w = y, y = !isNaN(parseFloat(w)) && isFinite(w) ? d + Number(y) : y);
             var b = r[f];
-            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = i(y) + "=" + i(b);
+            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", h = s(y) + "=" + s(b);
           }
           return h;
         })).join(v).replace(/[!'()*]/g, "") : "";
       };
-      e.exports = a;
+      n.exports = a;
     }]);
   });
-})(x);
-var X = x.exports;
-const S = /* @__PURE__ */ $(X), J = 0.85, W = 50, Y = "image/webp", K = "image/jpeg";
-function D(k, n) {
-  return k.toDataURL(n, J);
+})(N);
+var Y = N.exports;
+const O = /* @__PURE__ */ J(Y), K = 0.85, Q = 50, Z = "image/webp", z = "image/jpeg";
+function x(k, e) {
+  return k.toDataURL(e, K);
 }
-function B(k, n) {
-  const e = document.createElement("canvas"), s = e.getContext("2d"), i = document.createElement("canvas"), a = i.getContext("2d"), r = Math.min(n.width, n.height), d = W / r, v = n.width * d;
-  e.width = v, e.height = v;
-  let l = Math.floor(n.width * 0.5);
-  if (i.width = l, i.height = l, a.drawImage(k, Math.max(0, (n.width - r) / 2), Math.max(0, (n.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, e.width, e.height).data.every((f) => f === 0)) {
+function V(k, e) {
+  const n = document.createElement("canvas"), i = n.getContext("2d"), s = document.createElement("canvas"), a = s.getContext("2d"), r = Math.min(e.width, e.height), d = Q / r, v = e.width * d;
+  n.width = v, n.height = v;
+  let l = Math.floor(e.width * 0.5);
+  if (s.width = l, s.height = l, a.drawImage(k, Math.max(0, (e.width - r) / 2), Math.max(0, (e.height - r) / 2), r, r, 0, 0, l, l), !a.getImageData(0, 0, n.width, n.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
-      l = Math.floor(l * 0.5), a.drawImage(i, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return s.drawImage(i, 0, 0, l, l, 0, 0, e.width, e.height), D(e, Y) || D(e, K) || void 0;
+      l = Math.floor(l * 0.5), a.drawImage(s, 0, 0, l * 2, l * 2, 0, 0, l, l);
+    return i.drawImage(s, 0, 0, l, l, 0, 0, n.width, n.height), x(n, Z) || x(n, z) || void 0;
   }
 }
-const Q = 5;
-function Z(k) {
-  return new Promise((n) => {
-    const e = URL.createObjectURL(k), s = document.createElement("video");
-    s.oncanplay = () => {
-      s.onseeked = () => {
-        n(B(s, { width: s.videoWidth, height: s.videoHeight })), s.remove(), URL.revokeObjectURL(e);
-      }, s.currentTime = Math.min(s.duration / 2, Q);
-    }, s.src = e;
+const tt = 5;
+function et(k) {
+  return new Promise((e) => {
+    const n = URL.createObjectURL(k), i = document.createElement("video");
+    i.oncanplay = () => {
+      i.onseeked = () => {
+        e(V(i, { width: i.videoWidth, height: i.videoHeight })), i.remove(), URL.revokeObjectURL(n);
+      }, i.currentTime = Math.min(i.duration / 2, tt);
+    }, i.src = n;
   });
 }
-function z(k) {
-  return new Promise((n) => {
-    const e = URL.createObjectURL(k), s = document.createElement("img");
-    s.onload = () => {
-      n(B(s, { width: s.naturalWidth, height: s.naturalHeight })), s.remove(), URL.revokeObjectURL(e);
-    }, s.src = e;
+function nt(k) {
+  return new Promise((e) => {
+    const n = URL.createObjectURL(k), i = document.createElement("img");
+    i.onload = () => {
+      e(V(i, { width: i.naturalWidth, height: i.naturalHeight })), i.remove(), URL.revokeObjectURL(n);
+    }, i.src = n;
   });
 }
-async function F(k, n) {
-  switch (n) {
+async function S(k, e) {
+  switch (e) {
     case "VIDEO":
-      return await Z(k);
+      return await et(k);
     case "IMG":
-      return await z(k);
+      return await nt(k);
   }
   return "";
 }
-function L(k) {
-  return k.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[k.type.split("/")[0].toUpperCase()] : P(k.name);
+function F(k) {
+  return k.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[k.type.split("/")[0].toUpperCase()] : D(k.name);
 }
-class tt {
+class rt {
   /**
    * @param {object} params - uploader module params
    * @param {MediaConfig} params.config - media tool config
    * @param {Function} params.onUpload - one callback for all uploading (file, url, d-n-d, pasting)
    * @param {Function} params.onError - callback for uploading errors
    */
-  constructor({ config: n, onUpload: e, onError: s }) {
-    this.config = n, this.onUpload = e, this.onError = s;
+  constructor({ config: e, onUpload: n, onError: i }) {
+    this.config = e, this.onUpload = n, this.onError = i;
   }
   /**
    * Handle clicks on the upload file button
@@ -800,30 +785,30 @@ class tt {
    *
    * @param {Function} onPreview - callback fired when preview is ready
    */
-  async uploadSelectedFile({ onPreview: n }) {
+  async uploadSelectedFile({ onPreview: e }) {
     try {
-      let e, s;
+      let n, i;
       if (this.config.uploader && typeof this.config.uploader.uploadByFile == "function") {
-        const a = (await S.selectFiles({ accept: this.config.types }))[0];
-        s = L(a), F(a, s).then((r) => {
-          e || n(r);
-        }), e = await this.config.uploader.uploadByFile(a);
+        const a = (await O.selectFiles({ accept: this.config.types }))[0];
+        i = F(a), S(a, i).then((r) => {
+          n || e(r);
+        }), n = await this.config.uploader.uploadByFile(a);
       } else
-        e = await S.transport({
+        n = await O.transport({
           url: this.config.endpoints.byFile,
           data: this.config.additionalRequestData,
           accept: this.config.types,
           headers: this.config.additionalRequestHeaders,
-          beforeSend: (i) => {
-            preparePreview(i[0]);
-            const a = i[0];
-            s = L(a), F(a, s).then(n);
+          beforeSend: (s) => {
+            preparePreview(s[0]);
+            const a = s[0];
+            i = F(a), S(a, i).then(e);
           },
           fieldName: this.config.field
-        }).then((i) => i.body);
-      e.file.tag || (e.file.tag = s), this.onUpload(e);
-    } catch (e) {
-      this.onError(e);
+        }).then((s) => s.body);
+      n.file.tag || (n.file.tag = i), this.onUpload(n);
+    } catch (n) {
+      this.onError(n);
     }
   }
   /**
@@ -832,19 +817,19 @@ class tt {
    *
    * @param {string} url - media source url
    */
-  async uploadByUrl(n) {
+  async uploadByUrl(e) {
     try {
-      let e;
-      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? e = await this.config.uploader.uploadByUrl(n) : e = await S.post({
+      let n;
+      this.config.uploader && typeof this.config.uploader.uploadByUrl == "function" ? n = await this.config.uploader.uploadByUrl(e) : n = await O.post({
         url: this.config.endpoints.byUrl,
         data: Object.assign({
-          url: n
+          url: e
         }, this.config.additionalRequestData),
-        type: S.contentType.JSON,
+        type: O.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((s) => s.body), e.file.tag || (e.file.tag = P(n)), this.onUpload(e);
-    } catch (e) {
-      this.onError(e);
+      }).then((i) => i.body), n.file.tag || (n.file.tag = D(e)), this.onUpload(n);
+    } catch (n) {
+      this.onError(n);
     }
   }
   /**
@@ -854,30 +839,57 @@ class tt {
    * @param {File} file - file pasted by drag-n-drop
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
-  async uploadByFile(n, { onPreview: e }) {
-    const s = L(n);
+  async uploadByFile(e, { onPreview: n }) {
+    const i = F(e);
     try {
-      let i;
-      if (F(n, s).then((a) => {
-        i || e(a);
+      let s;
+      if (S(e, i).then((a) => {
+        s || n(a);
       }), this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
-        i = await this.config.uploader.uploadByFile(n);
+        s = await this.config.uploader.uploadByFile(e);
       else {
         const a = new FormData();
-        a.append(this.config.field, n), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
+        a.append(this.config.field, e), this.config.additionalRequestData && Object.keys(this.config.additionalRequestData).length && Object.entries(this.config.additionalRequestData).forEach(([r, d]) => {
           a.append(r, d);
-        }), i = await S.post({
+        }), s = await O.post({
           url: this.config.endpoints.byFile,
           data: a,
-          type: S.contentType.JSON,
+          type: O.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((r) => r.body);
       }
-      i.file.tag || (i.file.tag = s), this.onUpload(i);
-    } catch (i) {
-      this.onError(i);
+      s.file.tag || (s.file.tag = i), this.onUpload(s);
+    } catch (s) {
+      this.onError(s);
     }
   }
+}
+const P = "cdx-list", I = {
+  wrapper: `${P}-start-with-field`,
+  input: `${P}-start-with-field__input`,
+  startWithElementWrapperInvalid: `${P}-start-with-field--invalid`
+};
+function ot(k, { value: e, placeholder: n, attributes: i, sanitize: s }) {
+  const a = L("div", I.wrapper), r = L("input", I.input, {
+    placeholder: n,
+    /**
+     * Used to prevent focusing on the input by Tab key
+     * (Popover in the Toolbar lays below the blocks,
+     * so Tab in the last block will focus this hidden input if this property is not set)
+     */
+    tabIndex: -1,
+    /**
+     * Value of the start property, if it is not specified, then it is set to one
+     */
+    value: e
+  });
+  for (const d in i)
+    r.setAttribute(d, i[d]);
+  return a.appendChild(r), r.addEventListener("input", () => {
+    s !== void 0 && (r.value = s(r.value));
+    const d = r.checkValidity();
+    !d && !a.classList.contains(I.startWithElementWrapperInvalid) && a.classList.add(I.startWithElementWrapperInvalid), d && a.classList.contains(I.startWithElementWrapperInvalid) && a.classList.remove(I.startWithElementWrapperInvalid), d && k(r.value);
+  }), a;
 }
 /**
  * Image Tool for the Editor.js
@@ -910,7 +922,7 @@ class tt {
  *   },
  * },
  */
-class I {
+class R {
   /**
    * Notify core that read-only mode is supported
    *
@@ -928,7 +940,7 @@ class I {
    */
   static get toolbox() {
     return {
-      icon: R,
+      icon: U,
       title: "Media"
     };
   }
@@ -941,19 +953,19 @@ class I {
     return [
       {
         name: "withBorder",
-        icon: q,
+        icon: W,
         title: "With border",
         toggle: !0
       },
       {
         name: "stretched",
-        icon: V,
+        icon: G,
         title: "Stretch media",
         toggle: !0
       },
       {
         name: "withBackground",
-        icon: N,
+        icon: q,
         title: "With background",
         toggle: !0
       }
@@ -967,23 +979,22 @@ class I {
    * @param {boolean} tool.readOnly - read-only mode flag
    * @param {BlockAPI|{}} tool.block - current Block API
    */
-  constructor({ data: n, config: e, api: s, readOnly: i, block: a }) {
-    this.api = s, this.readOnly = i, this.block = a, this.config = {
-      endpoints: e.endpoints || "",
-      additionalRequestData: e.additionalRequestData || {},
-      additionalRequestHeaders: e.additionalRequestHeaders || {},
-      field: e.field || "media",
-      types: e.types || "image/*,audio/*,video/*",
-      captionPlaceholder: this.api.i18n.t(e.captionPlaceholder || "Caption"),
-      buttonContent: e.buttonContent || "",
-      uploader: e.uploader || void 0,
-      actions: e.actions || []
-    }, this.uploader = new tt({
+  constructor({ data: e, config: n, api: i, readOnly: s, block: a }) {
+    this.api = i, this.readOnly = s, this.block = a, this.config = {
+      endpoints: n.endpoints || "",
+      additionalRequestData: n.additionalRequestData || {},
+      additionalRequestHeaders: n.additionalRequestHeaders || {},
+      field: n.field || "media",
+      types: n.types || "image/*,audio/*,video/*",
+      buttonContent: n.buttonContent || "",
+      uploader: n.uploader || void 0,
+      actions: n.actions || []
+    }, this.uploader = new rt({
       config: this.config,
       onUpload: (r) => this.onUpload(r),
       onError: (r) => this.uploadingFailed(r)
     }), this.ui = new j({
-      api: s,
+      api: i,
       config: this.config,
       onSelectFile: () => {
         this.uploader.uploadSelectedFile({
@@ -992,8 +1003,8 @@ class I {
           }
         });
       },
-      readOnly: i
-    }), this._data = {}, this.data = n;
+      readOnly: s
+    }), this._data = {}, this.data = e;
   }
   /**
    * Renders Block content
@@ -1012,8 +1023,8 @@ class I {
    * @returns {boolean} false if saved data is not correct, otherwise true
    * @public
    */
-  validate(n) {
-    return n.file && n.file.url;
+  validate(e) {
+    return e.file && e.file.url;
   }
   /**
    * Return Block data
@@ -1023,8 +1034,7 @@ class I {
    * @returns {MediaToolData}
    */
   save() {
-    const n = this.ui.nodes.caption;
-    return this._data.caption = n.innerHTML, this.data;
+    return this.data;
   }
   /**
    * Returns configuration for block tunes: add background, add border, stretch media
@@ -1034,20 +1044,51 @@ class I {
    * @returns {Array}
    */
   renderSettings() {
-    return I.tunes.concat(this.config.actions).map((e) => ({
-      icon: e.icon,
-      label: this.api.i18n.t(e.title),
-      name: e.name,
-      toggle: e.toggle,
-      isActive: this.data[e.name],
+    const n = R.tunes.concat(this.config.actions).map((i) => ({
+      icon: i.icon,
+      label: this.api.i18n.t(i.title),
+      name: i.name,
+      toggle: i.toggle,
+      isActive: this.data[i.name],
+      children: i.children,
       onActivate: () => {
-        if (typeof e.action == "function") {
-          e.action(e.name);
+        if (typeof i.action == "function") {
+          i.action(i.name, this._data);
           return;
         }
-        this.tuneToggled(e.name);
+        this.tuneToggled(i.name);
       }
     }));
+    return this._renderSettings.concat(n);
+  }
+  get _renderSettings() {
+    return [
+      // hyperlink
+      {
+        name: "link",
+        icon: $,
+        label: this.api.i18n.t("Link"),
+        children: {
+          items: [
+            {
+              element: ot(
+                (e) => {
+                  this.data.link = e, this.ui.nodes.mediaContainer.href = e;
+                },
+                {
+                  value: this.data.link || "",
+                  placeholder: this.api.i18n.t("Add a link")
+                  /*sanitize: (input) => {
+                  
+                                    },*/
+                }
+              ),
+              type: "html"
+            }
+          ]
+        }
+      }
+    ];
   }
   /**
    * Fires after clicks on the Toolbox Image Icon
@@ -1078,7 +1119,7 @@ class I {
        * Paste URL of media into the Editor
        */
       patterns: {
-        media: G
+        media: X
       },
       /**
        * Drag n drop file from into the Editor
@@ -1097,29 +1138,29 @@ class I {
    *                              {@link https://github.com/codex-team/editor.js/blob/master/types/tools/paste-events.d.ts}
    * @returns {void}
    */
-  async onPaste(n) {
-    switch (n.type) {
+  async onPaste(e) {
+    switch (e.type) {
       case "tag": {
         this.ui.showPreloader();
-        const e = n.detail.data;
-        if (/^blob:/.test(e.src)) {
-          const i = await (await fetch(e.src)).blob();
-          this.uploadFile(i);
+        const n = e.detail.data;
+        if (/^blob:/.test(n.src)) {
+          const s = await (await fetch(n.src)).blob();
+          this.uploadFile(s);
           break;
         }
-        this.uploadUrl(e.src);
+        this.uploadUrl(n.src);
         break;
       }
       case "pattern": {
         this.ui.showPreloader();
-        const e = n.detail.data;
-        this.uploadUrl(e);
+        const n = e.detail.data;
+        this.uploadUrl(n);
         break;
       }
       case "file": {
         this.ui.showPreloader();
-        const e = n.detail.file;
-        this.uploadFile(e);
+        const n = e.detail.file;
+        this.uploadFile(n);
         break;
       }
     }
@@ -1135,10 +1176,10 @@ class I {
    *
    * @param {MediaToolData} data - data in Image Tool format
    */
-  set data(n) {
-    this.media = n.file, this._data.caption = n.caption || "", this.ui.fillCaption(this._data.caption), I.tunes.forEach(({ name: e }) => {
-      const s = typeof n[e] < "u" ? n[e] === !0 || n[e] === "true" : !1;
-      this.setTune(e, s);
+  set data(e) {
+    this.media = e.file, R.tunes.forEach(({ name: n }) => {
+      const i = typeof e[n] < "u" ? e[n] === !0 || e[n] === "true" : !1;
+      this.setTune(n, i);
     });
   }
   /**
@@ -1158,8 +1199,8 @@ class I {
    *
    * @param {object} file - uploaded file data
    */
-  set media(n) {
-    this._data.file = n || {}, n && n.url && this.ui.fillMedia(n.url, n.tag);
+  set media(e) {
+    this._data.file = e || {}, e && e.url && this.ui.fillMedia(e.url, e.tag);
   }
   /**
    * File uploading callback
@@ -1169,8 +1210,8 @@ class I {
    * @param {UploadResponseFormat} response - uploading server response
    * @returns {void}
    */
-  onUpload(n) {
-    n.success && n.file ? this.media = n.file : this.uploadingFailed("incorrect response: " + JSON.stringify(n));
+  onUpload(e) {
+    e.success && e.file ? this.media = e.file : this.uploadingFailed("incorrect response: " + JSON.stringify(e));
   }
   /**
    * Handle uploader errors
@@ -1179,8 +1220,8 @@ class I {
    * @param {string} errorText - uploading error text
    * @returns {void}
    */
-  uploadingFailed(n) {
-    console.log("Media Tool: uploading failed because of", n), this.api.notifier.show({
+  uploadingFailed(e) {
+    console.log("Media Tool: uploading failed because of", e), this.api.notifier.show({
       message: this.api.i18n.t("Couldn’t upload medium. Please try another."),
       style: "error"
     }), this.ui.hidePreloader();
@@ -1193,8 +1234,8 @@ class I {
    * @param {string} tuneName - tune that has been clicked
    * @returns {void}
    */
-  tuneToggled(n) {
-    this.setTune(n, !this._data[n]);
+  tuneToggled(e) {
+    this.setTune(e, !this._data[e]);
   }
   /**
    * Set one tune
@@ -1203,11 +1244,11 @@ class I {
    * @param {boolean} value - tune state
    * @returns {void}
    */
-  setTune(n, e) {
-    this._data[n] = e, this.ui.applyTune(n, e), n === "stretched" && Promise.resolve().then(() => {
-      this.block.stretched = e;
-    }).catch((s) => {
-      console.error(s);
+  setTune(e, n) {
+    this._data[e] = n, this.ui.applyTune(e, n), e === "stretched" && Promise.resolve().then(() => {
+      this.block.stretched = n;
+    }).catch((i) => {
+      console.error(i);
     });
   }
   /**
@@ -1216,10 +1257,10 @@ class I {
    * @param {File} file - file that is currently uploading (from paste)
    * @returns {void}
    */
-  uploadFile(n) {
-    this.uploader.uploadByFile(n, {
-      onPreview: (e) => {
-        this.ui.showPreloader(e);
+  uploadFile(e) {
+    this.uploader.uploadByFile(e, {
+      onPreview: (n) => {
+        this.ui.showPreloader(n);
       }
     });
   }
@@ -1229,10 +1270,10 @@ class I {
    * @param {string} url - url pasted
    * @returns {void}
    */
-  uploadUrl(n) {
-    this.ui.showPreloader(n), this.uploader.uploadByUrl(n);
+  uploadUrl(e) {
+    this.ui.showPreloader(e), this.uploader.uploadByUrl(e);
   }
 }
 export {
-  I as default
+  R as default
 };

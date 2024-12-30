@@ -33,7 +33,6 @@
 /**
  * @typedef {object} MediaToolData
  * @description Image Tool's input and output data format
- * @property {string} caption — media caption
  * @property {boolean} withBorder - should media be rendered with border
  * @property {boolean} withBackground - should media be rendered with background
  * @property {boolean} stretched - should media be stretched to full width of container
@@ -46,8 +45,9 @@ import './index.css';
 import Ui from './ui';
 import Uploader from './uploader';
 
-import { IconAddBorder, IconStretch, IconAddBackground, IconPicture } from '@codexteam/icons';
+import { IconAddBorder, IconStretch, IconAddBackground, IconPicture, IconLink } from '@codexteam/icons';
 import { REGEX } from './utils/fileTypes';
+import { renderToolboxInput } from './utils/input';
 
 /**
  * @typedef {object} MediaConfig
@@ -57,7 +57,6 @@ import { REGEX } from './utils/fileTypes';
  * @property {string} endpoints.byUrl - upload by URL
  * @property {string} field - field name for uploaded media
  * @property {string} types - available mime-types
- * @property {string} captionPlaceholder - placeholder for Caption field
  * @property {object} additionalRequestData - any data to send with requests
  * @property {object} additionalRequestHeaders - allows to pass custom headers with Request
  * @property {string} buttonContent - overrides for Select File button
@@ -149,7 +148,6 @@ export default class MediaTool {
       additionalRequestHeaders: config.additionalRequestHeaders || {},
       field: config.field || 'media',
       types: config.types || 'image/*,audio/*,video/*',
-      captionPlaceholder: this.api.i18n.t(config.captionPlaceholder || 'Caption'),
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
       actions: config.actions || [],
@@ -217,10 +215,6 @@ export default class MediaTool {
    * @returns {MediaToolData}
    */
   save() {
-    const caption = this.ui.nodes.caption;
-
-    this._data.caption = caption.innerHTML;
-
     return this.data;
   }
 
@@ -236,22 +230,55 @@ export default class MediaTool {
     // @see https://github.com/editor-js/image/pull/49
     const tunes = MediaTool.tunes.concat(this.config.actions);
 
-    return tunes.map(tune => ({
+    const settings = tunes.map(tune => ({
       icon: tune.icon,
       label: this.api.i18n.t(tune.title),
       name: tune.name,
       toggle: tune.toggle,
       isActive: this.data[tune.name],
+      children: tune.children,
       onActivate: () => {
         /* If it'a user defined tune, execute it's callback stored in action property */
         if (typeof tune.action === 'function') {
-          tune.action(tune.name);
+          tune.action(tune.name, this._data);
 
           return;
         }
         this.tuneToggled(tune.name);
       },
     }));
+
+    return this._renderSettings.concat(settings)
+  }
+
+  get _renderSettings() {
+    return [
+      // hyperlink
+      {
+        name: 'link',
+        icon: IconLink,
+        label: this.api.i18n.t('Link'),
+        children: {
+          items: [
+            {
+              element: renderToolboxInput(
+                (link) => {
+                  this.data["link"] = link
+                  this.ui.nodes.mediaContainer.href = link
+                },
+                {
+                  value: this.data["link"] || "",
+                  placeholder: this.api.i18n.t('Add a link'),
+                  /*sanitize: (input) => {
+
+                  },*/
+                }),
+              type: 'html',
+            },
+          ],
+        },
+      }
+    ]
   }
 
   /**
@@ -291,7 +318,7 @@ export default class MediaTool {
        * Drag n drop file from into the Editor
        */
       files: {
-        mimeTypes: [ 'image/*', 'audio/*', 'video/*' ],
+        mimeTypes: ['image/*', 'audio/*', 'video/*'],
       },
     };
   }
@@ -351,9 +378,6 @@ export default class MediaTool {
    */
   set data(data) {
     this.media = data.file;
-
-    this._data.caption = data.caption || '';
-    this.ui.fillCaption(this._data.caption);
 
     MediaTool.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;

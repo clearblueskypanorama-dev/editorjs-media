@@ -23,13 +23,10 @@ export default class Ui {
     this.readOnly = readOnly;
     this.nodes = {
       wrapper: make('div', [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: make('div', [this.CSS.mediaContainer]),
+      mediaContainer: make('a', [this.CSS.mediaContainer]),
       fileButton: this.createFileButton(),
       mediaEl: undefined,
       mediaPreloader: make('div', this.CSS.mediaPreloader),
-      caption: make('div', [this.CSS.input, this.CSS.caption], {
-        contentEditable: !this.readOnly,
-      }),
     };
 
     /**
@@ -38,14 +35,11 @@ export default class Ui {
      *    <media-container>
      *      <media-preloader />
      *    </media-container>
-     *    <caption />
      *    <select-file-button />
      *  </wrapper>
      */
-    this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
     this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader);
     this.nodes.wrapper.appendChild(this.nodes.mediaContainer);
-    this.nodes.wrapper.appendChild(this.nodes.caption);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
@@ -68,7 +62,6 @@ export default class Ui {
       mediaContainer: 'media-tool__media',
       mediaPreloader: 'media-tool__media-preloader',
       mediaEl: 'media-tool__media-picture',
-      caption: 'media-tool__caption',
     };
   };
 
@@ -99,6 +92,10 @@ export default class Ui {
       this.toggleStatus(Ui.status.EMPTY);
     } else {
       this.toggleStatus(Ui.status.UPLOADING);
+    }
+
+    if (toolData.link) {
+      this.nodes.mediaContainer.href = toolData.link
     }
 
     return this.nodes.wrapper;
@@ -210,18 +207,6 @@ export default class Ui {
     });
 
     this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
-  }
-
-  /**
-   * Shows caption input
-   *
-   * @param {string} text - caption text
-   * @returns {void}
-   */
-  fillCaption(text) {
-    if (this.nodes.caption) {
-      this.nodes.caption.innerHTML = text;
-    }
   }
 
   /**
