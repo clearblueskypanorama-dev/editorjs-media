@@ -1,4 +1,4 @@
-import ajax from '@codexteam/ajax';
+import { post, contentType } from '@codexteam/ajax';
 import { getFileType } from './utils/fileTypes';
 import { getPreview } from './utils/preview';
 
@@ -47,12 +47,12 @@ export default class Uploader {
 
       // default
       else {
-        result = await ajax.post({
+        result = await post({
           url: this.config.endpoints.byUrl,
           data: Object.assign({
             url: url,
           }, this.config.additionalRequestData),
-          type: ajax.contentType.JSON,
+          type: contentType.JSON,
           headers: this.config.additionalRequestHeaders,
         }).then(response => response.body);
       }
@@ -98,10 +98,10 @@ export default class Uploader {
           });
         }
 
-        result = await ajax.post({
+        result = await post({
           url: this.config.endpoints.byFile,
           data: formData,
-          type: ajax.contentType.JSON,
+          type: contentType.JSON,
           headers: this.config.additionalRequestHeaders,
         }).then(response => response.body);
       }

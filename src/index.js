@@ -48,7 +48,7 @@ import Uploader from './uploader';
 import { IconAddBorder, IconStretch, IconAddBackground, IconPicture, IconLink } from '@codexteam/icons';
 import { REGEX } from './utils/fileTypes';
 import { renderToolboxInput } from './utils/input';
-import { ajax } from '@codexteam/ajax';
+import { selectFiles } from '@codexteam/ajax';
 
 /**
  * @typedef {object} MediaConfig
@@ -170,7 +170,7 @@ export default class MediaTool {
       api,
       config: this.config,
       onSelectFile: async () => {
-        const files = await ajax.selectFiles({ accept: this.config.types, multiple: true })
+        const files = await selectFiles({ accept: this.config.types, multiple: true })
         if (files.length > 0) this.uploadFile(files[0]);
         if (files.length > 1) {
           for (let i = files.length - 1; i > 0; i--) {

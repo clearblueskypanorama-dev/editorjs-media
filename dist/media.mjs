@@ -1,15 +1,15 @@
 (function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode('.media-tool{--bg-color: #cdd1e0;--front-color: #388ae5;--border-color: #e8e8eb}.media-tool__media{border-radius:3px;overflow:hidden;margin-bottom:10px}.media-tool__media-picture{max-width:100%;vertical-align:bottom;display:block}.media-tool__media-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;margin:auto;position:relative;background-color:var(--bg-color);background-position:center center}.media-tool__media-preloader:after{content:"";position:absolute;z-index:3;width:60px;height:60px;border-radius:50%;border:2px solid var(--bg-color);border-top-color:var(--front-color);left:50%;top:50%;margin-top:-30px;margin-left:-30px;animation:media-preloader-spin 2s infinite linear;box-sizing:border-box}.media-tool__caption[contentEditable=true][data-placeholder]:before{position:absolute!important;content:attr(data-placeholder);color:#707684;font-weight:400;display:none}.media-tool__caption[contentEditable=true][data-placeholder]:empty:before{display:block}.media-tool__caption[contentEditable=true][data-placeholder]:empty:focus:before{display:none}.media-tool--empty .media-tool__media,.media-tool--empty .media-tool__caption,.media-tool--loading .media-tool__caption{display:none}.media-tool .cdx-button{display:flex;align-items:center;justify-content:center}.media-tool .cdx-button svg{height:auto;margin:0 6px 0 0}.media-tool--filled .cdx-button,.media-tool--filled .media-tool__media-preloader{display:none}.media-tool--loading .media-tool__media{min-height:200px;display:flex;border:1px solid var(--border-color);background-color:#fff}.media-tool--loading .media-tool__media-picture,.media-tool--loading .cdx-button{display:none}.media-tool--withBorder .media-tool__media{border:1px solid var(--border-color)}.media-tool--withBackground .media-tool__media{padding:15px;background:var(--bg-color)}.media-tool--withBackground .media-tool__media-picture{max-width:60%;margin:0 auto}.media-tool--stretched .media-tool__media-picture{width:100%}@keyframes media-preloader-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}')),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
-const V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', W = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"/></svg>', R = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', $ = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
-function _(b, e = null, o = {}) {
-  const i = document.createElement(b);
+const N = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V19C9.13623 19 8.20435 19 7.46927 18.6955C6.48915 18.2895 5.71046 17.5108 5.30448 16.5307C5 15.7956 5 14.8638 5 13V12C5 9.19108 5 7.78661 5.67412 6.77772C5.96596 6.34096 6.34096 5.96596 6.77772 5.67412C7.78661 5 9.19108 5 12 5H13.5C14.8956 5 15.5933 5 16.1611 5.17224C17.4395 5.56004 18.44 6.56046 18.8278 7.83886C19 8.40666 19 9.10444 19 10.5V10.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17.5L17.5 6.5"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 10.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.9919 19H11.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13L13 5"/></svg>', V = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.9919 9.5H19.0015"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 5H14.5096"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.625 5H15C17.2091 5 19 6.79086 19 9V9.375"/><path stroke="currentColor" stroke-width="2" d="M9.375 5L9 5C6.79086 5 5 6.79086 5 9V9.375"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 5H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9.5H5.00957"/><path stroke="currentColor" stroke-width="2" d="M9.375 19H9C6.79086 19 5 17.2091 5 15V14.625"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.3725 19H9.38207"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14.55H5.00957"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 13V16M16 19V16M19 16H16M16 16H13"/></svg>', q = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"/></svg>', R = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>', W = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9L20 12L17 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12H20"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9L4 12L7 15"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12H10"/></svg>';
+function L(E, e = null, o = {}) {
+  const i = document.createElement(E);
   Array.isArray(e) ? i.classList.add(...e) : e && i.classList.add(e);
   for (const s in o)
     i[s] = o[s];
   return i;
 }
-const D = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), U = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), A = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), G = new RegExp(`https?:\\/\\/\\S+\\.(${[...D, ...U, ...A].join("|")})(\\?[a-z0-9=]*)?$`, "i");
-function P(b) {
-  const e = b.split(".").pop();
+const D = /* @__PURE__ */ new Set(["apng", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "svg", "webp"]), U = /* @__PURE__ */ new Set(["m4a", "m4b", "mp4a", "mpga", "mp2", "mp2a", "mp3", "m2a", "m3a", "wav", "weba", "aac", "oga", "spx", "flac", "opus"]), A = /* @__PURE__ */ new Set(["mp4", "ogg", "ogv", "webm", "mov", "m4v", "mkv", "3gp", "avi", "mpeg"]), $ = new RegExp(`https?:\\/\\/\\S+\\.(${[...D, ...U, ...A].join("|")})(\\?[a-z0-9=]*)?$`, "i");
+function P(E) {
+  const e = E.split(".").pop();
   if (D.has(e))
     return "IMG";
   if (U.has(e))
@@ -27,12 +27,12 @@ class j {
    */
   constructor({ api: e, config: o, onSelectFile: i, readOnly: s }) {
     this.api = e, this.config = o, this.onSelectFile = i, this.readOnly = s, this.nodes = {
-      wrapper: _("div", [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: _("div", [this.CSS.mediaContainer]),
-      href: _("a", [], { target: "_blank" }),
+      wrapper: L("div", [this.CSS.baseClass, this.CSS.wrapper]),
+      mediaContainer: L("div", [this.CSS.mediaContainer]),
+      href: L("a", [], { target: "_blank" }),
       fileButton: this.createFileButton(),
       mediaEl: void 0,
-      mediaPreloader: _("div", this.CSS.mediaPreloader)
+      mediaPreloader: L("div", this.CSS.mediaPreloader)
     }, this.nodes.href.appendChild(this.nodes.mediaContainer), this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader), this.nodes.wrapper.appendChild(this.nodes.href), this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
   /**
@@ -85,7 +85,7 @@ class j {
    * @returns {Element}
    */
   createFileButton() {
-    const e = _("div", [this.CSS.button]);
+    const e = L("div", [this.CSS.button]);
     return e.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select a media file")}`, e.addEventListener("click", () => {
       this.onSelectFile();
     }), e;
@@ -119,7 +119,7 @@ class j {
       src: e
     };
     let s = "load";
-    (o === "VIDEO" || o === "AUDIO") && (i.muted = !0, i.playsinline = !0, i.controls = !0, o === "AUDIO" && (i.style = "width: 100%;"), s = "loadedmetadata"), this.nodes.mediaEl = _(o, this.CSS.mediaEl, i), this.nodes.mediaEl.addEventListener(s, () => {
+    (o === "VIDEO" || o === "AUDIO") && (i.muted = !0, i.playsinline = !0, i.controls = !0, o === "AUDIO" && (i.style = "width: 100%;"), s = "loadedmetadata"), this.nodes.mediaEl = L(o, this.CSS.mediaEl, i), this.nodes.mediaEl.addEventListener(s, () => {
       this.toggleStatus(j.status.FILLED), this.nodes.mediaPreloader && (this.nodes.mediaPreloader.style.backgroundImage = "");
     }), this.nodes.mediaContainer.appendChild(this.nodes.mediaEl);
   }
@@ -144,13 +144,10 @@ class j {
     this.nodes.wrapper.classList.toggle(`${this.CSS.wrapper}--${e}`, o);
   }
 }
-function X(b) {
-  return b && b.__esModule && Object.prototype.hasOwnProperty.call(b, "default") ? b.default : b;
-}
 var H = { exports: {} };
-(function(b, e) {
+(function(E, e) {
   (function(o, i) {
-    b.exports = i();
+    E.exports = i();
   })(window, function() {
     return function(o) {
       var i = {};
@@ -298,8 +295,8 @@ var H = { exports: {} };
                 c(I);
               }
             }
-            for (var E = 0; E < g.length; E++)
-              p(E, g[E]);
+            for (var b = 0; b < g.length; b++)
+              p(b, g[b]);
           });
         }, l.resolve = function(r) {
           return r && typeof r == "object" && r.constructor === l ? r : new l(function(d) {
@@ -354,11 +351,11 @@ var H = { exports: {} };
           });
           var g = t.ratio;
           c.upload.addEventListener("progress", function(m) {
-            var p = Math.round(m.loaded / m.total * 100), E = Math.ceil(p * g / 100);
-            t.progress(Math.min(E, 100));
+            var p = Math.round(m.loaded / m.total * 100), b = Math.ceil(p * g / 100);
+            t.progress(Math.min(b, 100));
           }, !1), c.addEventListener("progress", function(m) {
-            var p = Math.round(m.loaded / m.total * 100), E = Math.ceil(p * (100 - g) / 100) + g;
-            t.progress(Math.min(E, 100));
+            var p = Math.round(m.loaded / m.total * 100), b = Math.ceil(p * (100 - g) / 100) + g;
+            t.progress(Math.min(b, 100));
           }, !1), c.onreadystatechange = function() {
             if (c.readyState === 4) {
               var m = c.response;
@@ -366,8 +363,8 @@ var H = { exports: {} };
                 m = JSON.parse(m);
               } catch {
               }
-              var p = y.parseHeaders(c.getAllResponseHeaders()), E = { body: m, code: c.status, headers: p };
-              w(c.status) ? r(E) : d(E);
+              var p = y.parseHeaders(c.getAllResponseHeaders()), b = { body: m, code: c.status, headers: p };
+              w(c.status) ? r(b) : d(b);
             }
           }, c.send(t.data);
         });
@@ -489,10 +486,10 @@ var H = { exports: {} };
               });
             } : function() {
               if (u.postMessage && !u.importScripts) {
-                var p = !0, E = u.onmessage;
+                var p = !0, b = u.onmessage;
                 return u.onmessage = function() {
                   p = !1;
-                }, u.postMessage("", "*"), u.onmessage = E, p;
+                }, u.postMessage("", "*"), u.onmessage = b, p;
               }
             }() ? (w = "setImmediate$" + Math.random() + "$", y = function(p) {
               p.source === u && typeof p.data == "string" && p.data.indexOf(w) === 0 && m(+p.data.slice(w.length));
@@ -503,17 +500,17 @@ var H = { exports: {} };
             }, l = function(p) {
               h.port2.postMessage(p);
             }) : d && "onreadystatechange" in d.createElement("script") ? (f = d.documentElement, l = function(p) {
-              var E = d.createElement("script");
-              E.onreadystatechange = function() {
-                m(p), E.onreadystatechange = null, f.removeChild(E), E = null;
-              }, f.appendChild(E);
+              var b = d.createElement("script");
+              b.onreadystatechange = function() {
+                m(p), b.onreadystatechange = null, f.removeChild(b), b = null;
+              }, f.appendChild(b);
             }) : l = function(p) {
               setTimeout(m, 0, p);
             }, c.setImmediate = function(p) {
               typeof p != "function" && (p = new Function("" + p));
-              for (var E = new Array(arguments.length - 1), M = 0; M < E.length; M++)
-                E[M] = arguments[M + 1];
-              var C = { callback: p, args: E };
+              for (var b = new Array(arguments.length - 1), M = 0; M < b.length; M++)
+                b[M] = arguments[M + 1];
+              var C = { callback: p, args: b };
               return t[k] = C, l(k), k++;
             }, c.clearImmediate = g;
           }
@@ -524,8 +521,8 @@ var H = { exports: {} };
             if (r)
               setTimeout(m, 0, p);
             else {
-              var E = t[p];
-              if (E) {
+              var b = t[p];
+              if (b) {
                 r = !0;
                 try {
                   (function(M) {
@@ -546,7 +543,7 @@ var H = { exports: {} };
                       default:
                         C.apply(v, T);
                     }
-                  })(E);
+                  })(b);
                 } finally {
                   g(p), r = !1;
                 }
@@ -724,53 +721,53 @@ var H = { exports: {} };
     }]);
   });
 })(H);
-var B = H.exports;
-const O = /* @__PURE__ */ X(B), J = 0.85, Y = 50, K = "image/webp", Q = "image/jpeg";
-function x(b, e) {
-  return b.toDataURL(e, J);
+var O = H.exports;
+const G = 0.85, X = 50, J = "image/webp", Y = "image/jpeg";
+function x(E, e) {
+  return E.toDataURL(e, G);
 }
-function N(b, e) {
-  const o = document.createElement("canvas"), i = o.getContext("2d"), s = document.createElement("canvas"), a = s.getContext("2d"), n = Math.min(e.width, e.height), u = Y / n, v = e.width * u;
+function B(E, e) {
+  const o = document.createElement("canvas"), i = o.getContext("2d"), s = document.createElement("canvas"), a = s.getContext("2d"), n = Math.min(e.width, e.height), u = X / n, v = e.width * u;
   o.width = v, o.height = v;
   let l = Math.floor(e.width * 0.5);
-  if (s.width = l, s.height = l, a.drawImage(b, Math.max(0, (e.width - n) / 2), Math.max(0, (e.height - n) / 2), n, n, 0, 0, l, l), !a.getImageData(0, 0, o.width, o.height).data.every((f) => f === 0)) {
+  if (s.width = l, s.height = l, a.drawImage(E, Math.max(0, (e.width - n) / 2), Math.max(0, (e.height - n) / 2), n, n, 0, 0, l, l), !a.getImageData(0, 0, o.width, o.height).data.every((f) => f === 0)) {
     for (; l * 0.5 > v; )
       l = Math.floor(l * 0.5), a.drawImage(s, 0, 0, l * 2, l * 2, 0, 0, l, l);
-    return i.drawImage(s, 0, 0, l, l, 0, 0, o.width, o.height), x(o, K) || x(o, Q) || void 0;
+    return i.drawImage(s, 0, 0, l, l, 0, 0, o.width, o.height), x(o, J) || x(o, Y) || void 0;
   }
 }
-const Z = 5;
-function z(b) {
+const K = 5;
+function Q(E) {
   return new Promise((e) => {
-    const o = URL.createObjectURL(b), i = document.createElement("video");
+    const o = URL.createObjectURL(E), i = document.createElement("video");
     i.oncanplay = () => {
       i.onseeked = () => {
-        e(N(i, { width: i.videoWidth, height: i.videoHeight })), i.remove(), URL.revokeObjectURL(o);
-      }, i.currentTime = Math.min(i.duration / 2, Z);
+        e(B(i, { width: i.videoWidth, height: i.videoHeight })), i.remove(), URL.revokeObjectURL(o);
+      }, i.currentTime = Math.min(i.duration / 2, K);
     }, i.src = o;
   });
 }
-function tt(b) {
+function Z(E) {
   return new Promise((e) => {
-    const o = URL.createObjectURL(b), i = document.createElement("img");
+    const o = URL.createObjectURL(E), i = document.createElement("img");
     i.onload = () => {
-      e(N(i, { width: i.naturalWidth, height: i.naturalHeight })), i.remove(), URL.revokeObjectURL(o);
+      e(B(i, { width: i.naturalWidth, height: i.naturalHeight })), i.remove(), URL.revokeObjectURL(o);
     }, i.src = o;
   });
 }
-async function et(b, e) {
+async function z(E, e) {
   switch (e) {
     case "VIDEO":
-      return await z(b);
+      return await Q(E);
     case "IMG":
-      return await tt(b);
+      return await Z(E);
   }
   return "";
 }
-function nt(b) {
-  return b.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[b.type.split("/")[0].toUpperCase()] : P(b.name);
+function tt(E) {
+  return E.type ? { IMAGE: "IMG", VIDEO: "VIDEO", AUDIO: "AUDIO" }[E.type.split("/")[0].toUpperCase()] : P(E.name);
 }
-class rt {
+class et {
   /**
    * @param {object} params - uploader module params
    * @param {MediaConfig} params.config - media tool config
@@ -809,10 +806,10 @@ class rt {
    * @param {Function} onPreview - file pasted by drag-n-drop
    */
   async uploadByFile(e, { onPreview: o }) {
-    const i = nt(e);
+    const i = tt(e);
     try {
       let s;
-      if (et(e, i).then((a) => {
+      if (z(e, i).then((a) => {
         s || o(a);
       }), this.config.uploader && typeof this.config.uploader.uploadByFile == "function")
         s = await this.config.uploader.uploadByFile(e);
@@ -833,13 +830,13 @@ class rt {
     }
   }
 }
-const F = "cdx-list", L = {
+const F = "cdx-list", _ = {
   wrapper: `${F}-start-with-field`,
   input: `${F}-start-with-field__input`,
   startWithElementWrapperInvalid: `${F}-start-with-field--invalid`
 };
-function ot(b, { value: e, placeholder: o, attributes: i, sanitize: s }) {
-  const a = _("div", L.wrapper), n = _("input", L.input, {
+function nt(E, { value: e, placeholder: o, attributes: i, sanitize: s }) {
+  const a = L("div", _.wrapper), n = L("input", _.input, {
     placeholder: o,
     /**
      * Used to prevent focusing on the input by Tab key
@@ -857,7 +854,7 @@ function ot(b, { value: e, placeholder: o, attributes: i, sanitize: s }) {
   return a.appendChild(n), n.addEventListener("input", () => {
     s !== void 0 && (n.value = s(n.value));
     const u = n.checkValidity();
-    !u && !a.classList.contains(L.startWithElementWrapperInvalid) && a.classList.add(L.startWithElementWrapperInvalid), u && a.classList.contains(L.startWithElementWrapperInvalid) && a.classList.remove(L.startWithElementWrapperInvalid), u && b(n.value);
+    !u && !a.classList.contains(_.startWithElementWrapperInvalid) && a.classList.add(_.startWithElementWrapperInvalid), u && a.classList.contains(_.startWithElementWrapperInvalid) && a.classList.remove(_.startWithElementWrapperInvalid), u && E(n.value);
   }), a;
 }
 /**
@@ -922,19 +919,19 @@ class S {
     return [
       {
         name: "withBorder",
-        icon: q,
+        icon: V,
         title: "With border",
         toggle: !0
       },
       {
         name: "stretched",
-        icon: $,
+        icon: W,
         title: "Stretch media",
         toggle: !0
       },
       {
         name: "withBackground",
-        icon: V,
+        icon: N,
         title: "With background",
         toggle: !0
       }
@@ -958,7 +955,7 @@ class S {
       buttonContent: o.buttonContent || "",
       uploader: o.uploader || void 0,
       actions: o.actions || []
-    }, this.uploader = new rt({
+    }, this.uploader = new et({
       config: this.config,
       onUpload: (n) => this.onUpload(n),
       onError: (n) => this.uploadingFailed(n)
@@ -966,7 +963,7 @@ class S {
       api: i,
       config: this.config,
       onSelectFile: async () => {
-        const n = await B.ajax.selectFiles({ accept: this.config.types, multiple: !0 });
+        const n = await O.selectFiles({ accept: this.config.types, multiple: !0 });
         if (n.length > 0 && this.uploadFile(n[0]), n.length > 1)
           for (let u = n.length - 1; u > 0; u--)
             this.api.blocks.insert(this.config.field, { _file: n[u] });
@@ -1034,12 +1031,12 @@ class S {
       // hyperlink
       {
         name: "link",
-        icon: W,
+        icon: q,
         label: this.api.i18n.t("Link"),
         children: {
           items: [
             {
-              element: ot(
+              element: nt(
                 (e) => {
                   this._data.link = e, this.ui.nodes.href.href = e;
                 },
@@ -1084,7 +1081,7 @@ class S {
        * Paste URL of media into the Editor
        */
       patterns: {
-        media: G
+        media: $
       },
       /**
        * Drag n drop file from into the Editor
