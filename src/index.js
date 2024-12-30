@@ -171,12 +171,11 @@ export default class MediaTool {
       config: this.config,
       onSelectFile: async () => {
         const files = await selectFiles({ accept: this.config.types, multiple: true })
-        if (files.length > 0) this.uploadFile(files[0]);
-        if (files.length > 1) {
-          for (let i = files.length - 1; i > 0; i--) {
-            this.api.blocks.insert(this.config.field, { _file: files[i] })
-          }
+        const index = this.api.blocks.getCurrentBlockIndex()
+        for (let _file of files) {
+          this.api.blocks.insert(this.config.field, { _file }, undefined, index)
         }
+        this.api.blocks.delete(index)
       },
       readOnly,
     });
@@ -294,7 +293,6 @@ export default class MediaTool {
    */
   rendered() {
     if (this.initialFile) this.uploadFile(this.initialFile);
-    else if (!this.data.file?.url) this.ui.nodes.fileButton.click();
   }
 
   /**
