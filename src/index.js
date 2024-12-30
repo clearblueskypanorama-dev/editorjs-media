@@ -193,6 +193,7 @@ export default class MediaTool {
    * @returns {HTMLDivElement}
    */
   render() {
+    console.debug("render", this)
     return this.ui.render(this.data);
   }
 
@@ -330,6 +331,7 @@ export default class MediaTool {
    * @returns {void}
    */
   async onPaste(event) {
+    console.debug("render", event)
     switch (event.type) {
       case 'tag': {
         this.ui.showPreloader();

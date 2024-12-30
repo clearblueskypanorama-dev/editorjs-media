@@ -1015,7 +1015,7 @@ class R {
    * @returns {HTMLDivElement}
    */
   render() {
-    return this.ui.render(this.data);
+    return console.debug("render", this), this.ui.render(this.data);
   }
   /**
    * Validate data: check if Image exists
@@ -1137,7 +1137,7 @@ class R {
    * @returns {void}
    */
   async onPaste(e) {
-    switch (e.type) {
+    switch (console.debug("render", e), e.type) {
       case "tag": {
         this.ui.showPreloader();
         const n = e.detail.data;
