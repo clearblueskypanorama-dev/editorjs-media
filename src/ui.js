@@ -94,6 +94,7 @@ export default class Ui {
       this.toggleStatus(Ui.status.UPLOADING);
     }
 
+    console.debug(toolData, this.nodes)
     if (toolData.link) {
       this.nodes.mediaContainer.href = toolData.link
     }
