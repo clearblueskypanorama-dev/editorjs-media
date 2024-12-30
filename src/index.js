@@ -48,6 +48,7 @@ import Uploader from './uploader';
 import { IconAddBorder, IconStretch, IconAddBackground, IconPicture, IconLink } from '@codexteam/icons';
 import { REGEX } from './utils/fileTypes';
 import { renderToolboxInput } from './utils/input';
+import { ajax } from '@codexteam/ajax';
 
 /**
  * @typedef {object} MediaConfig
@@ -168,15 +169,22 @@ export default class MediaTool {
     this.ui = new Ui({
       api,
       config: this.config,
-      onSelectFile: () => {
-        this.uploader.uploadSelectedFile({
-          onPreview: (src) => {
-            this.ui.showPreloader(src);
-          },
-        });
+      onSelectFile: async () => {
+        const files = await ajax.selectFiles({ accept: this.config.types, multiple: true })
+        if (files.length > 0) this.uploadFile(files[0]);
+        if (files.length > 1) {
+          for (let i = files.length - 1; i > 0; i--) {
+            this.api.blocks.insert(this.config.field, { _file: files[i] })
+          }
+        }
       },
       readOnly,
     });
+
+    if (data._file) {
+      this.initialFile = data._file
+      data = {}
+    }
 
     /**
      * Set saved state
@@ -285,7 +293,8 @@ export default class MediaTool {
    * @public
    */
   appendCallback() {
-    this.ui.nodes.fileButton.click();
+    if (this.initialFile) this.uploadFile(this.initialFile);
+    else this.ui.nodes.fileButton.click();
   }
 
   /**

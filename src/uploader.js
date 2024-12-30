@@ -31,54 +31,6 @@ export default class Uploader {
 
   /**
    * Handle clicks on the upload file button
-   * Fires ajax.transport()
-   *
-   * @param {Function} onPreview - callback fired when preview is ready
-   */
-  async uploadSelectedFile({ onPreview }) {
-    try {
-      let result;
-      let tag;
-
-      // custom
-      if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
-        const files = await ajax.selectFiles({ accept: this.config.types })
-        const file = files[0]
-        tag = getTag(file)
-
-        getPreview(file, tag).then((url) => {
-          if (!result) onPreview(url);
-        })
-
-        result = await this.config.uploader.uploadByFile(file)
-      }
-
-      // default
-      else {
-        result = await ajax.transport({
-          url: this.config.endpoints.byFile,
-          data: this.config.additionalRequestData,
-          accept: this.config.types,
-          headers: this.config.additionalRequestHeaders,
-          beforeSend: (files) => {
-            preparePreview(files[0]);
-            const file = files[0]
-            tag = getTag(file)
-            getPreview(file, tag).then(onPreview)
-          },
-          fieldName: this.config.field,
-        }).then((response) => response.body);
-      }
-
-      if (!result.file.tag) result.file.tag = tag;
-      this.onUpload(result);
-    } catch (error) {
-      this.onError(error);
-    }
-  }
-
-  /**
-   * Handle clicks on the upload file button
    * Fires ajax.post()
    *
    * @param {string} url - media source url
