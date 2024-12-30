@@ -191,6 +191,8 @@ export default class MediaTool {
      */
     this._data = {};
     this.data = data;
+
+    console.debug(this, data)
   }
 
   /**
@@ -293,6 +295,7 @@ export default class MediaTool {
    * @public
    */
   appendCallback() {
+    console.debug("callback")
     if (this.initialFile) this.uploadFile(this.initialFile);
     else this.ui.nodes.fileButton.click();
   }

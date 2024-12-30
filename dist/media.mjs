@@ -969,7 +969,7 @@ class S {
             this.api.blocks.insert(this.config.field, { _file: n[u] });
       },
       readOnly: s
-    }), e._file && (this.initialFile = e._file, e = {}), this._data = {}, this.data = e;
+    }), e._file && (this.initialFile = e._file, e = {}), this._data = {}, this.data = e, console.debug(this, e);
   }
   /**
    * Renders Block content
@@ -1059,7 +1059,7 @@ class S {
    * @public
    */
   appendCallback() {
-    this.initialFile ? this.uploadFile(this.initialFile) : this.ui.nodes.fileButton.click();
+    console.debug("callback"), this.initialFile ? this.uploadFile(this.initialFile) : this.ui.nodes.fileButton.click();
   }
   /**
    * Specify paste substitutes
