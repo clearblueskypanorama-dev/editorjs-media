@@ -23,7 +23,8 @@ export default class Ui {
     this.readOnly = readOnly;
     this.nodes = {
       wrapper: make('div', [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: make('a', [this.CSS.mediaContainer]),
+      mediaContainer: make('div', [this.CSS.mediaContainer]),
+      href: make('a', [], { target: "_blank" }),
       fileButton: this.createFileButton(),
       mediaEl: undefined,
       mediaPreloader: make('div', this.CSS.mediaPreloader),
@@ -32,14 +33,17 @@ export default class Ui {
     /**
      * Create base structure
      *  <wrapper>
-     *    <media-container>
-     *      <media-preloader />
-     *    </media-container>
+     *    <href>
+     *      <media-container>
+     *        <media-preloader />
+     *      </media-container>
+     *    <href />
      *    <select-file-button />
      *  </wrapper>
      */
+    this.nodes.href.appendChild(this.nodes.mediaContainer);
     this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader);
-    this.nodes.wrapper.appendChild(this.nodes.mediaContainer);
+    this.nodes.wrapper.appendChild(this.nodes.href);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
@@ -95,7 +99,7 @@ export default class Ui {
     }
 
     if (toolData.link) {
-      this.nodes.mediaContainer.href = toolData.link
+      this.nodes.href.href = toolData.link
     }
 
     return this.nodes.wrapper;

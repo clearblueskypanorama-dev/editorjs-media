@@ -138,6 +138,7 @@ export default class MediaTool {
     this.api = api;
     this.readOnly = readOnly;
     this.block = block;
+    console.debug(data)
 
     /**
      * Tool's initial config
@@ -264,12 +265,11 @@ export default class MediaTool {
               element: renderToolboxInput(
                 (link) => {
                   this._data["link"] = link
-                  this.ui.nodes.mediaContainer.href = link
+                  this.ui.nodes.href.href = link
                 },
                 {
                   value: this._data["link"] || "",
                   placeholder: this.api.i18n.t('Add a link'),
-                  target: "_blank",
                 }),
               type: 'html',
             },

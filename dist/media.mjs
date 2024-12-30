@@ -28,11 +28,12 @@ class j {
   constructor({ api: e, config: n, onSelectFile: i, readOnly: s }) {
     this.api = e, this.config = n, this.onSelectFile = i, this.readOnly = s, this.nodes = {
       wrapper: L("div", [this.CSS.baseClass, this.CSS.wrapper]),
-      mediaContainer: L("a", [this.CSS.mediaContainer]),
+      mediaContainer: L("div", [this.CSS.mediaContainer]),
+      href: L("a", [], { target: "_blank" }),
       fileButton: this.createFileButton(),
       mediaEl: void 0,
       mediaPreloader: L("div", this.CSS.mediaPreloader)
-    }, this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader), this.nodes.wrapper.appendChild(this.nodes.mediaContainer), this.nodes.wrapper.appendChild(this.nodes.fileButton);
+    }, this.nodes.href.appendChild(this.nodes.mediaContainer), this.nodes.mediaContainer.appendChild(this.nodes.mediaPreloader), this.nodes.wrapper.appendChild(this.nodes.href), this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
   /**
    * CSS classes
@@ -76,7 +77,7 @@ class j {
    * @returns {Element}
    */
   render(e) {
-    return !e.file || Object.keys(e.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), e.link && (this.nodes.mediaContainer.href = e.link), this.nodes.wrapper;
+    return !e.file || Object.keys(e.file).length === 0 ? this.toggleStatus(j.status.EMPTY) : this.toggleStatus(j.status.UPLOADING), e.link && (this.nodes.href.href = e.link), this.nodes.wrapper;
   }
   /**
    * Creates upload-file button
@@ -980,7 +981,7 @@ class R {
    * @param {BlockAPI|{}} tool.block - current Block API
    */
   constructor({ data: e, config: n, api: i, readOnly: s, block: a }) {
-    this.api = i, this.readOnly = s, this.block = a, this.config = {
+    this.api = i, this.readOnly = s, this.block = a, console.debug(e), this.config = {
       endpoints: n.endpoints || "",
       additionalRequestData: n.additionalRequestData || {},
       additionalRequestHeaders: n.additionalRequestHeaders || {},
@@ -1073,12 +1074,11 @@ class R {
             {
               element: ot(
                 (e) => {
-                  this._data.link = e, this.ui.nodes.mediaContainer.href = e;
+                  this._data.link = e, this.ui.nodes.href.href = e;
                 },
                 {
                   value: this._data.link || "",
-                  placeholder: this.api.i18n.t("Add a link"),
-                  target: "_blank"
+                  placeholder: this.api.i18n.t("Add a link")
                 }
               ),
               type: "html"
