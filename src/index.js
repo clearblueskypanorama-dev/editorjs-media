@@ -269,9 +269,7 @@ export default class MediaTool {
                 {
                   value: this.data["link"] || "",
                   placeholder: this.api.i18n.t('Add a link'),
-                  /*sanitize: (input) => {
-
-                  },*/
+                  target: "_blank",
                 }),
               type: 'html',
             },

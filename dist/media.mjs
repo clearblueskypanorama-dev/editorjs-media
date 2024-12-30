@@ -1077,10 +1077,8 @@ class R {
                 },
                 {
                   value: this.data.link || "",
-                  placeholder: this.api.i18n.t("Add a link")
-                  /*sanitize: (input) => {
-                  
-                                    },*/
+                  placeholder: this.api.i18n.t("Add a link"),
+                  target: "_blank"
                 }
               ),
               type: "html"
