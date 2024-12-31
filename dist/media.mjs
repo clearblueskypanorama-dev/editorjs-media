@@ -86,7 +86,7 @@ class j {
    */
   createFileButton() {
     const e = L("div", [this.CSS.button]);
-    return e.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select a media file")}`, e.addEventListener("click", () => {
+    return e.innerHTML = this.config.buttonContent || `${R} ${this.api.i18n.t("Select media file(s)")}`, e.addEventListener("click", () => {
       this.onSelectFile();
     }), e;
   }
