@@ -1143,7 +1143,7 @@ class S {
     this.media = e.file, S.tunes.forEach(({ name: o }) => {
       const i = typeof e[o] < "u" ? e[o] === !0 || e[o] === "true" : !1;
       this.setTune(o, i);
-    }), e.link && (this._data.link = e.link);
+    }), e.link && (this._data.link = e.link, this.ui.nodes.href.href = e.link);
   }
   /**
    * Return Tool data
@@ -1174,7 +1174,7 @@ class S {
    * @returns {void}
    */
   onUpload(e) {
-    e.success && e.file ? (this.media = e.file, e.link && (this._data.link = e.link)) : this.uploadingFailed("incorrect response: " + JSON.stringify(e));
+    e.success && e.file ? (this.media = e.file, e.link && (this._data.link = e.link, this.ui.nodes.href.href = e.link)) : this.uploadingFailed("incorrect response: " + JSON.stringify(e));
   }
   /**
    * Handle uploader errors

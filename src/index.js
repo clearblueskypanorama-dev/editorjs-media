@@ -391,7 +391,10 @@ export default class MediaTool {
       this.setTune(tune, value);
     });
 
-    if (data.link) this._data["link"] = data.link;
+    if (data.link) {
+      this._data["link"] = data.link
+      this.ui.nodes.href.href = data.link
+    }
   }
 
   /**
@@ -430,8 +433,11 @@ export default class MediaTool {
    */
   onUpload(response) {
     if (response.success && response.file) {
-      this.media = response.file;
-      if (response.link) this._data["link"] = response.link;
+      this.media = response.file; 
+      if (response.link) {
+        this._data["link"] = response.link
+        this.ui.nodes.href.href = response.link
+      }
     } else {
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
     }
