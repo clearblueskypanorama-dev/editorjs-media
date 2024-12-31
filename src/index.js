@@ -431,6 +431,7 @@ export default class MediaTool {
   onUpload(response) {
     if (response.success && response.file) {
       this.media = response.file;
+      if (response.link) this._data["link"] = response.link;
     } else {
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
     }

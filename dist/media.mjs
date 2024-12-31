@@ -1174,7 +1174,7 @@ class S {
    * @returns {void}
    */
   onUpload(e) {
-    e.success && e.file ? this.media = e.file : this.uploadingFailed("incorrect response: " + JSON.stringify(e));
+    e.success && e.file ? (this.media = e.file, e.link && (this._data.link = e.link)) : this.uploadingFailed("incorrect response: " + JSON.stringify(e));
   }
   /**
    * Handle uploader errors
