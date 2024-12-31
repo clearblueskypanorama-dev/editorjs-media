@@ -498,6 +498,7 @@ export default class MediaTool {
    * @returns {void}
    */
   uploadFile(file) {
+    this.ui.showPreloader("")
     this.uploader.uploadByFile(file, {
       onPreview: (src) => {
         this.ui.showPreloader(src);

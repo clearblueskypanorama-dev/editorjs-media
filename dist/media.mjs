@@ -1221,7 +1221,7 @@ class S {
    * @returns {void}
    */
   uploadFile(e) {
-    this.uploader.uploadByFile(e, {
+    this.ui.showPreloader(""), this.uploader.uploadByFile(e, {
       onPreview: (o) => {
         this.ui.showPreloader(o);
       }
